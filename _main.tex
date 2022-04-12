@@ -1,0 +1,469 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Arts escèniques},
+  pdfauthor={Ramiro Palau},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+% Make links footnotes instead of hotlinks:
+\DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[catalan]{babel}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Arts escèniques}
+\author{Ramiro Palau}
+\date{2022-04-12}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\setstretch{1}
+\hypertarget{about}{%
+\chapter*{About}\label{about}}
+\addcontentsline{toc}{chapter}{About}
+
+Documentació dels projectes proposats a realitzar en el desenvolupament de les practiques realitzades en \textbf{Espacio Inestable}.
+
+\hypertarget{usage}{%
+\section*{Usage}\label{usage}}
+\addcontentsline{toc}{section}{Usage}
+
+Anirem detallant els diferents projectes que es proposen per a digitalitzar \emph{les arts escèniques},
+amb una breu descripció de la seva posada en funcionament, requisits, pros i contres.
+
+En cas afirmatiu s'aniria desenvolupant la manera de implantar-lo, cost, i detallarem el seu
+funcionament i configuració.
+
+La idea, es que aquest document siga una guia per mantindre els projectes realitzats o replicar-los en altres llocs,
+i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l'empresa.
+
+\hypertarget{streaming}{%
+\chapter{Streaming}\label{streaming}}
+
+\emph{Implantació d'un sistema de streaming per a la sala}
+
+Es vol posar un sistema de streaming per a la sala i les seves funcions, o per tindre una copia de les obres per poder-les editar mes tard.
+
+\hypertarget{materials}{%
+\section{Materials}\label{materials}}
+
+\emph{Es requeriria}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Servidor}, que deuria ser un ordenador de sobretaula, que es miraran els requisits minims segons el serveis que finalment es donen a terme.
+\item
+  \textbf{Un servidor de disc}, que podria ser el servidor dels altres apartats per guardar una copia de les diferents càmeres. si hi ha pressupost, es faria un \href{https://ca.wikipedia.org/wiki/RAID}{RAID}.
+\item
+  \textbf{Càmeres ip} i millors \textbf{micròfons} que envien el so per la connexió de xarxa de la càmera.
+\item
+  \textbf{\href{https://www.vadavo.com/blog/switch-poe-que-es-y-que-tipos-hay/}{Switch} \href{https://ca.wikipedia.org/wiki/Power_over_Ethernet}{PoE}} , es podria posar una de 4 ports en el escenari, per a felicitar el escalat posterior del projecte que no son massa cars, i un switch (este no PoE) en les oficines per centralitzar la xarxa. i tirar cable entre ells i les càmeres. reduint la distancia del PoE a les càmeres ip.
+\item
+  \textbf{Conter} en una plataforma de streaming.
+\item
+  \textbf{Programa de streaming} (OBS, Livestream Studio, Wirecast, vMix, mimoLive o Tricaster) alternatives gratuïtes.
+\item
+  Un ordenador o portàtil que realitze les tasques de \textbf{producció}, podria ser un dels ordenadors de l'empresa que gasta per a disney, s'utilitzaria en el moment de fer la producció en viu. Per a fer streaming de una obra editada a posteriori, de les copies fetes en el servidor de disc, no faria falta.
+\end{enumerate}
+
+\hypertarget{projecte-de-instillaciuxf3}{%
+\section{Projecte de instil·lació}\label{projecte-de-instillaciuxf3}}
+
+Es realitzaria fent tres xarxes diferents, una per al circuit d'imatge i so de les càmeres, altra per al wifi de la sala i la tercera per als equips de administració. Per aixo, necessitem un switch en la oficina que puga fer varies xarxes virtuals, per tindre-les separades. (no volem que un espectador puga entrar en els ordenadors de l'oficina, o sature internet i done latència al streaming)
+\#\# Pressupost
+
+\hypertarget{software}{%
+\section{Software}\label{software}}
+
+Programes de streaming, OBS, Livestream Studio, Wirecast, mimoLive.
+
+Es recomana per a començar OBS o Livestream, en cas de que el ordenador que farà de centre de producció siga un Mac, la opció sera OBS.
+
+\hypertarget{obs}{%
+\subsection{\texorpdfstring{\href{https://obsproject.com/}{OBS}}{OBS}}\label{obs}}
+
+Free and open source software for video recording and live streaming.
+Multiplataforma.
+
+\hypertarget{livestream-studio}{%
+\subsection{\texorpdfstring{\href{https://streamlabs.com/}{Livestream Studio}}{Livestream Studio}}\label{livestream-studio}}
+
+Per a Windows
+
+\hypertarget{wirecast}{%
+\subsection{\texorpdfstring{\href{https://www.telestream.net/}{Wirecast}}{Wirecast}}\label{wirecast}}
+
+De pagament.
+
+\hypertarget{mimolive}{%
+\subsection{\texorpdfstring{\href{https://mimolive.com/}{MimoLive}}{MimoLive}}\label{mimolive}}
+
+Pagament
+
+\hypertarget{hardware-necessari}{%
+\section{Hardware necessari}\label{hardware-necessari}}
+
+\hypertarget{cuxe0meres-ip}{%
+\subsection{Càmeres ip}\label{cuxe0meres-ip}}
+
+Hi ha dos tipus de càmeres ip que ens vindrien be, unes son del tipus \href{https://ca.wikipedia.org/wiki/C\%C3\%A0mera_PTZ}{PTZ} es poden controlar remotament, i altres que son fixes, mes barates. Es podria fer una mix dels dos tipus, la frontal al escenari, podria fer fixa, i en algun lateral posar una amb moviment.
+
+El projecte es pot implantar per fases, primer provar en una, i si dona resultat anar ampliant, segons necessitats.
+
+Per les característiques dels espectacles, es requeriria càmeres amb bona lluminositat, bones lents, aço augmentara el pressupost, pero segons les capacitats es pot anar fent, i millorar si es considera que val la pena.
+
+Les càmeres i el muntatge està pensat per poden ser fàcilment desmuntable i transportat en cas de tindre la necessitat de realitzar l'espectacle extern a la sala. O reutilitzar el material obsolet per aquest fi.
+
+\texttt{Llista\ provisional\ de\ recerca\ de\ càmeres\ i\ marques.}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.amazon.es/dp/B086X637W2?ref_=as_li_ss_tl\&language=en_US\&linkCode=gs2\&linkId=a19d43bd6c875dd9cde44b1b4f5a3776\&tag=getlockers0f8-21\&th=1}{camara en amazon zowietek}
+\item
+  \href{https://www.axis.com/en-us/products/axis-v59-series}{Axis}
+\item
+  \href{https://getlockers.com/best-ptz-camera-for-live-streaming/}{Getlockers}
+\item
+  \href{https://ptzoptics.com/sdi/}{Ptzoptics}
+\end{itemize}
+
+\hypertarget{installaciuxf3-de-wifi-per-al-pati-de-butaques}{%
+\chapter{Instal·lació de wifi per al pati de butaques}\label{installaciuxf3-de-wifi-per-al-pati-de-butaques}}
+
+\hypertarget{requeriments-per-a-la-seva-implantaciuxf3}{%
+\section{Requeriments per a la seva implantació}\label{requeriments-per-a-la-seva-implantaciuxf3}}
+
+\hypertarget{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}{%
+\subsection{Potencia de la connexió de internet per donar servei}\label{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}}
+
+Es requereix que el ample de banda de la connexió d'internet puga donar servei al meins a 92 espectadors, que es el aforo del pati de butaques.
+
+Es te que limitar el ample de banda que oferim als espectadors en cas de realizer el streaming al mateix temps, aço ho realitzem assegurant el ample de banda en la xarxa de el circuit de imatge. en el switch.
+
+\hypertarget{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}{%
+\subsection{localització dels dispositius de retransmissió}\label{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}}
+
+Em d'estudiar el numero i posicions en la sala per a que la retransmissió siga optima.
+
+\hypertarget{implantaciuxf3-de-entorn-git}{%
+\chapter{Implantació de entorn Git}\label{implantaciuxf3-de-entorn-git}}
+
+Explorar la forma d'integrar el concepte git en les arts escèniques.
+Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració
+de publicacions o la creació d'obres de teatre,
+
+\hypertarget{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
+\section{Implantació del sistema col·laboratiu en el desenvolupament d'obres de teatre.}\label{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}}
+
+\begin{itemize}
+\tightlist
+\item
+  Es pot realitzar mitjan la creació d'un compte en una de les plataformes git que hi ha en internet,
+\item
+  Configurant un servidor git en el propi centre de treball
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Git i un servidor web, esta opció es per a gastar el entorn git en consola, no es recomana per
+    a la empresa.
+  \item
+    Un entorn web , he fet proves en gitlab i gitea, i el final crec que la millor opció es la de gitea per el
+    reduït gast de recursos que fa i la facilitat d'us.
+  \item
+    Es pot mirar de enllaçar el repositori git en el conter de drive que te la empresa, per fer un
+    repositori privat per als membres.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{beneficis-de-la-seva-implantaciuxf3}{%
+\section{Beneficis de la seva implantació}\label{beneficis-de-la-seva-implantaciuxf3}}
+
+El beneficis, son els mateixos que per a la creació de projectes informatics,
+pero que son poc utilitzats en el mon de les lletres.
+* Posibilitat de crear obres col·laboratives.
+* El guardat de les diferents version segons va desenvolupant-se el projecte,
+i poder tornar en el temps si alguna cosa no va be.
+* Bifurcar camins d'exploració en la creació literaria.
+
+\hypertarget{mode-de-funcionament}{%
+\section{Mode de funcionament}\label{mode-de-funcionament}}
+
+\hypertarget{breu-tutorial-per-al-funcionament}{%
+\subsection{Breu tutorial per al funcionament}\label{breu-tutorial-per-al-funcionament}}
+
+\hypertarget{installaciuxf3-dun-repositori-en-el-centre}{%
+\section{Instal·lació d'un repositori en el centre}\label{installaciuxf3-dun-repositori-en-el-centre}}
+
+Procés d'instal.lacio d'un repositori de git
+
+\begin{itemize}
+\item
+  Git i Apache \texttt{buscar\ la\ fulla\ on\ ho\ esplicaa}
+\item
+  Instal.lacio de \href{https://docs.gitea.io/en-us/}{gitea} , o be directament, o per una imatge docker
+\item
+  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git}
+  en un espai onedriver, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
+\end{itemize}
+
+\hypertarget{possible-implantaciuxf3-en-el-repositori-en-internet}{%
+\section{Possible implantació en el repositori en internet}\label{possible-implantaciuxf3-en-el-repositori-en-internet}}
+
+El mes fácil seria el traure un comptem en una de les plataformes que hi ha en internet,
+el problema es el recel que tinga l'empresa per el tema de privacitat.
+Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al qui es convide.
+
+\hypertarget{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}{%
+\section{Explorar wikimedia per a la realització de escritura col·laborativa}\label{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}}
+
+L'escritura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es posible
+discutir els convits proposat, obrir discussions sobre el text analitzat.
+Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir
+aquesta ferramenta.
+
+\hypertarget{migraciuxf3-de-les-fulles-web-a-hugo}{%
+\chapter{Migració de les fulles web a hugo}\label{migraciuxf3-de-les-fulles-web-a-hugo}}
+
+\hypertarget{avantatges-de-la-migraciuxf3}{%
+\section{Avantatges de la migració}\label{avantatges-de-la-migraciuxf3}}
+
+\emph{Hugo es un framework per a construir fulles estàtiques}
+
+La fulla web de la empresa està implementa en wordpress, hugo es una alternativa per a la realització del projecte de aquesta fulla, on el seu manteniment e implementació es molt mes senzilla. hugo es un framework on una vegada configurat el tema de la fulla, els autors de les publicacions, soles han de penjar un document de text, en format markdown per a que este nou posts es publique, la organització en carpetes i mitjançant tags ens facilita molt la administració del lloc, a mes de la seva seguretat, ja que soles compartim fulles estètiques, sense fer us de bases de dades, reduint considerablement el seu manteniment.
+
+\hypertarget{mode-de-implementar-la-migraciuxf3}{%
+\section{Mode de implementar la migració}\label{mode-de-implementar-la-migraciuxf3}}
+
+Una vegades que l'empresa em pase el backup de les fulles wordpress, hi ha una forma de passar els posts a markdown,
+Ordenant en diferents carpetes, per contingut temàtic i autors, on cada autor o secció de l
+
+\hypertarget{conversiuxf3-dels-posts-de-wordpress-a-md}{%
+\subsection{Conversió dels posts de WordPress a md}\label{conversiuxf3-dels-posts-de-wordpress-a-md}}
+
+possibles solucions per al procés
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://kevq.uk/how-to-convert-wordpress-to-markdown/}{How To Convert WordPress To Markdown}
+\item
+  \href{https://swizec.com/blog/how-to-export-a-large-wordpress-site-to-markdown/}{How to export a large Wordpress site to Markdown}
+\item
+  \href{https://prefetch.net/blog/2017/11/24/exporting-wordpress-posts-to-markdown/}{Exporting Wordpress Posts To Markdown}
+\end{itemize}
+
+\emph{Quant estiguem en el cas estudiarem en mes profunditat la manera de fer-ho}
+
+Estic mirant per a fer una xicoteta demostració de les característiques de hugo, per fer una posta en comú de com funciona, i si es factible la seva migració.
+
+Un altra possibilitat de la seva implantació, es si es realitza la instancio de una zona wifi en el pati de butaques, al l'hora de donar els paràmetres de la xarxa (nom de xarxa i password), que es faria en un codi \href{https://www.qr-code-generator.com/solutions/wifi-qr-code/}{Qr} \emph{(algo paregut aço, ja ho desenvoluparé un poc mes en el apartat wifi)}, li se pot passar una direcció de entrada automàtica a una fulla web, que estaria en el servidor de la xarxa local, on es pot passar informació de l'obra que es va a representar, o realitzar interaccion amb el public, en temps real.
+
+\hypertarget{possibles-interaccions-amb-el-public}{%
+\subsubsection{Possibles interaccions amb el public}\label{possibles-interaccions-amb-el-public}}
+
+\begin{itemize}
+\item
+  Preàmbul de l'obra que es va a representar, per a que el public s'informe o posar en context del que van a veure, uns minuts abans que comence.
+\item
+  Es pot realitzar una webapp de xat per a conferencies, el public puga colgar alli les seves preguntes, i des de la taula, poder seleccionar les mes interessants, o la persona a la que es donara veu.
+\item
+  Fer obres interactives amb el public, on este puga fer votacions, mitjançant el seu movil, i d'aquesta forma poder canviar el desenllaç de l'obra en temps real.
+\end{itemize}
+
+En definitiva, si es configura una xarxa en la sala, poder traure tot el rendiment possible , ja que en la actualitat tot el mon te un movil damunt.
+
+\hypertarget{organitzaciuxf3-del-diferents-apartats-de-les-fulles}{%
+\section{Organització del diferents apartats de les fulles}\label{organitzaciuxf3-del-diferents-apartats-de-les-fulles}}
+
+\hypertarget{alternativa-merege-wordpress}{%
+\section{Alternativa, merege wordpress}\label{alternativa-merege-wordpress}}
+
+En cas contrari, es miraria la forma de combinar els 5 wordpress en un soles, fer \href{https://wpmudev.com/blog/merging-wordpress-sites/}{merge wordpress}
+\texttt{mirar\ que\ mes\ alternative\ hi\ ha.}
+
+\hypertarget{implantaciuxf3-de-projectes-exelerarning}{%
+\chapter{Implantació de projectes exelerarning}\label{implantaciuxf3-de-projectes-exelerarning}}
+
+\href{https://exelearning.net/ca}{Exelearning} és una eina d'autor de codi obert per ajudar als docents en la creació i publicació de continguts web.
+
+\hypertarget{proposta-dimplantar-donar-cursos-en-la-sala-o-patrocinats-per-la-mateixa}{%
+\section{Proposta d'implantar donar cursos en la sala o patrocinats per la mateixa}\label{proposta-dimplantar-donar-cursos-en-la-sala-o-patrocinats-per-la-mateixa}}
+
+Una de les activitats de la empresa es en el entorn educatiu, de la realització d'obres de teatre en instituts i collegis, una bona forma de introduir la digitalització en les arts escèniques, seria preparar cursos introductors a l'obra que es vol representar, per a que el professorat els puguera impartir abas de la seva representació, i anar preparant als alumnes del que van a veure, o fer cursos o jocs interactius post espectacle per reforçar el missatge que es vol transmetre.
+
+\hypertarget{funcionament-dexelearning}{%
+\section{Funcionament d'exelearning}\label{funcionament-dexelearning}}
+
+Anem a \href{https://exelearning.net/ca/descarregues/}{descarregues} per obtindre el programa per a la plataforma on vullguem construir el projecte.
+En el següent enllaç \href{https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe26/}{\textbf{Documentació}}, tenim una explicació de com funciona i les possibilitats de exportar el projecte ja siga a la nostra fulla o a espais gratuïts de allotjament de contingut educatiu que després podem enllaçar.
+
+\hypertarget{llocs-on-podem-penjar-el-material-educatiu}{%
+\subsection{Llocs on podem penjar el material educatiu}\label{llocs-on-podem-penjar-el-material-educatiu}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://public.bscw.de/pub/}{BSCW (Basic Support for Cooperative Work)}
+\item
+  \href{https://graasp.eu/}{Graasp} Pertany a la comunitat europea i la seva finalitat es crear i allotjar material educatiu.
+\item
+  \href{http://vishub.org/}{Vish} Xarxa social educativa per la creació de recursos educatius.
+\end{itemize}
+
+\hypertarget{possible-implantaciuxf3-duna-plataforma-moodle}{%
+\section{Possible implantació d'una plataforma moodle}\label{possible-implantaciuxf3-duna-plataforma-moodle}}
+
+Si es volguera anar un poc mes lluny, es podria implantar una plataforma moodle, per donar cursos relacionats en les arts escèniques, on es colgaria material , hi ha varis hostings on podem penjar el nostre moodle a preus raonables, per fer un curs que ens interese en un moment donat, mirar \href{https://www.hostingadvice.com/how-to/best-moodle-hosting/}{Best Moodle Hosting Services}
+
+\hypertarget{desenvolupament-appweb}{%
+\chapter{Desenvolupament Appweb}\label{desenvolupament-appweb}}
+
+\emph{L'empresa vol realitzar informes per a la seva comptabilitat i la demanda de subvencions, on es reflectiran el numero d'obres, espectadors, gasto, i fer estadístiques de la assistència de public i comparar en Google analític}..
+
+\hypertarget{desenvolupament-duna-app-de-gestiuxf3-dinformes-de-la-sala.}{%
+\section{Desenvolupament d'una app de gestió d'informes de la sala.}\label{desenvolupament-duna-app-de-gestiuxf3-dinformes-de-la-sala.}}
+
+\emph{Es proposa la realització d'una appweb que realitze aquestes tasque.}
+
+En principi, seria mitjançant una base de dades, on introduir els valors que recopile la empesa, i un entorn web on es pugen fer consultes i redactar informes sobre les mateixes.
+
+\begin{quote}
+Pendent de resoldre, la conveniència o no de la utilització de una base de dades, una SQLite o un fitxer json, ja que el numero de dades no es massa elevat.\\
+Investigar com es fan estes coses, ja que jo soc de xarxes, no de programació.
+\end{quote}
+
+La app es colgaria en el servidor de l'empresa, per a que es puguen fer consultes des de alli.
+El que implica la configuració de un servidor en la mateixa sala, on de pas posarem un servidor de dns, un de fulles web si es vol realitzar interaccions amb el public, optatiu un de correu, i es podria imantar també un servidor git, per fer les copies de seguretat i seguiment de versions, dels projectes com la revista que publiquen o obres de teatre, en el cas de que les vullguen crear de forma col.lavorativa.
+
+Després de provar varies alternatives, com \href{https://about.gitlab.com/}{gitlab} , \href{https://gogs.io/}{Gogs}, la millor alternativa pareix ser \href{https://gitea.io/en-us/}{Gitea}, es molt lleuger, es pot instal.lar amb una base de dades SQLite, i el entorn web que proporciona es molt paregut al de github, i les exigencies de la empresa, no son les de un entorn de programació.
+
+La millor opció per aquest cas es traure un conter de github de la empesa, on es guarden els projectes.
+
+\hypertarget{alternatives}{%
+\subsection{Alternatives}\label{alternatives}}
+
+\begin{itemize}
+\tightlist
+\item
+  El projecte es pot realitzar en node.js, express i vue.js
+\item
+  \href{https://www.r-project.org/}{R} i \href{https://shiny.rstudio.com/}{shiny}, que pareix mes fàcil, el que implica l'instal.lacio de R en el servidor, per a que ens servisca la aplicació.
+\end{itemize}
+
+\hypertarget{tasques-a-realitzar}{%
+\section{Tasques a realitzar}\label{tasques-a-realitzar}}
+
+\begin{itemize}
+\tightlist
+\item
+  S'ha d'investigar la programació de plantilles de \href{http://www.latextemplates.com/}{Latex}, per a formatjar els documents d'eixida, en el logo de l'empresa, i un format propi de redaccions d'informes.
+\item
+  El funcionament de \href{https://pandoc.org/}{Pandoc}, per a poder traure els diferents formats que necessitem, pdf, docx \ldots{}
+\item
+  Crear un xicotet doc del funcionament de markdown per a la gent de l'empresa.
+\end{itemize}
+
+\hypertarget{remodelat-de-la-fulla-web-de-espacio-inestable}{%
+\chapter{\texorpdfstring{Remodelat de la fulla web de \emph{Espacio Inestable}}{Remodelat de la fulla web de Espacio Inestable}}\label{remodelat-de-la-fulla-web-de-espacio-inestable}}
+
+\hypertarget{reformulaciuxf3-de-les-estratuxe8gies-de-venda-de-entrades}{%
+\section{Reformulació de les estratègies de venda de entrades}\label{reformulaciuxf3-de-les-estratuxe8gies-de-venda-de-entrades}}
+
+La estratègia de la venda de entrades, està gestionada per una empresa de venda de events, es planteja la possibilitat de migrar a un altra plataforma o autogestió de les mateixes.
+
+\hypertarget{installaciuxf3-de-pugin-de-venda-de-entrades-i-tema-per-a-la-fulla-web}{%
+\section{Instal·lació de pugin de venda de entrades i tema per a la fulla web}\label{installaciuxf3-de-pugin-de-venda-de-entrades-i-tema-per-a-la-fulla-web}}
+
+Es recomana d'implementació de una solució com la que es te en aquesta fulla, on podem veure una demostració de les seves funcions.\href{https://tickera.com/demos/theater-demo/}{ticketera}
+
+En aquest plugin per a wordpress, tenim la possibilitat de configurar les nostres entrades, afegint imatge de l'obra, inclusió de codis Qr (per al wifi), implantar la compra de entrades, amb selecció de la cadira en el pati de butaques.
+
+Es tindria que contractar els serveis de \href{https://stripe.com/en-es}{stripe} , la passerella de cobrament. el \href{https://stripe.com/en-es/pricing}{preu} es 1,4\% +25€, la configuració en wordpress es molt fàcil, i el tema i el plugin ja estan preparats.
+
+Un altra part interessant d´aquest plugin, es la possibilitat de validació d'entrades mitjançant un codi Qr, que funciona en una aplicació de movil, actualitzant la base de dades d'assistència real al event.
+
+\hypertarget{tasques-a-fer}{%
+\section{Tasques a fer}\label{tasques-a-fer}}
+
+Configurar el tema de la fula web per a que tinga el aspecte desitjat, es podria comprar també un tema que ofereixen en la mateixa ticketera dissenyat expressament per a \href{https://tickera.com/demos/theater-demo/}{teatres} i events.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
