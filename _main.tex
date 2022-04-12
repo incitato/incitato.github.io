@@ -82,7 +82,7 @@
 
 \title{Arts escèniques}
 \author{Ramiro Palau}
-\date{2022-04-10}
+\date{2022-04-12}
 
 \begin{document}
 \maketitle
@@ -96,18 +96,25 @@
 \chapter*{About}\label{about}}
 \addcontentsline{toc}{chapter}{About}
 
-Documentació dels projectes proposats a realitzar en el desenvolupament de les practiques realitzades en \textbf{Espacio Inestable} com a realització de les practiques d'empresa.
+Documentació dels projectes proposats a realitzar en el desenvolupament de les practiques realitzades en \textbf{Espacio Inestable}.
 
 \hypertarget{usage}{%
 \section*{Usage}\label{usage}}
 \addcontentsline{toc}{section}{Usage}
 
-Anirem detallant els diferents projectes que es proposen a la empresa per a digitalitzar \emph{les arts escèniques}, en una descripció de la seva posada en funcionament, per veure si els interessa que es realitze. En cas afirmatiu es aniria desenvolupant la manera de implantar-lo, cost, i detallarem el seu funcionament, per a que aquest document siga una guia per mantindre-lo o replicar-lo.
+Anirem detallant els diferents projectes que es proposen per a digitalitzar \emph{les arts escèniques},
+amb una breu descripció de la seva posada en funcionament, requisits, pros i contres.
+
+En cas afirmatiu s'aniria desenvolupant la manera de implantar-lo, cost, i detallarem el seu
+funcionament i configuració.
+
+La idea, es que aquest document siga una guia per mantindre els projectes realitzats o replicar-los en altres llocs,
+i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l'empresa.
 
 \hypertarget{streaming}{%
 \chapter{Streaming}\label{streaming}}
 
-\emph{Implantació d'un sistema de streaming per a la sal}
+\emph{Implantació d'un sistema de streaming per a la sala}
 
 Es vol posar un sistema de streaming per a la sala i les seves funcions, o per tindre una copia de les obres per poder-les editar mes tard.
 
@@ -214,26 +221,82 @@ Es te que limitar el ample de banda que oferim als espectadors en cas de realize
 
 Em d'estudiar el numero i posicions en la sala per a que la retransmissió siga optima.
 
-\hypertarget{implantaciuxf3-de-github}{%
-\chapter{Implantació de GitHub}\label{implantaciuxf3-de-github}}
+\hypertarget{implantaciuxf3-de-entorn-git}{%
+\chapter{Implantació de entorn Git}\label{implantaciuxf3-de-entorn-git}}
 
-\hypertarget{plantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
-\section{Plantació del sistema col·laboratiu en el desenvolupament d'obres de teatre.}\label{plantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}}
+Explorar la forma d'integrar el concepte git en les arts escèniques.
+Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració
+de publicacions o la creació d'obres de teatre,
 
-\hypertarget{beneficis-de-la-seva-plantaciuxf3}{%
-\section{Beneficis de la seva plantació}\label{beneficis-de-la-seva-plantaciuxf3}}
+\hypertarget{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
+\section{Implantació del sistema col·laboratiu en el desenvolupament d'obres de teatre.}\label{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}}
+
+\begin{itemize}
+\tightlist
+\item
+  Es pot realitzar mitjan la creació d'un compte en una de les plataformes git que hi ha en internet,
+\item
+  Configurant un servidor git en el propi centre de treball
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Git i un servidor web, esta opció es per a gastar el entorn git en consola, no es recomana per
+    a la empresa.
+  \item
+    Un entorn web , he fet proves en gitlab i gitea, i el final crec que la millor opció es la de gitea per el
+    reduït gast de recursos que fa i la facilitat d'us.
+  \item
+    Es pot mirar de enllaçar el repositori git en el conter de drive que te la empresa, per fer un
+    repositori privat per als membres.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{beneficis-de-la-seva-implantaciuxf3}{%
+\section{Beneficis de la seva implantació}\label{beneficis-de-la-seva-implantaciuxf3}}
+
+El beneficis, son els mateixos que per a la creació de projectes informatics,
+pero que son poc utilitzats en el mon de les lletres.
+* Posibilitat de crear obres col·laboratives.
+* El guardat de les diferents version segons va desenvolupant-se el projecte,
+i poder tornar en el temps si alguna cosa no va be.
+* Bifurcar camins d'exploració en la creació literaria.
 
 \hypertarget{mode-de-funcionament}{%
-\section{mode de funcionament}\label{mode-de-funcionament}}
+\section{Mode de funcionament}\label{mode-de-funcionament}}
 
 \hypertarget{breu-tutorial-per-al-funcionament}{%
-\subsection{breu tutorial per al funcionament}\label{breu-tutorial-per-al-funcionament}}
+\subsection{Breu tutorial per al funcionament}\label{breu-tutorial-per-al-funcionament}}
 
 \hypertarget{installaciuxf3-dun-repositori-en-el-centre}{%
-\section{instal·lació d'un repositori en el centre}\label{installaciuxf3-dun-repositori-en-el-centre}}
+\section{Instal·lació d'un repositori en el centre}\label{installaciuxf3-dun-repositori-en-el-centre}}
 
-\hypertarget{possible-plantaciuxf3-en-el-repositori-en-internet}{%
-\section{possible plantació en el repositori en internet}\label{possible-plantaciuxf3-en-el-repositori-en-internet}}
+Procés d'instal.lacio d'un repositori de git
+
+\begin{itemize}
+\item
+  Git i Apache \texttt{buscar\ la\ fulla\ on\ ho\ esplicaa}
+\item
+  Instal.lacio de \href{https://docs.gitea.io/en-us/}{gitea} , o be directament, o per una imatge docker
+\item
+  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git}
+  en un espai onedriver, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
+\end{itemize}
+
+\hypertarget{possible-implantaciuxf3-en-el-repositori-en-internet}{%
+\section{Possible implantació en el repositori en internet}\label{possible-implantaciuxf3-en-el-repositori-en-internet}}
+
+El mes fácil seria el traure un comptem en una de les plataformes que hi ha en internet,
+el problema es el recel que tinga l'empresa per el tema de privacitat.
+Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al qui es convide.
+
+\hypertarget{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}{%
+\section{Explorar wikimedia per a la realització de escritura col·laborativa}\label{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}}
+
+L'escritura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es posible
+discutir els convits proposat, obrir discussions sobre el text analitzat.
+Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir
+aquesta ferramenta.
 
 \hypertarget{migraciuxf3-de-les-fulles-web-a-hugo}{%
 \chapter{Migració de les fulles web a hugo}\label{migraciuxf3-de-les-fulles-web-a-hugo}}
@@ -332,12 +395,12 @@ Si es volguera anar un poc mes lluny, es podria implantar una plataforma moodle,
 \hypertarget{desenvolupament-appweb}{%
 \chapter{Desenvolupament Appweb}\label{desenvolupament-appweb}}
 
-\emph{La empresa vol realitzar informes de per a la seva comptabilitat i la demanda de subvencions, on es reflectiran el numero d'obres, espectadors, gasto, i fer estadístiques de la assistència de public i comparar en Google analític}..
+\emph{L'empresa vol realitzar informes per a la seva comptabilitat i la demanda de subvencions, on es reflectiran el numero d'obres, espectadors, gasto, i fer estadístiques de la assistència de public i comparar en Google analític}..
 
 \hypertarget{desenvolupament-duna-app-de-gestiuxf3-dinformes-de-la-sala.}{%
 \section{Desenvolupament d'una app de gestió d'informes de la sala.}\label{desenvolupament-duna-app-de-gestiuxf3-dinformes-de-la-sala.}}
 
-\emph{Es proposa la realització d'una appweb que realitze estes tasque.}
+\emph{Es proposa la realització d'una appweb que realitze aquestes tasque.}
 
 En principi, seria mitjançant una base de dades, on introduir els valors que recopile la empesa, i un entorn web on es pugen fer consultes i redactar informes sobre les mateixes.
 
