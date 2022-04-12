@@ -53,19 +53,6 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -82,34 +69,31 @@
 
 \title{Arts escèniques}
 \author{Ramiro Palau}
-\date{2022-04-12}
+\date{2022-04-13}
 
 \begin{document}
 \maketitle
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
 \setstretch{1}
 \hypertarget{about}{%
 \chapter*{About}\label{about}}
-\addcontentsline{toc}{chapter}{About}
+
 
 Documentació dels projectes proposats a realitzar en el desenvolupament de les practiques realitzades en \textbf{Espacio Inestable}.
 
 \hypertarget{usage}{%
 \section*{Usage}\label{usage}}
-\addcontentsline{toc}{section}{Usage}
 
-Anirem detallant els diferents projectes que es proposen per a digitalitzar \emph{les arts escèniques},
-amb una breu descripció de la seva posada en funcionament, requisits, pros i contres.
 
-En cas afirmatiu s'aniria desenvolupant la manera de implantar-lo, cost, i detallarem el seu
-funcionament i configuració.
+Anirem detallant els diferents projectes que es proposen per a digitalitzar \emph{les arts escèniques}, amb una breu descripció de la seva posada en funcionament, requisits, pros i contres.
 
-La idea, es que aquest document siga una guia per mantindre els projectes realitzats o replicar-los en altres llocs,
-i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l'empresa.
+En cas afirmatiu s'aniria desenvolupant la manera de implantar-lo, cost, i detallarem el seu funcionament i configuració.
+
+La idea, es que aquest document siga una guia per mantindre els projectes realitzats o replicar-los en altres llocs, i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l'empresa.
 
 \hypertarget{streaming}{%
 \chapter{Streaming}\label{streaming}}
@@ -141,11 +125,13 @@ Es vol posar un sistema de streaming per a la sala i les seves funcions, o per t
   Un ordenador o portàtil que realitze les tasques de \textbf{producció}, podria ser un dels ordenadors de l'empresa que gasta per a disney, s'utilitzaria en el moment de fer la producció en viu. Per a fer streaming de una obra editada a posteriori, de les copies fetes en el servidor de disc, no faria falta.
 \end{enumerate}
 
-\hypertarget{projecte-de-instillaciuxf3}{%
-\section{Projecte de instil·lació}\label{projecte-de-instillaciuxf3}}
+\hypertarget{projecte-dinstillaciuxf3}{%
+\section{Projecte d'instil·lació}\label{projecte-dinstillaciuxf3}}
 
 Es realitzaria fent tres xarxes diferents, una per al circuit d'imatge i so de les càmeres, altra per al wifi de la sala i la tercera per als equips de administració. Per aixo, necessitem un switch en la oficina que puga fer varies xarxes virtuals, per tindre-les separades. (no volem que un espectador puga entrar en els ordenadors de l'oficina, o sature internet i done latència al streaming)
-\#\# Pressupost
+
+\hypertarget{pressupost}{%
+\section{Pressupost}\label{pressupost}}
 
 \hypertarget{software}{%
 \section{Software}\label{software}}
@@ -157,8 +143,7 @@ Es recomana per a començar OBS o Livestream, en cas de que el ordenador que far
 \hypertarget{obs}{%
 \subsection{\texorpdfstring{\href{https://obsproject.com/}{OBS}}{OBS}}\label{obs}}
 
-Free and open source software for video recording and live streaming.
-Multiplataforma.
+Free and open source software for video recording and live streaming. Multiplataforma.
 
 \hypertarget{livestream-studio}{%
 \subsection{\texorpdfstring{\href{https://streamlabs.com/}{Livestream Studio}}{Livestream Studio}}\label{livestream-studio}}
@@ -178,6 +163,39 @@ Pagament
 \hypertarget{hardware-necessari}{%
 \section{Hardware necessari}\label{hardware-necessari}}
 
+\hypertarget{servidor}{%
+\subsection{Servidor}\label{servidor}}
+
+Es comenta que es pot reutilitzar l'ordenador que es te en venda de entrades, Es pot mirar a veure si compleix els requisits minims requerits. En principi, no crec que faça falta un massa potent per a lo que volem posar.
+
+En el servidor s'implementaran serveis de DNS, Servidor de fulles web, (controlador de domini, no crec que siga necessari, pero es pot posar també, si volem controlar els recursos que tinga accés cada membre)
+
+Es podia discutir si interessa un sistema de comunicacions inter, per poder comunicar mitjançant so, video o xat entre el control i l'escenari. o volen passar informació en temps real als actors en el escenari des de control. hi ha varies opcions lliure, per exemple \href{https://meet.jit.si/}{Jitsi meet}, tindria que mirar-ho, ho he provar varie vegades, i no he pogut der-lo funcionar, es cosa d'insistir. Aço li donaria un poc mes de faena al servidor, pero com no serien molt interlocutors, no crec que requerisca massa potencia.
+
+Es podria posar també un sistema de \href{https://nextcloud.com/}{cloud} intern, que ja integra les videoconferències i moltes mes coses per al treball en equip, pero supose que amb un equip reduït, igual no val la pena, si soles es local, i la gent treballa des de casa la major part del temps. Es pot contractar un conter online, pero je s'està gastant el drive. Es pot fer una demo, i si interessa es deixa.
+
+Sistema de correu intern, no li vec massa sentit, pero es pot posar.
+
+Al servidor de web, es pot instal.lar una copia de wordpress, per si es vol experimentar con es veuen les coses abans de publicar-les. Es pot configurar per a que cada usuari de la sala tinga el seu directori per penjar les seves fulles.
+
+Crec que seria interessant, per servir presentacions de les obres que es van a representar, si al final s'instal.la wifi en la sala, que tinguen una primera fulla al connectar, on es parle de l'obra que van a veure, de les pròximes que es representaran una fulla, o on es puga interactuar amb ells, passant qüestionaris, convidant-los a fer comentaris \ldots{} ( aço es intern i soles es pot realitzar amb la gent que es connecte al wifi)
+
+En principi el ordenador per fer el streaming, ha de tindre una targeta de video mitjanament potent, no crec que siga el cas del servidor, este no requereix ni pantalla una vegada instal.lat, es gastaria algun altre disponible en la sala, en cas necessari, ho podíem fer també es este, pero va augmentant el nivell de requisits minims de potencia.
+
+\texttt{Si\ se\ m\textquotesingle{}ocorre\ alguna\ cossa\ mes\ la\ posaré,\ o\ ja\ em\ digueu.}
+
+\hypertarget{servidor-de-disc}{%
+\subsection{Servidor de disc}\label{servidor-de-disc}}
+
+Si es volen guardar les copies de les càmeres, i la idea es no fer un streaming pur, mes be editar a posteriori les imatges, o tindre una copia dels assajos per veure en que es pot millorar, es requeriria espai per fer aquestes copies. hi ha dues possibilitats.
+
+\begin{itemize}
+\item
+  \href{https://en.wikipedia.org/wiki/Network-attached_storage}{NAS}, sistema de disc en xarxa, La millor opció.
+\item
+  Que la torre que gastem de servidor , faça de servidor de disc, on es pot implementar configurar RAID en diferents tipus de redundancies, segons el numero de discs durs que tinguem, i si ens interessa mes la velocitat o la redundància.
+\end{itemize}
+
 \hypertarget{cuxe0meres-ip}{%
 \subsection{Càmeres ip}\label{cuxe0meres-ip}}
 
@@ -192,9 +210,8 @@ Les càmeres i el muntatge està pensat per poden ser fàcilment desmuntable i t
 \texttt{Llista\ provisional\ de\ recerca\ de\ càmeres\ i\ marques.}
 
 \begin{itemize}
-\tightlist
 \item
-  \href{https://www.amazon.es/dp/B086X637W2?ref_=as_li_ss_tl\&language=en_US\&linkCode=gs2\&linkId=a19d43bd6c875dd9cde44b1b4f5a3776\&tag=getlockers0f8-21\&th=1}{camara en amazon zowietek}
+  \href{https://www.amazon.es/dp/B086X637W2?ref_=as_li_ss_tl\&language=en_US\&linkCode=gs2\&linkId=a19d43bd6c875dd9cde44b1b4f5a3776\&tag=getlockers0f8-21\&th=1}{camera en amazon zowietek}
 \item
   \href{https://www.axis.com/en-us/products/axis-v59-series}{Axis}
 \item
@@ -203,11 +220,23 @@ Les càmeres i el muntatge està pensat per poden ser fàcilment desmuntable i t
   \href{https://ptzoptics.com/sdi/}{Ptzoptics}
 \end{itemize}
 
+\hypertarget{el-conter-del-streaming}{%
+\subsection{El conter del streaming}\label{el-conter-del-streaming}}
+
+Es traure un conter en alguna de les plataformes que existeixen, ja teniu un conter en youtube, es pot gastar eixa o traure en \href{https://www.twitch.tv/}{twitch}, a veure quina deixa configurar mes la pàgina d'inici, es pot crear una nova on enllaçar els continguts, o integrar-los en les fulles de l'empresa.
+
+\hypertarget{muntatge}{%
+\section{Muntatge}\label{muntatge}}
+
+Fare proves de tot aço i penjaré el resultat de com es fa.
+
 \hypertarget{installaciuxf3-de-wifi-per-al-pati-de-butaques}{%
 \chapter{Instal·lació de wifi per al pati de butaques}\label{installaciuxf3-de-wifi-per-al-pati-de-butaques}}
 
 \hypertarget{requeriments-per-a-la-seva-implantaciuxf3}{%
 \section{Requeriments per a la seva implantació}\label{requeriments-per-a-la-seva-implantaciuxf3}}
+
+Uns repetidors de wifi, he quedat en un amic que controla del tema per a mirar-ho. Es tindria que pensar si realment es vol instal.lar per tindre coverture per als 92 espectadors, o es pensa que no tots es van a connectar, i començar per un sistema basic, ampliable conforme a les necessitat augmenten.
 
 \hypertarget{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}{%
 \subsection{Potencia de la connexió de internet per donar servei}\label{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}}
@@ -221,12 +250,15 @@ Es te que limitar el ample de banda que oferim als espectadors en cas de realize
 
 Em d'estudiar el numero i posicions en la sala per a que la retransmissió siga optima.
 
+\hypertarget{muntatge-1}{%
+\section{Muntatge}\label{muntatge-1}}
+
+\texttt{Aci\ descriure\ con\ es\ realitza\ l\textquotesingle{}instancio\ i\ el\ components\ necessaris.}
+
 \hypertarget{implantaciuxf3-de-entorn-git}{%
 \chapter{Implantació de entorn Git}\label{implantaciuxf3-de-entorn-git}}
 
-Explorar la forma d'integrar el concepte git en les arts escèniques.
-Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració
-de publicacions o la creació d'obres de teatre,
+Explorar la forma d'integrar el concepte git en les arts escèniques. Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració de publicacions o la creació d'obres de teatre,
 
 \hypertarget{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
 \section{Implantació del sistema col·laboratiu en el desenvolupament d'obres de teatre.}\label{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}}
@@ -241,26 +273,18 @@ de publicacions o la creació d'obres de teatre,
   \begin{itemize}
   \tightlist
   \item
-    Git i un servidor web, esta opció es per a gastar el entorn git en consola, no es recomana per
-    a la empresa.
+    Git i un servidor web, esta opció es per a gastar el entorn git en consola, no es recomana per a la empresa.
   \item
-    Un entorn web , he fet proves en gitlab i gitea, i el final crec que la millor opció es la de gitea per el
-    reduït gast de recursos que fa i la facilitat d'us.
+    Un entorn web , he fet proves en gitlab i gitea, i el final crec que la millor opció es la de gitea per el reduït gast de recursos que fa i la facilitat d'us.
   \item
-    Es pot mirar de enllaçar el repositori git en el conter de drive que te la empresa, per fer un
-    repositori privat per als membres.
+    Es pot mirar de enllaçar el repositori git en el conter de drive que te la empresa, per fer un repositori privat per als membres.
   \end{itemize}
 \end{itemize}
 
 \hypertarget{beneficis-de-la-seva-implantaciuxf3}{%
 \section{Beneficis de la seva implantació}\label{beneficis-de-la-seva-implantaciuxf3}}
 
-El beneficis, son els mateixos que per a la creació de projectes informatics,
-pero que son poc utilitzats en el mon de les lletres.
-* Posibilitat de crear obres col·laboratives.
-* El guardat de les diferents version segons va desenvolupant-se el projecte,
-i poder tornar en el temps si alguna cosa no va be.
-* Bifurcar camins d'exploració en la creació literaria.
+El beneficis, son els mateixos que per a la creació de projectes informatics, pero que son poc utilitzats en el mon de les lletres. * Posibilitat de crear obres col·laboratives. * El guardat de les diferents version segons va desenvolupant-se el projecte, i poder tornar en el temps si alguna cosa no va be. * Bifurcar camins d'exploració en la creació literaria.
 
 \hypertarget{mode-de-funcionament}{%
 \section{Mode de funcionament}\label{mode-de-funcionament}}
@@ -279,40 +303,37 @@ Procés d'instal.lacio d'un repositori de git
 \item
   Instal.lacio de \href{https://docs.gitea.io/en-us/}{gitea} , o be directament, o per una imatge docker
 \item
-  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git}
-  en un espai onedriver, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
+  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git} en un espai onedriver, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
 \end{itemize}
 
 \hypertarget{possible-implantaciuxf3-en-el-repositori-en-internet}{%
 \section{Possible implantació en el repositori en internet}\label{possible-implantaciuxf3-en-el-repositori-en-internet}}
 
-El mes fácil seria el traure un comptem en una de les plataformes que hi ha en internet,
-el problema es el recel que tinga l'empresa per el tema de privacitat.
-Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al qui es convide.
+El mes fácil seria el traure un comptem en una de les plataformes que hi ha en internet, el problema es el recel que tinga l'empresa per el tema de privacitat. Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al qui es convide.
 
 \hypertarget{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}{%
 \section{Explorar wikimedia per a la realització de escritura col·laborativa}\label{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}}
 
-L'escritura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es posible
-discutir els convits proposat, obrir discussions sobre el text analitzat.
-Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir
-aquesta ferramenta.
+L'escritura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es posible discutir els convits proposat, obrir discussions sobre el text analitzat. Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir aquesta ferramenta.
 
 \hypertarget{migraciuxf3-de-les-fulles-web-a-hugo}{%
-\chapter{Migració de les fulles web a hugo}\label{migraciuxf3-de-les-fulles-web-a-hugo}}
+\chapter{Migració de les fulles web a Hugo}\label{migraciuxf3-de-les-fulles-web-a-hugo}}
+
+\texttt{En\ principi\ descartat}
 
 \hypertarget{avantatges-de-la-migraciuxf3}{%
 \section{Avantatges de la migració}\label{avantatges-de-la-migraciuxf3}}
 
 \emph{Hugo es un framework per a construir fulles estàtiques}
 
-La fulla web de la empresa està implementa en wordpress, hugo es una alternativa per a la realització del projecte de aquesta fulla, on el seu manteniment e implementació es molt mes senzilla. hugo es un framework on una vegada configurat el tema de la fulla, els autors de les publicacions, soles han de penjar un document de text, en format markdown per a que este nou posts es publique, la organització en carpetes i mitjançant tags ens facilita molt la administració del lloc, a mes de la seva seguretat, ja que soles compartim fulles estètiques, sense fer us de bases de dades, reduint considerablement el seu manteniment.
+La fulla web de l'empresa està implementa en wordpress, hugo es una alternativa per la realització del projecte de aquesta fulla, on el seu manteniment e implementació es molt mes senzilla. hugo es un framework on una vegada configurat el tema de la fulla, els autors de les publicacions, soles han de penjar un document de text, en format markdown per a que este nou posts es publique, la organització en carpetes i mitjançant tags ens facilita molt la administració del lloc, a mes de la seva seguretat, ja que soles compartim fulles estètiques, sense fer us de bases de dades, reduint considerablement el seu manteniment.
 
-\hypertarget{mode-de-implementar-la-migraciuxf3}{%
-\section{Mode de implementar la migració}\label{mode-de-implementar-la-migraciuxf3}}
+\hypertarget{mode-dimplementar-la-migraciuxf3}{%
+\section{Mode d'implementar la migració}\label{mode-dimplementar-la-migraciuxf3}}
 
 Una vegades que l'empresa em pase el backup de les fulles wordpress, hi ha una forma de passar els posts a markdown,
-Ordenant en diferents carpetes, per contingut temàtic i autors, on cada autor o secció de l
+
+Ordenant en diferents carpetes, per contingut temàtic i autors, on cada autor o secció te la seva carpeta on colgar els nous post, en fitxer de text \emph{md} i les imatges que vullga que apareguen.
 
 \hypertarget{conversiuxf3-dels-posts-de-wordpress-a-md}{%
 \subsection{Conversió dels posts de WordPress a md}\label{conversiuxf3-dels-posts-de-wordpress-a-md}}
@@ -338,6 +359,8 @@ Un altra possibilitat de la seva implantació, es si es realitza la instancio de
 \hypertarget{possibles-interaccions-amb-el-public}{%
 \subsubsection{Possibles interaccions amb el public}\label{possibles-interaccions-amb-el-public}}
 
+Les fulles del servidor intern per al public, recomane que es facen amb Hugo, ho deixaré preparat per a que siga molt fàcil la creació de fulles noves. On soles es ha de colgar un fitxer de text en un directori determinat\ldots bueno, i compilar la full, pero ja deixaré un script que ho faça, miraré la forma de que es faça soles, integració continuada crec que es diu. Es pot fer en wordpress si vos es mes fàcil, es parlar-ho i provar.
+
 \begin{itemize}
 \item
   Preàmbul de l'obra que es va a representar, per a que el public s'informe o posar en context del que van a veure, uns minuts abans que comence.
@@ -355,8 +378,7 @@ En definitiva, si es configura una xarxa en la sala, poder traure tot el rendime
 \hypertarget{alternativa-merege-wordpress}{%
 \section{Alternativa, merege wordpress}\label{alternativa-merege-wordpress}}
 
-En cas contrari, es miraria la forma de combinar els 5 wordpress en un soles, fer \href{https://wpmudev.com/blog/merging-wordpress-sites/}{merge wordpress}
-\texttt{mirar\ que\ mes\ alternative\ hi\ ha.}
+En cas contrari, es miraria la forma de combinar els 5 wordpress en un soles, fer \href{https://wpmudev.com/blog/merging-wordpress-sites/}{merge wordpress} \texttt{mirar\ que\ mes\ alternative\ hi\ ha.}
 
 \hypertarget{implantaciuxf3-de-projectes-exelerarning}{%
 \chapter{Implantació de projectes exelerarning}\label{implantaciuxf3-de-projectes-exelerarning}}
@@ -371,8 +393,7 @@ Una de les activitats de la empresa es en el entorn educatiu, de la realització
 \hypertarget{funcionament-dexelearning}{%
 \section{Funcionament d'exelearning}\label{funcionament-dexelearning}}
 
-Anem a \href{https://exelearning.net/ca/descarregues/}{descarregues} per obtindre el programa per a la plataforma on vullguem construir el projecte.
-En el següent enllaç \href{https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe26/}{\textbf{Documentació}}, tenim una explicació de com funciona i les possibilitats de exportar el projecte ja siga a la nostra fulla o a espais gratuïts de allotjament de contingut educatiu que després podem enllaçar.
+Anem a \href{https://exelearning.net/ca/descarregues/}{descarregues} per obtindre el programa per a la plataforma on vullguem construir el projecte. En el següent enllaç \href{https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe26/}{\textbf{Documentació}}, tenim una explicació de com funciona i les possibilitats de exportar el projecte ja siga a la nostra fulla o a espais gratuïts de allotjament de contingut educatiu que després podem enllaçar.
 
 \hypertarget{llocs-on-podem-penjar-el-material-educatiu}{%
 \subsection{Llocs on podem penjar el material educatiu}\label{llocs-on-podem-penjar-el-material-educatiu}}
@@ -409,8 +430,7 @@ Pendent de resoldre, la conveniència o no de la utilització de una base de dad
 Investigar com es fan estes coses, ja que jo soc de xarxes, no de programació.
 \end{quote}
 
-La app es colgaria en el servidor de l'empresa, per a que es puguen fer consultes des de alli.
-El que implica la configuració de un servidor en la mateixa sala, on de pas posarem un servidor de dns, un de fulles web si es vol realitzar interaccions amb el public, optatiu un de correu, i es podria imantar també un servidor git, per fer les copies de seguretat i seguiment de versions, dels projectes com la revista que publiquen o obres de teatre, en el cas de que les vullguen crear de forma col.lavorativa.
+La app es colgaria en el servidor de l'empresa, per a que es puguen fer consultes des de alli. El que implica la configuració de un servidor en la mateixa sala, on de pas posarem un servidor de dns, un de fulles web si es vol realitzar interaccions amb el public, optatiu un de correu, i es podria imantar també un servidor git, per fer les copies de seguretat i seguiment de versions, dels projectes com la revista que publiquen o obres de teatre, en el cas de que les vullguen crear de forma col.lavorativa.
 
 Després de provar varies alternatives, com \href{https://about.gitlab.com/}{gitlab} , \href{https://gogs.io/}{Gogs}, la millor alternativa pareix ser \href{https://gitea.io/en-us/}{Gitea}, es molt lleuger, es pot instal.lar amb una base de dades SQLite, i el entorn web que proporciona es molt paregut al de github, i les exigencies de la empresa, no son les de un entorn de programació.
 
@@ -463,6 +483,28 @@ Un altra part interessant d´aquest plugin, es la possibilitat de validació d'e
 \section{Tasques a fer}\label{tasques-a-fer}}
 
 Configurar el tema de la fula web per a que tinga el aspecte desitjat, es podria comprar també un tema que ofereixen en la mateixa ticketera dissenyat expressament per a \href{https://tickera.com/demos/theater-demo/}{teatres} i events.
+
+\hypertarget{configurracio-del-servidor}{%
+\chapter{Configurracio del servidor}\label{configurracio-del-servidor}}
+
+\begin{itemize}
+\item
+  Posible instalacio d'un NAS
+\item
+  Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost fer un de tipus 0 o 1 en redundancia.
+\item
+  Configurar un DNS en el servidor.
+\item
+  Configurar un DHCP, de moment ho descarte, si anara a mes el wifi en la sala, i es vullga fer mes interaccions amb el public, seria per a estudiar, soles per al numero d'ordenador dels centre, amb IP fixes, va que el mates.
+\item
+  Configurar un servidor web, per als serveis que es poden posar.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    La web de
+  \end{itemize}
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 
