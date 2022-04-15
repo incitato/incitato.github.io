@@ -1,10 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  10pt,
-]{book}
+  10pt, krantz2,
+]{krantz}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{setspace}
@@ -40,9 +41,54 @@
 \hypersetup{
   pdftitle={Arts escèniques},
   pdfauthor={Ramiro Palau},
-  hidelinks,
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.33,0.33,0.33}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.61,0.61,0.61}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.14,0.14,0.14}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.43,0.43,0.43}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -61,20 +107,68 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage[catalan]{babel}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+\usepackage{Alegreya}
+\usepackage[scale=.8]{sourcecodepro}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\frontmatter
+ 
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
 
 \title{Arts escèniques}
 \author{Ramiro Palau}
-\date{2022-04-13}
+\date{2022-04-15}
 
 \begin{document}
 \maketitle
 
 {
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
@@ -141,22 +235,30 @@ Programes de streaming, OBS, Livestream Studio, Wirecast, mimoLive.
 Es recomana per a començar OBS o Livestream, en cas de que el ordenador que farà de centre de producció siga un Mac, la opció sera OBS.
 
 \hypertarget{obs}{%
-\subsection{\texorpdfstring{\href{https://obsproject.com/}{OBS}}{OBS}}\label{obs}}
+\subsection{OBS}\label{obs}}
+
+\href{https://obsproject.com/}{OBS}
 
 Free and open source software for video recording and live streaming. Multiplataforma.
 
 \hypertarget{livestream-studio}{%
-\subsection{\texorpdfstring{\href{https://streamlabs.com/}{Livestream Studio}}{Livestream Studio}}\label{livestream-studio}}
+\subsection{Livestream Studio}\label{livestream-studio}}
+
+\href{https://streamlabs.com/}{Livestream Studio}
 
 Per a Windows
 
 \hypertarget{wirecast}{%
-\subsection{\texorpdfstring{\href{https://www.telestream.net/}{Wirecast}}{Wirecast}}\label{wirecast}}
+\subsection{Wirecast}\label{wirecast}}
+
+\href{https://www.telestream.net/}{Wirecast}
 
 De pagament.
 
-\hypertarget{mimolive}{%
-\subsection{\texorpdfstring{\href{https://mimolive.com/}{MimoLive}}{MimoLive}}\label{mimolive}}
+\hypertarget{momolive}{%
+\subsection{Momolive}\label{momolive}}
+
+\href{https://mimolive.com/}{MimoLive}
 
 Pagament
 
@@ -260,8 +362,8 @@ Em d'estudiar el numero i posicions en la sala per a que la retransmissió siga 
 
 Explorar la forma d'integrar el concepte git en les arts escèniques. Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració de publicacions o la creació d'obres de teatre,
 
-\hypertarget{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
-\section{Implantació del sistema col·laboratiu en el desenvolupament d'obres de teatre.}\label{implantaciuxf3-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.}}
+\hypertarget{implantaciuxf3-del-sistema-col.laboratiu-en-el-desenvolupament-dobres-de-teatre.}{%
+\section{Implantació del sistema col.laboratiu en el desenvolupament d'obres de teatre.}\label{implantaciuxf3-del-sistema-col.laboratiu-en-el-desenvolupament-dobres-de-teatre.}}
 
 \begin{itemize}
 \tightlist
@@ -284,7 +386,15 @@ Explorar la forma d'integrar el concepte git en les arts escèniques. Explorar e
 \hypertarget{beneficis-de-la-seva-implantaciuxf3}{%
 \section{Beneficis de la seva implantació}\label{beneficis-de-la-seva-implantaciuxf3}}
 
-El beneficis, son els mateixos que per a la creació de projectes informatics, pero que son poc utilitzats en el mon de les lletres. * Posibilitat de crear obres col·laboratives. * El guardat de les diferents version segons va desenvolupant-se el projecte, i poder tornar en el temps si alguna cosa no va be. * Bifurcar camins d'exploració en la creació literaria.
+El beneficis, son els mateixos que per a la creació de projectes informàtics, pero que son poc utilitzats en el mon de les lletres. \emph{Possibilitat de crear obres col·laboratives.}
+
+\begin{itemize}
+\tightlist
+\item
+  El guardat de les diferents versions segons va desenvolupant-se el projecte, i poder tornar en el temps si alguna cosa no va be.
+\item
+  Bifurcar camins d'exploració en la creació literària.
+\end{itemize}
 
 \hypertarget{mode-de-funcionament}{%
 \section{Mode de funcionament}\label{mode-de-funcionament}}
@@ -292,8 +402,8 @@ El beneficis, son els mateixos que per a la creació de projectes informatics, p
 \hypertarget{breu-tutorial-per-al-funcionament}{%
 \subsection{Breu tutorial per al funcionament}\label{breu-tutorial-per-al-funcionament}}
 
-\hypertarget{installaciuxf3-dun-repositori-en-el-centre}{%
-\section{Instal·lació d'un repositori en el centre}\label{installaciuxf3-dun-repositori-en-el-centre}}
+\hypertarget{instal.laciuxf3-dun-repositori-en-el-centre}{%
+\section{Instal.lació d'un repositori en el centre}\label{instal.laciuxf3-dun-repositori-en-el-centre}}
 
 Procés d'instal.lacio d'un repositori de git
 
@@ -314,7 +424,7 @@ El mes fácil seria el traure un comptem en una de les plataformes que hi ha en 
 \hypertarget{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}{%
 \section{Explorar wikimedia per a la realització de escritura col·laborativa}\label{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}}
 
-L'escritura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es posible discutir els convits proposat, obrir discussions sobre el text analitzat. Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir aquesta ferramenta.
+L'escriptura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es possible discutir els convits proposat, obrir discussions sobre el text analitzat. Es pot explorar el concepte de \href{https://es.wikipedia.org/wiki/Narrativa_hipertextual}{Narrativa hipertextual} fent servir aquesta ferramenta.
 
 \hypertarget{migraciuxf3-de-les-fulles-web-a-hugo}{%
 \chapter{Migració de les fulles web a Hugo}\label{migraciuxf3-de-les-fulles-web-a-hugo}}
@@ -354,7 +464,7 @@ possibles solucions per al procés
 
 Estic mirant per a fer una xicoteta demostració de les característiques de hugo, per fer una posta en comú de com funciona, i si es factible la seva migració.
 
-Un altra possibilitat de la seva implantació, es si es realitza la instancio de una zona wifi en el pati de butaques, al l'hora de donar els paràmetres de la xarxa (nom de xarxa i password), que es faria en un codi \href{https://www.qr-code-generator.com/solutions/wifi-qr-code/}{Qr} \emph{(algo paregut aço, ja ho desenvoluparé un poc mes en el apartat wifi)}, li se pot passar una direcció de entrada automàtica a una fulla web, que estaria en el servidor de la xarxa local, on es pot passar informació de l'obra que es va a representar, o realitzar interaccion amb el public, en temps real.
+Un altra possibilitat de la seva implantació, es si es realitza la instal.lacio d'una zona wifi en el pati de butaques, al l'hora de donar els paràmetres de la xarxa (nom de xarxa i password), que es faria en un codi \href{https://www.qr-code-generator.com/solutions/wifi-qr-code/}{Qr} \emph{(algo paregut aço, ja ho desenvoluparé un poc mes en el apartat wifi)}, li se pot passar una direcció de entrada automàtica a una fulla web, que estaria en el servidor de la xarxa local, on es pot passar informació de l'obra que es va a representar, o realitzar interacció amb el public, en temps real.
 
 \hypertarget{possibles-interaccions-amb-el-public}{%
 \subsubsection{Possibles interaccions amb el public}\label{possibles-interaccions-amb-el-public}}
@@ -473,7 +583,7 @@ La estratègia de la venda de entrades, està gestionada per una empresa de vend
 
 Es recomana d'implementació de una solució com la que es te en aquesta fulla, on podem veure una demostració de les seves funcions.\href{https://tickera.com/demos/theater-demo/}{ticketera}
 
-En aquest plugin per a wordpress, tenim la possibilitat de configurar les nostres entrades, afegint imatge de l'obra, inclusió de codis Qr (per al wifi), implantar la compra de entrades, amb selecció de la cadira en el pati de butaques.
+En aquest plugin per a WordPress, tenim la possibilitat de configurar les nostres entrades, afegint imatge de l'obra, inclusió de codis Qr (per al wifi), implantar la compra de entrades, amb selecció de la cadira en el pati de butaques.
 
 Es tindria que contractar els serveis de \href{https://stripe.com/en-es}{stripe} , la passerella de cobrament. el \href{https://stripe.com/en-es/pricing}{preu} es 1,4\% +25€, la configuració en wordpress es molt fàcil, i el tema i el plugin ja estan preparats.
 
@@ -506,6 +616,29 @@ Configurar el tema de la fula web per a que tinga el aspecte desitjat, es podria
   \end{itemize}
 \end{itemize}
 
-  \bibliography{book.bib,packages.bib}
+\hypertarget{notes}{%
+\chapter{notes}\label{notes}}
+
+Per a comprimir els gif
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}colors}\OperatorTok{=}\NormalTok{64 }\AttributeTok{{-}{-}use{-}col}\OperatorTok{=}\NormalTok{web }\AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{100 prova.gif }\AttributeTok{{-}o}\NormalTok{ comgif.gif}
+
+\ExtensionTok{o}\NormalTok{ no tan bestia}
+
+\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{80 prova.gif }\AttributeTok{{-}o}\NormalTok{ provacomp1.gif}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{important}: Flata retocar el css
+
+\textbf{Nota}: Flata retocar el css
+
+\textbf{Tip}: Flata retocar el css
+
+\textbf{Perill}: Flata retocar el css
+
+  \bibliography{book.bib}
 
 \end{document}

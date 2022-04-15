@@ -1,14 +1,51 @@
 p.caption {
-  color: #777;
-  margin-top: 10px;
+    color: #777;
+    margin-top: 10px;
 }
+
 p code {
-  white-space: inherit;
+    white-space: inherit;
 }
+
 pre {
-  word-break: normal;
-  word-wrap: normal;
+    word-break: normal;
+    word-wrap: normal;
 }
+
 pre code {
-  white-space: inherit;
+    white-space: inherit;
+}
+.infobox {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f7efef 5px center/3em no-repeat;
+  border: 2px solid orange;
+  border-radius: 10px;
+}
+.caution {
+  background-image: url("imatges/caution.png");
+}
+.important {
+  background-image: url("./imatges/important.png");
+}
+.note {
+  background-image: url("imatges/note.png");
+}
+.tip {
+  background-image: url("imatges/tip.png");
+}
+.warning {
+  background-image: url("imatges/warning.png");
+}
+.figure {
+  text-align: center;
+  margin-top: 50px;
+  padding-right: 10px;
+	box-shadow:15px 10px 10px rgba(0,0,0,0.15);
+}
+p.caption {
+  color: #bbb;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }

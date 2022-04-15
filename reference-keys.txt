@@ -1,3 +1,4 @@
+fig:sheets-option-drag
 streaming
 materials
 projecte-dinstillació
@@ -6,7 +7,7 @@ software
 obs
 livestream-studio
 wirecast
-mimolive
+momolive
 hardware-necessari
 servidor
 servidor-de-disc
@@ -19,11 +20,11 @@ potencia-de-la-connexió-de-internet-per-donar-servei
 localització-dels-dispositius-de-retransmissió
 muntatge-1
 implantació-de-entorn-git
-implantació-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.
+implantació-del-sistema-col.laboratiu-en-el-desenvolupament-dobres-de-teatre.
 beneficis-de-la-seva-implantació
 mode-de-funcionament
 breu-tutorial-per-al-funcionament
-installació-dun-repositori-en-el-centre
+instal.lació-dun-repositori-en-el-centre
 possible-implantació-en-el-repositori-en-internet
 explorar-wikimedia-per-a-la-realització-de-escritura-collaborativa
 migració-de-les-fulles-web-a-hugo
@@ -47,3 +48,4 @@ reformulació-de-les-estratègies-de-venda-de-entrades
 installació-de-pugin-de-venda-de-entrades-i-tema-per-a-la-fulla-web
 tasques-a-fer
 configurracio-del-servidor
+notes
