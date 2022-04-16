@@ -23,7 +23,7 @@
 <meta name="author" content="Ramiro Palau" />
 
 
-<meta name="date" content="2022-04-15" />
+<meta name="date" content="2022-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -145,13 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1" data-path="streaming.html"><a href="streaming.html#materials"><i class="fa fa-check"></i><b>1.1</b> Materials<span></span></a></li>
 <li class="chapter" data-level="1.2" data-path="streaming.html"><a href="streaming.html#projecte-dinstillació"><i class="fa fa-check"></i><b>1.2</b> Projecte d’instil·lació<span></span></a></li>
 <li class="chapter" data-level="1.3" data-path="streaming.html"><a href="streaming.html#pressupost"><i class="fa fa-check"></i><b>1.3</b> Pressupost<span></span></a></li>
-<li class="chapter" data-level="1.4" data-path="streaming.html"><a href="streaming.html#software"><i class="fa fa-check"></i><b>1.4</b> Software<span></span></a>
-<ul>
-<li class="chapter" data-level="1.4.1" data-path="streaming.html"><a href="streaming.html#obs"><i class="fa fa-check"></i><b>1.4.1</b> OBS<span></span></a></li>
-<li class="chapter" data-level="1.4.2" data-path="streaming.html"><a href="streaming.html#livestream-studio"><i class="fa fa-check"></i><b>1.4.2</b> Livestream Studio<span></span></a></li>
-<li class="chapter" data-level="1.4.3" data-path="streaming.html"><a href="streaming.html#wirecast"><i class="fa fa-check"></i><b>1.4.3</b> Wirecast<span></span></a></li>
-<li class="chapter" data-level="1.4.4" data-path="streaming.html"><a href="streaming.html#momolive"><i class="fa fa-check"></i><b>1.4.4</b> Momolive<span></span></a></li>
-</ul></li>
+<li class="chapter" data-level="1.4" data-path="streaming.html"><a href="streaming.html#software"><i class="fa fa-check"></i><b>1.4</b> Software<span></span></a></li>
 <li class="chapter" data-level="1.5" data-path="streaming.html"><a href="streaming.html#hardware-necessari"><i class="fa fa-check"></i><b>1.5</b> Hardware necessari<span></span></a>
 <ul>
 <li class="chapter" data-level="1.5.1" data-path="streaming.html"><a href="streaming.html#servidor"><i class="fa fa-check"></i><b>1.5.1</b> Servidor<span></span></a></li>
@@ -216,7 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#tasques-a-fer"><i class="fa fa-check"></i><b>7.3</b> Tasques a fer<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="configurracio-del-servidor.html"><a href="configurracio-del-servidor.html"><i class="fa fa-check"></i><b>8</b> Configurracio del servidor<span></span></a></li>
-<li class="chapter" data-level="9" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>9</b> notes<span></span></a></li>
+<li class="chapter" data-level="9" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>9</b> Notes<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="notes.html"><a href="notes.html#recordatoris"><i class="fa fa-check"></i><b>9.1</b> Recordatoris<span></span></a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -236,35 +233,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="implantació-de-entorn-git" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Projecte 3</span> Implantació de entorn Git<a href="implantació-de-entorn-git.html#implantació-de-entorn-git" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Explorar la forma d’integrar el concepte git en les arts escèniques.
-Explorar els avantatges del seguiment de versions, i el procés
-col.laboratiu per per a la elaboració de publicacions o la creació
-d’obres de teatre,</p>
+<p>Explorar la forma d’integrar el concepte git en les arts escèniques. Explorar els avantatges del seguiment de versions, i el procés col.laboratiu per per a la elaboració de publicacions o la creació d’obres de teatre,</p>
 <div id="implantació-del-sistema-col.laboratiu-en-el-desenvolupament-dobres-de-teatre." class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Implantació del sistema col.laboratiu en el desenvolupament d’obres de teatre.<a href="implantació-de-entorn-git.html#implantació-del-sistema-col.laboratiu-en-el-desenvolupament-dobres-de-teatre." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>Es pot realitzar mitjan la creació d’un compte en una de les
-plataformes git que hi ha en internet,</li>
+<li>Es pot realitzar mitjan la creació d’un compte en una de les plataformes git que hi ha en internet,</li>
 <li>Configurant un servidor git en el propi centre de treball
 <ul>
-<li>Git i un servidor web, esta opció es per a gastar el entorn git
-en consola, no es recomana per a la empresa.</li>
-<li>Un entorn web , he fet proves en gitlab i gitea, i el final crec
-que la millor opció es la de gitea per el reduït gast de
-recursos que fa i la facilitat d’us.</li>
-<li>Es pot mirar de enllaçar el repositori git en el conter de drive
-que te la empresa, per fer un repositori privat per als membres.</li>
+<li>Git i un servidor web, esta opció es per a gastar el entorn git en consola, no es recomana per a la empresa.</li>
+<li>Un entorn web , he fet proves en gitlab i gitea, i el final crec que la millor opció es la de gitea per el reduït gast de recursos que fa i la facilitat d’us.</li>
+<li>Es pot mirar de enllaçar el repositori git en el conter de drive que te la empresa, per fer un repositori privat per als membres.</li>
 </ul></li>
 </ul>
 </div>
 <div id="beneficis-de-la-seva-implantació" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Beneficis de la seva implantació<a href="implantació-de-entorn-git.html#beneficis-de-la-seva-implantació" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El beneficis, son els mateixos que per a la creació de projectes
-informàtics, pero que son poc utilitzats en el mon de les lletres.
-<em>Possibilitat de crear obres col·laboratives.</em></p>
+<p>El beneficis, son els mateixos que per a la creació de projectes informàtics, pero que son poc utilitzats en el mon de les lletres. <em>Possibilitat de crear obres col·laboratives.</em></p>
 <ul>
-<li>El guardat de les diferents versions segons va desenvolupant-se el
-projecte, i poder tornar en el temps si alguna cosa no va be.</li>
+<li>El guardat de les diferents versions segons va desenvolupant-se el projecte, i poder tornar en el temps si alguna cosa no va be.</li>
 <li>Bifurcar camins d’exploració en la creació literària.</li>
 </ul>
 </div>
@@ -279,29 +265,17 @@ projecte, i poder tornar en el temps si alguna cosa no va be.</li>
 <p>Procés d’instal.lacio d’un repositori de git</p>
 <ul>
 <li><p>Git i Apache <code>buscar la fulla on ho esplicaa</code></p></li>
-<li><p>Instal.lacio de <a href="https://docs.gitea.io/en-us/">gitea</a> , o be
-directament, o per una imatge docker</p></li>
-<li><p>Servir el
-<a href="https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html">git</a>
-en un espai onedriver, pareix que es per consola, mirar algun client
-de git desktop que facilita les coses.</p></li>
+<li><p>Instal.lacio de <a href="https://docs.gitea.io/en-us/">gitea</a> , o be directament, o per una imatge docker</p></li>
+<li><p>Servir el <a href="https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html">git</a> en un espai onedrive, pareix que es per consola, mirar algun client de git desktop que facilita les coses.</p></li>
 </ul>
 </div>
 <div id="possible-implantació-en-el-repositori-en-internet" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Possible implantació en el repositori en internet<a href="implantació-de-entorn-git.html#possible-implantació-en-el-repositori-en-internet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El mes fácil seria el traure un comptem en una de les plataformes que hi
-ha en internet, el problema es el recel que tinga l’empresa per el tema
-de privacitat. Estes plataformes tenen l’opció de crear repositoris
-privats, on soles es pot connectar al qui es convide.</p>
+<p>El mes fàcil seria el traure un comptem en una de les plataformes que hi ha en internet, el problema es el recel que tinga l’empresa per el tema de privacitat. Estes plataformes tenen l’opció de crear repositoris privats, on soles es pot connectar al que convideu.</p>
 </div>
 <div id="explorar-wikimedia-per-a-la-realització-de-escritura-collaborativa" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Explorar wikimedia per a la realització de escritura col·laborativa<a href="implantació-de-entorn-git.html#explorar-wikimedia-per-a-la-realització-de-escritura-collaborativa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>L’escriptura col·laborativa mitjançant ferramentes de xarxa, com la
-wikipedia, on es possible discutir els convits proposat, obrir
-discussions sobre el text analitzat. Es pot explorar el concepte de
-<a href="https://es.wikipedia.org/wiki/Narrativa_hipertextual">Narrativa
-hipertextual</a> fent
-servir aquesta ferramenta.</p>
+<p>L’escriptura col·laborativa mitjançant ferramentes de xarxa, com la wikipedia, on es possible discutir els convits proposat, obrir discussions sobre el text analitzat. Es pot explorar el concepte de <a href="https://es.wikipedia.org/wiki/Narrativa_hipertextual">Narrativa hipertextual</a> fent servir aquesta ferramenta.</p>
 
 </div>
 </div>
@@ -326,7 +300,7 @@ servir aquesta ferramenta.</p>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
+"github": true,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -342,8 +316,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/incitato/prova/edit/main/03-github.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
@@ -359,7 +333,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "none"
 },
 "toolbar": {
 "position": "static"

@@ -1,13 +1,8 @@
-fig:sheets-option-drag
 streaming
 materials
 projecte-dinstillació
 pressupost
 software
-obs
-livestream-studio
-wirecast
-momolive
 hardware-necessari
 servidor
 servidor-de-disc
@@ -49,3 +44,4 @@ installació-de-pugin-de-venda-de-entrades-i-tema-per-a-la-fulla-web
 tasques-a-fer
 configurracio-del-servidor
 notes
+recordatoris

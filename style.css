@@ -15,28 +15,47 @@ pre {
 pre code {
     white-space: inherit;
 }
-.infobox {
+.rmdnote {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
-  background: #f7efef 5px center/3em no-repeat;
-  border: 2px solid orange;
+  background: rgba(119,136,153, 0.1) 5px center/3em no-repeat;
+  border: 2px solid rgba(119,136,153, 0.3);
   border-radius: 10px;
-}
-.caution {
-  background-image: url("imatges/caution.png");
-}
-.important {
-  background-image: url("./imatges/important.png");
-}
-.note {
   background-image: url("imatges/note.png");
 }
-.tip {
+.rmdtip {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: rgba(81, 183, 73, 0.1) 5px center/3em no-repeat;
+  border: 2px solid rgba(81, 183, 73, 0.5);
+  border-radius: 10px;
   background-image: url("imatges/tip.png");
 }
-.warning {
+.rmdwarn {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: rgba(255,83,59, 0.1) 5px center/3em no-repeat;
+  border: 2px solid rgba(255,83,59, 0.5);
+  border-radius: 10px;
   background-image: url("imatges/warning.png");
 }
+.rmdinfo {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: rgba(92, 122, 234, 0.1) 5px center/3em no-repeat;
+  border: 2px solid rgba(92, 122, 234, 0.5);
+  border-radius: 10px;
+  background-image: url("imatges/important.png");
+}
+.rmdcuidao {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: rgba(251,188,5, 0.1) 5px center/3em no-repeat;
+  border: 2px solid rgba(251,188,5, 0.5);
+  border-radius: 10px;
+  background-image: url("imatges/caution.png");
+}
+
 .figure {
   text-align: center;
   margin-top: 50px;
@@ -49,3 +68,21 @@ p.caption {
   margin-bottom: 10px;
   text-align: center;
 }
+
+.dreta {
+  text-align: right;
+}
+.centre {
+  text-align: center;
+}
+blockquote > p:last-child {
+  text-align: right;
+}
+blockquote > p:first-child {
+  text-align: inherit;
+}
+
+.columns {
+  display: flex;
+}
+*/

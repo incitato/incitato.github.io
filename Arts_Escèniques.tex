@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  10pt, krantz2,
+  10pt,
 ]{krantz}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -48,7 +48,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[left=3cm,right=3cm,top=0.85cm,bottom=3cm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -58,37 +58,37 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.33,0.33,0.33}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.61,0.61,0.61}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.14,0.14,0.14}{\textbf{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.43,0.43,0.43}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -99,6 +99,19 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -108,52 +121,85 @@
 \usepackage{booktabs}
 \usepackage[catalan]{babel}
 \usepackage{longtable}
-\usepackage[bf,singlelinecheck=off]{caption}
 
-\usepackage{Alegreya}
-\usepackage[scale=.8]{sourcecodepro}
+%no se  ue fan
+%\usepackage[bf,singlelinecheck=off]{caption}
+%\usepackage{Alegreya}
+%\usepackage[scale=.7]{sourcecodepro}
+%\usepackage{framed,color}
 
-\usepackage{framed,color}
-\definecolor{shadecolor}{RGB}{248,248,248}
+\usepackage[skins]{tcolorbox}
 
-\renewcommand{\textfraction}{0.05}
-\renewcommand{\topfraction}{0.8}
-\renewcommand{\bottomfraction}{0.8}
-\renewcommand{\floatpagefraction}{0.75}
+\definecolor{colortip}{RGB}{81,183,73}
+\definecolor{colornote}{RGB}{119,136,153}
+\definecolor{colorwarn}{RGB}{255,83,59}
+\definecolor{colorinfo}{RGB}{92, 122, 234}
+\definecolor{colorcuidao}{RGB}{251,188,5}
 
-\renewenvironment{quote}{\begin{VF}}{\end{VF}}
-\let\oldhref\href
-\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
-
-\ifxetex
-  \usepackage{letltxmacro}
-  \setlength{\XeTeXLinkMargin}{1pt}
-  \LetLtxMacro\SavedIncludeGraphics\includegraphics
-  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-    \IncludeGraphicsAux{#1}%
-  }%
-  \newcommand*{\IncludeGraphicsAux}[2]{%
-    \XeTeXLinkBox{%
-      \SavedIncludeGraphics#1{#2}%
-    }%
-  }%
-\fi
-
-\usepackage{makeidx}
-\makeindex
-
-\urlstyle{tt}
-
-\usepackage{amsthm}
-\makeatletter
-\def\thm@space@setup{%
-  \thm@preskip=8pt plus 2pt minus 4pt
-  \thm@postskip=\thm@preskip
+\tcbset{
+  colbacktitle=white,
+  enhanced,
+  boxrule=9pt,
+  sharp corners,
+  attach boxed title to top left={yshift=-1.5mm, xshift=5mm},
+  colback=white, 
+  coltext=black, 
+  leftrule=.3mm,
+  rightrule=.3mm,
+  bottomrule=.3mm,
+  toprule=.3mm,
+  boxsep=1pt, 
+  arc=4pt 
 }
-\makeatother
+\newtcolorbox{rmdcuidao}[1]{
+  title=#1,
+  drop small lifted shadow,
+  coltitle=colorcuidao,
+  colframe=colorcuidao, 
+  colback=colorcuidao!5!
+}
+\newtcolorbox{rmdtip}[1]{
+  title=#1,
+  drop small lifted shadow,
+  coltitle=colortip,
+  colframe=colortip, 
+  colback=colortip!5!
+}
 
-\frontmatter
- 
+\newtcolorbox{rmdnote}[1]{
+  title=#1,
+  drop small lifted shadow,
+  coltitle=colornote,
+  colframe=colornote,
+  colback=colornote!5!
+}
+
+\newtcolorbox{rmdwarn}[1]{
+  title=#1,
+  drop small lifted shadow,
+  coltitle=colorwarn,
+  colframe=colorwarn,
+  colback=colorwarn!5!
+}
+
+\newtcolorbox{rmdinfo}{
+  drop large lifted shadow,
+  coltitle=colorinfo,
+  colframe=colorinfo,
+  colback=colorinfo!5!,
+  capture=hbox
+}
+
+%\makeatother
+% marca d'aigua
+% https://github.com/callegar/LaTeX-draftwatermark
+% https://github.com/callegar/LaTeX-everypage
+% https://ctan.org/pkg/draftwatermark
+% draftwatermark espacio inestable everypage
+%\usepackage[angle=270,text=Espacio\ inestable,color=gray,pos={0.5in,3.5in},scale=0.25]{draftwatermark}
+% draftwatermark 和 everypage 由同一个人维护，后者将停止维护
+% https://github.com/CTeX-org/ctex-kit/issues/331
+%\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -161,8 +207,18 @@
 \bibliographystyle{apalike}
 
 \title{Arts escèniques}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Projecte de pràctiques d'empresa del grau\\
+F.P. ASISX\\
+I.E. Maria Enriquez\\
+\emph{Gandia 2022}}
 \author{Ramiro Palau}
-\date{2022-04-15}
+\date{2022-04-16}
 
 \begin{document}
 \maketitle
@@ -210,7 +266,7 @@ Es vol posar un sistema de streaming per a la sala i les seves funcions, o per t
 \item
   \textbf{Càmeres ip} i millors \textbf{micròfons} que envien el so per la connexió de xarxa de la càmera.
 \item
-  \textbf{\href{https://www.vadavo.com/blog/switch-poe-que-es-y-que-tipos-hay/}{Switch} \href{https://ca.wikipedia.org/wiki/Power_over_Ethernet}{PoE}} , es podria posar una de 4 ports en el escenari, per a felicitar el escalat posterior del projecte que no son massa cars, i un switch (este no PoE) en les oficines per centralitzar la xarxa. i tirar cable entre ells i les càmeres. reduint la distancia del PoE a les càmeres ip.
+  \href{https://www.vadavo.com/blog/switch-poe-que-es-y-que-tipos-hay/}{\textbf{Switch}} \href{https://ca.wikipedia.org/wiki/Power_over_Ethernet}{\textbf{PoE}} , es podria posar una de 4 ports en el escenari, per a felicitar el escalat posterior del projecte que no son massa cars, i un switch (este no PoE) en les oficines per centralitzar la xarxa. i tirar cable entre ells i les càmeres. reduint la distancia del PoE a les càmeres ip.
 \item
   \textbf{Conter} en una plataforma de streaming.
 \item
@@ -234,33 +290,32 @@ Programes de streaming, OBS, Livestream Studio, Wirecast, mimoLive.
 
 Es recomana per a començar OBS o Livestream, en cas de que el ordenador que farà de centre de producció siga un Mac, la opció sera OBS.
 
-\hypertarget{obs}{%
-\subsection{OBS}\label{obs}}
-
-\href{https://obsproject.com/}{OBS}
-
-Free and open source software for video recording and live streaming. Multiplataforma.
-
-\hypertarget{livestream-studio}{%
-\subsection{Livestream Studio}\label{livestream-studio}}
-
-\href{https://streamlabs.com/}{Livestream Studio}
-
-Per a Windows
-
-\hypertarget{wirecast}{%
-\subsection{Wirecast}\label{wirecast}}
-
-\href{https://www.telestream.net/}{Wirecast}
-
-De pagament.
-
-\hypertarget{momolive}{%
-\subsection{Momolive}\label{momolive}}
-
-\href{https://mimolive.com/}{MimoLive}
-
-Pagament
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2917}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7083}}@{}}
+\caption{Programes}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Programes}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Desc}
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Programes}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Desc}
+\end{minipage} \\
+\midrule
+\endhead
+\href{https://obsproject.com/}{OBS} & Software gratis per a gravar video i streaming. \\
+\href{https://streamlabs.com/}{Livestream Studio} & Per a Windows \\
+\href{https://www.telestream.net/}{Wirecast} & De pagament. \\
+\href{https://mimolive.com/}{MimoLive} & Pagament processional. \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{hardware-necessari}{%
 \section{Hardware necessari}\label{hardware-necessari}}
@@ -268,13 +323,13 @@ Pagament
 \hypertarget{servidor}{%
 \subsection{Servidor}\label{servidor}}
 
-Es comenta que es pot reutilitzar l'ordenador que es te en venda de entrades, Es pot mirar a veure si compleix els requisits minims requerits. En principi, no crec que faça falta un massa potent per a lo que volem posar.
+Es comenta que es pot re utilitzar l'ordenador que es te en venda de entrades, Es pot mirar a veure si compleix els requisits minims requerits. En principi, no crec que faça falta un massa potent per a lo que volem posar.
 
 En el servidor s'implementaran serveis de DNS, Servidor de fulles web, (controlador de domini, no crec que siga necessari, pero es pot posar també, si volem controlar els recursos que tinga accés cada membre)
 
 Es podia discutir si interessa un sistema de comunicacions inter, per poder comunicar mitjançant so, video o xat entre el control i l'escenari. o volen passar informació en temps real als actors en el escenari des de control. hi ha varies opcions lliure, per exemple \href{https://meet.jit.si/}{Jitsi meet}, tindria que mirar-ho, ho he provar varie vegades, i no he pogut der-lo funcionar, es cosa d'insistir. Aço li donaria un poc mes de faena al servidor, pero com no serien molt interlocutors, no crec que requerisca massa potencia.
 
-Es podria posar també un sistema de \href{https://nextcloud.com/}{cloud} intern, que ja integra les videoconferències i moltes mes coses per al treball en equip, pero supose que amb un equip reduït, igual no val la pena, si soles es local, i la gent treballa des de casa la major part del temps. Es pot contractar un conter online, pero je s'està gastant el drive. Es pot fer una demo, i si interessa es deixa.
+Es podria posar també un sistema de \href{https://nextcloud.com/}{cloud} intern, que ja integra les videoconferències i moltes mes coses per al treball en equip, pero supose que amb un equip reduït, igual no val la pena, si soles es local, i la gent treballa des de casa la major part del temps. Es pot contractar un conter online, pero ja s'està gastant el drive. Es pot fer una demo, i si interessa es deixa.
 
 Sistema de correu intern, no li vec massa sentit, pero es pot posar.
 
@@ -338,14 +393,14 @@ Fare proves de tot aço i penjaré el resultat de com es fa.
 \hypertarget{requeriments-per-a-la-seva-implantaciuxf3}{%
 \section{Requeriments per a la seva implantació}\label{requeriments-per-a-la-seva-implantaciuxf3}}
 
-Uns repetidors de wifi, he quedat en un amic que controla del tema per a mirar-ho. Es tindria que pensar si realment es vol instal.lar per tindre coverture per als 92 espectadors, o es pensa que no tots es van a connectar, i començar per un sistema basic, ampliable conforme a les necessitat augmenten.
+Uns repetidors de wifi, he quedat en un amic que controla del tema per a mirar-ho. Es tindria que pensar si realment es vol instal.lar per tindre coverture per als 92 espectadors, o es pensa que no tots es van a connectar, i començar per un sistema bàsic, ampliable conforme a les necessitat augmenten.
 
 \hypertarget{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}{%
 \subsection{Potencia de la connexió de internet per donar servei}\label{potencia-de-la-connexiuxf3-de-internet-per-donar-servei}}
 
 Es requereix que el ample de banda de la connexió d'internet puga donar servei al meins a 92 espectadors, que es el aforo del pati de butaques.
 
-Es te que limitar el ample de banda que oferim als espectadors en cas de realizer el streaming al mateix temps, aço ho realitzem assegurant el ample de banda en la xarxa de el circuit de imatge. en el switch.
+Es te que limitar l'ample de banda que oferim als espectadors en cas de realizar el streaming al mateix temps, aço ho realitzem assegurant l´ample de banda en la xarxa del circuit d'imatge. en el switch.
 
 \hypertarget{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}{%
 \subsection{localització dels dispositius de retransmissió}\label{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}}
@@ -413,13 +468,13 @@ Procés d'instal.lacio d'un repositori de git
 \item
   Instal.lacio de \href{https://docs.gitea.io/en-us/}{gitea} , o be directament, o per una imatge docker
 \item
-  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git} en un espai onedriver, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
+  Servir el \href{https://www.permikkelsen.dk/how-to-host-your-git-repository-on-onedrive.html}{git} en un espai onedrive, pareix que es per consola, mirar algun client de git desktop que facilita les coses.
 \end{itemize}
 
 \hypertarget{possible-implantaciuxf3-en-el-repositori-en-internet}{%
 \section{Possible implantació en el repositori en internet}\label{possible-implantaciuxf3-en-el-repositori-en-internet}}
 
-El mes fácil seria el traure un comptem en una de les plataformes que hi ha en internet, el problema es el recel que tinga l'empresa per el tema de privacitat. Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al qui es convide.
+El mes fàcil seria el traure un comptem en una de les plataformes que hi ha en internet, el problema es el recel que tinga l'empresa per el tema de privacitat. Estes plataformes tenen l'opció de crear repositoris privats, on soles es pot connectar al que convideu.
 
 \hypertarget{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}{%
 \section{Explorar wikimedia per a la realització de escritura col·laborativa}\label{explorar-wikimedia-per-a-la-realitzaciuxf3-de-escritura-collaborativa}}
@@ -599,13 +654,13 @@ Configurar el tema de la fula web per a que tinga el aspecte desitjat, es podria
 
 \begin{itemize}
 \item
-  Posible instalacio d'un NAS
+  Possible instal·lació d'un NAS
 \item
-  Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost fer un de tipus 0 o 1 en redundancia.
+  Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost fer un de tipus 0 o 1 en redundància.
 \item
   Configurar un DNS en el servidor.
 \item
-  Configurar un DHCP, de moment ho descarte, si anara a mes el wifi en la sala, i es vullga fer mes interaccions amb el public, seria per a estudiar, soles per al numero d'ordenador dels centre, amb IP fixes, va que el mates.
+  Configurar un DHCP, de moment ho descartem, si anara a mes el wifi en la sala, i es vullga fer mes interaccions amb el public, seria per a estudiar, soles per al numero d'ordenador dels centre, amb IP fixes, va que el mates.
 \item
   Configurar un servidor web, per als serveis que es poden posar.
 
@@ -617,27 +672,69 @@ Configurar el tema de la fula web per a que tinga el aspecte desitjat, es podria
 \end{itemize}
 
 \hypertarget{notes}{%
-\chapter{notes}\label{notes}}
+\chapter{Notes}\label{notes}}
 
-Per a comprimir els gif
+Recordatoris de com es fan les coses, despres el borrare
+
+\hypertarget{recordatoris}{%
+\section{Recordatoris}\label{recordatoris}}
+
+\textbf{Pera que els gif no vagen al pdf}
+
+Falta saber com es canvia per un png
+
+```\{r sheets-option-drag, fig.pos=`h', fig.cap=``Prova de gif''\}\\
+if(knitr::is\_html\_output(excludes=``markdown'')) knitr::include\_graphics(``imatges/provacomp.gif'')\\
+```
+
+\textbf{Per a comprimir els gif}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}colors}\OperatorTok{=}\NormalTok{64 }\AttributeTok{{-}{-}use{-}col}\OperatorTok{=}\NormalTok{web }\AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{100 prova.gif }\AttributeTok{{-}o}\NormalTok{ comgif.gif}
-
-\ExtensionTok{o}\NormalTok{ no tan bestia}
-
-\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{80 prova.gif }\AttributeTok{{-}o}\NormalTok{ provacomp1.gif}
+\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}colors}\OperatorTok{=}\NormalTok{64 }\AttributeTok{{-}{-}use{-}col}\OperatorTok{=}\NormalTok{web }\AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{100 prova.gif }\AttributeTok{{-}o}\NormalTok{ comgif.gif  }
+\ExtensionTok{o}\NormalTok{ no tan bestia  }
+\ExtensionTok{$}\NormalTok{ gifsicle }\AttributeTok{{-}O3} \AttributeTok{{-}{-}lossy}\OperatorTok{=}\NormalTok{80 prova.gif }\AttributeTok{{-}o}\NormalTok{ provacomp1.gif  }
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{important}: Flata retocar el css
+\begin{rmdinfo}{}
+::: \{.rmdinfo .centre data-latex=``\{\}''\}\\
+la la la\\
+:::
 
-\textbf{Nota}: Flata retocar el css
+\end{rmdinfo}
 
-\textbf{Tip}: Flata retocar el css
+\begin{rmdcuidao}{Ves en conter}
+\{.rmdcuidao data-latex=``\{ves en conter\}''\}
 
-\textbf{Perill}: Flata retocar el css
+\end{rmdcuidao}
+
+\begin{rmdwarn}{Perill}
+\{.rmdwarn data-latex=``\{Perill\}''
+
+\end{rmdwarn}
+
+\begin{rmdtip}{Tip}
+\{.rmdtip data-latex=``\{Tip\}''\}
+
+\end{rmdtip}
+
+\begin{rmdnote}{Nota}
+\includegraphics{imatges/note.png} \textbf{Aço es una nota} \{.rmdnote data-latex=``\{Nota\}''\}\\
+ves en cuidaoooo no se si aço trancara o continua fins el mas alla\\
+ves en cuidaoooo no se si aço trancara o continua fins el mas alla
+
+\end{rmdnote}
+
+\begin{rmdinfo}{}
+\textbf{Per que no ixca en el pdf}
+
+```\{asis, echo=!knitr::is\_latex\_output()\}\\
+::: \{.rmdcuidao\}\\
+ves en cuidaoooo no se si aço trancara o continua fins el mas alla :::\\
+```
+
+\end{rmdinfo}
 
   \bibliography{book.bib}
 
