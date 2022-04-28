@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Arts escèniques</title>
+  <title>Projecte 11 Servidor | Arts escèniques</title>
   <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Arts escèniques" />
+  <meta property="og:title" content="Projecte 11 Servidor | Arts escèniques" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="github-repo" content="incitato/prova" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Arts escèniques" />
+  <meta name="twitter:title" content="Projecte 11 Servidor | Arts escèniques" />
   
   <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="nextcloud.html"/>
 
-<link rel="next" href="streaming.html"/>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -250,27 +250,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Arts escèniques</h1>
-<h2 class="subtitle"><em><p>Projecte de pràctiques d’empresa del grau<br />
-F.P. ASISX<br />
-I.E. Maria Enriquez<br />
-<em>Gandia 2022</em></p></em></h2>
-<p class="author"><em>Ramiro Palau</em></p>
-<p class="date"><em>2022-04-29</em></p>
+<div id="servidor-1" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Projecte 11</span> Servidor<a href="servidor-1.html#servidor-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Es proposa la compra d’un servidor d’ebay, per fer alli les màquines virtuals que requerim, per desenvolupar el projecte.</p>
+<ul>
+<li><p>En el servidor es vol crear instàncies d’un servidor de disc.</p></li>
+<li><p>Servidor de pàgines web.</p></li>
+<li><p>Servidor de Nextcloud.</p></li>
+<li><p>Maquina virtual per controlar el wifi de la sala.</p></li>
+<li><p>Tallafocs i entorn de seguretat.</p></li>
+<li><p>Mirar si es posa un Ldap o en l’entorn de Nextcloud es pot controlar els accessos i recursos servits als usuaris.</p></li>
+</ul>
+<p>Tutorial <a href="https://www.youtube.com/watch?v=sshqDf01Xyc">nextcloud</a></p>
+<div id="material" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Material<a href="servidor-1.html#material" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><a href="https://www1.la.dell.com/content/products/productdetails.aspx/poweredge-r320?c=ve&amp;l=es&amp;s=corp&amp;cs=vecorp1">Servidor</a>. En <a href="https://www.ebay.es/itm/125269454776?hash=item1d2aa42fb8:g:aTIAAOSw3ExiXvm5">ebai</a> el podem trobar per uns 250 euros, amb 64G de Ram, podríem estirar més fins als 128G, Pero realment no esn fa falta tanta, per al que volem posar. (mirar més models), té 4 bahies per a hdd on podem fer un Raid 5 en tres d’ells i l’altre pe arrancar les VM.
+<img src="imatges/server_hp.png" alt="server" />
+<a href="https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/ja/jp/Dell-PowerEdge-R320Technical-Guide.pdf">Documentació del model</a>, si va avant, mirar posar un ssd, no està clar.
+No veig comp amb <a href="https://ubuntu.com/certified?category=Server&amp;vendor=Dell+EMC&amp;offset=20">ubuntu</a>, igual mirar altre server.</li>
+<li>Discs durs, admet segons documentació 4 SATA de 4Gb.</li>
+<li>Segon targeta de xarxa.(redundància)</li>
+<li>Preguntar a Toni el Hypervisor més adequat.</li>
+<li>Un Sai, mirar potencia, quan es decideixen el server.</li>
+</ol>
 </div>
-<div id="about" class="section level1 unnumbered hasAnchor">
-<h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available in PDF output-->
-<div class="rmdcuidao">
-<p><strong>Nota</strong>: El llibre encara està en fase de construcció, disculpeu les faltes ortogràfiques i la incoherència del text</p>
+<div id="avantatges" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Avantatges<a href="servidor-1.html#avantatges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La idea és muntar un servidor de Nextcloud, per l’emmagatzematge dels fitxers de la sala. aprofitar este entorn per a posar també, treball en grup de documents amb <a href="https://www.collaboraoffice.com/">Collabora</a>, o si els agrada més el plug de MS office en línia. Encara que hi ha altres solucions dins el mateix Nextcloud per a fer treball en grup.
+Provar d’integrar <a href="https://etherpad.org/">Etherpad</a> en Nextcoud, en un Docker i afegir-lo al menu.</p>
+<p>Crear grups de treball on es puga compartir fitxers, com per exemple, un de redactors de la revista, on puguen discutir sobre els articles a publicar.
+Un altre per als treballadors, per a l’administració, inclús es pot fer grups per a les companyies convidades per fer els seus espectacles.</p>
+<p>Es pot aprofitar el sistema de Talk que té, per poder fer comunicacions entre els membres de l’empresa, entre el comandament de llums i el vestuari dels actors, entre redactors i director de la revista per discutir els articles…
+Amb el seu servei de comunicacions privat.</p>
+<div id="pfsense-1" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Pfsense<a href="servidor-1.html#pfsense-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Primer que res, hem de posar un sistema de seguretat o <a href="https://en.wikipedia.org/wiki/DMZ_%28computing%29">DZM</a>, o farem amb <a href="https://www.pfsense.org/">Pfsense</a>, mitjançant una VM en el servidor.</p>
+<div class="rmdtip">
+<p>A l’hora de configurar el pfsese tenim dues opcions.</p>
+<ul>
+<li>Fer una VPN</li>
+<li>Exposar els ports que volem, el 443</li>
+</ul>
 </div>
-<p>Documentació dels projectes proposats a realitzar en el desenvolupament de les pràctiques realitzades en <strong>Espacio Inestable</strong>.</p>
-<div id="usage" class="section level2 unnumbered hasAnchor">
-<h2>Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Anirem detallant els diferents projectes que se suggereixen per a digitalitzar <em>les arts escèniques</em>, amb una breu descripció de la seua posada en funcionament, requisits, pros i contres.</p>
-<p>En cas afirmatiu s’aniria desenvolupant la manera d’implantar-lo, cost, i detallarem el seu funcionament i configuració.</p>
-<p>La idea, es que aquest document siga una guia per mantenir els projectes elaborats o replicar-los en altres llocs, i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l’empresa.</p>
+<p>El millor seria fer una VPN, pero per l’administració de després pot ser un poc complicat per a l’empresa, si no tenen un administrador.</p>
+<p>Ens decantarem per exposar el port 443.</p>
+<p>La configuració la posaré en un apartat posterior.</p>
+</div>
+<div id="ddns" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> DDNS<a href="servidor-1.html#ddns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Traure conter en un DNS dinàmic.
+En fer la instal.lació de Nexctcloud VM pels scripts de guithub, ja en s crea un en dedyn.io, mirar altres opcions. A més ens crea un certificat d’aquest domini en Lets encrypt. Mirar la possibilitat de la creació d’un subdomini en el domini de l’empresa, preguntar si tenen les claus del seu domini.</p>
+</div>
+<div id="nextcloud-1" class="section level3 hasAnchor" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> Nextcloud<a href="servidor-1.html#nextcloud-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fem servir els <a href="https://github.com/nextcloud/vm.git">scripts</a> de instal.lacio, que afegeixen millores de seguretat i rendiment.</p>
+<div class="rmdtip">
+<p>Fer un lvm en el RAID 5 del servidor i donar format ZFS, la VM de Nextcloud en el ssd si el podem posar o en el disc de les VM</p>
+</div>
+</div>
+</div>
+<div id="accés-point-del-wifi" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Accés point del wifi<a href="servidor-1.html#accés-point-del-wifi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En una altra VM posar el software que controla les antenes del wifi</p>
+</div>
+<div id="servidor-de-disc-per-al-video" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Servidor de disc per al video<a href="servidor-1.html#servidor-de-disc-per-al-video" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Normalment les càmeres ip funcionen en un servidor de ftp on es guarden les gravacions. En el Raid 5 fem una altra partició lvm d’espai per aquest propòsit, i posem un servidor de sftp en una altra VM on també tindrem el servidor web. Aquesta partició de dades la podem compartir per xarxa amb la VM de Nextcloud on podem muntar medis externs i compartir en els usuaris que volem, par a què es puga muntar també en ella, perquè els usuaris puguen veure les gravacions, sols dret de lectura.</p>
 
 </div>
 </div>
@@ -279,8 +325,8 @@ I.E. Maria Enriquez<br />
           </div>
         </div>
       </div>
+<a href="nextcloud.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="streaming.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +357,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/incitato/prova/edit/main/index.Rmd",
+"link": "https://github.com/incitato/prova/edit/main/12-provalangtool.rmd",
 "text": "Edit"
 },
 "history": {

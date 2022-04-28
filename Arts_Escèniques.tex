@@ -218,7 +218,7 @@ F.P. ASISX\\
 I.E. Maria Enriquez\\
 \emph{Gandia 2022}}
 \author{Ramiro Palau}
-\date{2022-04-20}
+\date{2022-04-29}
 
 \begin{document}
 \maketitle
@@ -260,15 +260,15 @@ Es vol posar un sistema de streaming per a la sala i les seues funcions, o per t
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Servidor}, que devia ser un ordinador de sobretaula, que es miraran els requisits mínims segons el servei que finalment es donen a terme.
+  \textbf{Servidor}, podria ser un ordinador de sobretaula, es pot mirar el que es gasta ara per a la venda d'entrades, per veure si compleix els requisits mínims per als serveis que finalment es volen donar, o un servidor dedicat, on centralitzem tots els serveis. (Comentaré aquest cas en l'apartat servidor)
 \item
-  \textbf{Un servidor de disc}, que podria ser el servidor dels altres apartats per guardar una còpia de les diferents càmeres. Si hi ha pressupost, es faria un \href{https://ca.wikipedia.org/wiki/RAID}{RAID}.
+  \textbf{Un servidor de disc}, que podria ser el servidor dels altres apartats per guardar una còpia de les diferents càmeres. Si hi ha pressupost, es faria un \href{https://ca.wikipedia.org/wiki/RAID}{RAID 5}.
 \item
   \textbf{Càmeres ip} i millors \textbf{micròfons} que envien el so per la connexió de xarxa de la càmera.
 \item
-  \href{https://www.vadavo.com/blog/switch-poe-que-es-y-que-tipos-hay/}{\textbf{Switch}} \href{https://ca.wikipedia.org/wiki/Power_over_Ethernet}{\textbf{PoE}} , es podria posar una de 4 ports en l'escenari, per a felicitar l'escalat posterior del projecte que no són massa cars, i un switch (aquest no PoE) en les oficines per centralitzar la xarxa. i tirar cable entre ells i les càmeres. Reduint la distància del PoE a les càmeres ip.
+  \href{https://www.vadavo.com/blog/switch-poe-que-es-y-que-tipos-hay/}{\textbf{Switch}} \href{https://ca.wikipedia.org/wiki/Power_over_Ethernet}{\textbf{PoE}}, es podria posar una de 4 ports en l'escenari, per a facilitar l'escalat posterior del projecte que no són massa cars, i un switch (aquest no PoE) en les oficines per centralitzar la xarxa. Tirar cable entre ells i les càmeres. Reduint la distància del PoE a les càmeres ip. ::: \{.rmdtip data-latex=``\{Consell\}''\} Examinat la distribució del teatre, el millor és fer una topologia senzilla de la xarxa, Posar un switch i el servidor, en el quarto de les llums que està centrat, seria un bon joc, i d'alli traure cables a la resta dels departaments. :::
 \item
-  \textbf{Conte} en una plataforma de streaming.
+  \textbf{Conte} en una plataforma de streaming de l'elecció de la sala, youtube, \href{https://www.twitch.tv/}{twitch}.
 \item
   \textbf{Programa de streaming} (OBS, Livestream Studio, Wirecast, vMix, mimoLive o Tricaster) alternatives gratuïtes.
 \item
@@ -393,24 +393,25 @@ Faré proves de tot açò i penjaré el resultat de com es fa.
 \hypertarget{requeriments-per-a-la-seua-implantaciuxf3}{%
 \section{Requeriments per a la seua implantació}\label{requeriments-per-a-la-seua-implantaciuxf3}}
 
-Uns repetidors de wifi, he quedat en un amic que controla del tema per a mirar-ho. S'haguera de pensar si realment es vol instal·lar per tindre cobertura per als 92 espectadors, o es pensa que no tots es connectaran, i començar per un sistema bàsic, ampliable a mesura que augmenten les necessitats.
+Uns repetidors de wifi. S'haguera de pensar si realment es vol instal·lar per tindre cobertura per als 92 espectadors, o es pensa que no tots es connectaran, i començar per un sistema bàsic, ampliable a mesura que augmenten les necessitats. I si es posa, donar-li més ús, no sol accés a internet.
 
 \hypertarget{potuxe8ncia-de-la-connexiuxf3-dinternet-per-donar-servei}{%
 \subsection{Potència de la connexió d'internet per donar servei}\label{potuxe8ncia-de-la-connexiuxf3-dinternet-per-donar-servei}}
 
-Es requereix que l'amplada de banda de la connexió d'internet puga donar servei almenys a 92 espectadors, que es l'afore del pati de butaques.
+Es requereix que l'amplada de banda de la connexió d'internet puga donar servei almenys a 92 espectadors, que se l'afore del pati de butaques.
 
-S'ha de limitar l'amplada de banda que oferim als espectadors en cas de realitzar el streaming al mateix temps, açò ho realitzem assegurant l'amplada de banda en la xarxa del circuit d'imatge. En el switch.
+S'ha de limitar l'amplada de banda que oferim als espectadors en cas de realitzar la reproducció en línia al mateix temps, açò ho realitzem assegurant l'amplada de banda en la xarxa del circuit d'imatge. En el commutador. Es recomana contractar una connexió d'amplada de banda minima 300Mb.
 
 \hypertarget{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}{%
-\subsection{localització dels dispositius de retransmissió}\label{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}}
+\subsection{Localització dels dispositius de retransmissió}\label{localitzaciuxf3-dels-dispositius-de-retransmissiuxf3}}
 
-Hem d'estudiar el número i posicions en la sala perquè la retransmissió siga òptima.
+Hem d'estudiar el número i posicions en la sala perquè la retransmissió siga òptima. En principi si l'antena és bona, en una en l'entrada de la sala d'actes, seria suficient, o en el sostre, damunt l'escenari. Pero en ser una casa vella de parets immenses, segur hi ha problemes, per a tot l'espai. Es poden posar altres no tan potents, no han de donar servei per a tanta gent. \#\# Muntatge
 
-\hypertarget{muntatge-1}{%
-\section{Muntatge}\label{muntatge-1}}
+Antena, una d'aquestes de \href{https://ui.com/wi-fi}{Unifi}, recomane U6 Professional, pero no sé en les parets tan grans que hi ha en la sala, valdrà un sol per a tot l'espai. Es pot posar un altre repetidor sol per al despatx. La idea és fer dues xarxes, una per al públic, en accés a internet i al servidor web intern de promocions, i una altra que tinga accés a la xarxa de l'oficina i recursos del servidor, que podem utilitzar perquè el centre de llums comunique en el servidor de fitxers, utilitzar camera del movil en espectacles, i xat intern.
 
-\texttt{Aci\ descriure\ com\ es\ realitza\ l\textquotesingle{}instal·lacio\ i\ els\ components\ necessaris.}
+Les antenes propostes són PoE, les alimentarem amb el switch, en portar cable de xarxa ja ho tenim.
+
+\href{https://www.ui.com/download/unifi/default/default/unifi-dream-router-datasheet}{Software i documentació}, posar-lo en una VM, en el servidor
 
 \hypertarget{implantaciuxf3-dentorn-git}{%
 \chapter{Implantació d'entorn Git}\label{implantaciuxf3-dentorn-git}}
@@ -788,6 +789,159 @@ ves en cuidaoooo no se si açò tancara o continua fins el mas enllà :::\\
 ```
 
 \end{rmdinfo}
+
+\hypertarget{nextcloud}{%
+\chapter{Nextcloud}\label{nextcloud}}
+
+provem els scripts de \href{https://github.com/nextcloud/vm}{nextcloud/vm} Per instal.lar anem \href{https://linuxiac.com/install-nextcloud-on-ubuntu/}{inst nextcloud} fes la taua \href{https://docs.hanssonit.se/s/W6fMouPiqQz3_Mog/W6fMouPiqQz3_Mog/d/bj0vl4ahv0jgrmfm0950/build-your-own-nextcloud-vm}{vm}
+
+sudo git clone \url{https://github.com/nextcloud/vm.git}
+
+Provar aço en una ubuntu 20.04 que es la compatible. a vore els scripts que tal van, diu que la harderitza a nivell A+
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+per manual
+
+\begin{quote}
+sudo unzip nextcloud-23.0.0.zip -d /var/www/html/\\
+sudo mkdir /var/www/html/nextcloud/data\\
+sudo chown -R www-\url{data:www-data} /var/www/html/nextcloud/
+\end{quote}
+
+a part afegim la carpeta on volem guardar les dades, normalment muntarem en mnt un disc per fer-ho, en este cas ho fem en la carpeta home/nextcloud i li donarem permisos a www-data.
+
+abans
+
+\begin{quote}
+mkdir /home/nextcloud\\
+sudo chown -R www-\url{data:www-data} /home/nextcloud
+\end{quote}
+
+install collabora \href{https://docs.nextcloud.com/server/latest/admin_manual/office/installation.html}{collabora} \href{https://sdk.collaboraonline.com/docs/installation/index.html}{altre oficial} , mirar també els connector de libreoffice, si en aço ja sobra\ldots{} o si el que volen gastar es el Office, hi ha un connector, si ja tenen conter en el online,vincular.
+
+\href{https://thecustomizewindows.com/2018/11/installing-languagetool-grammer-checking-software-on-ubuntu-server/}{languagetool} \href{https://github.com/fiduswriter/fiduswriter-languagetool}{fiduswriter}
+
+Mirar la possibilitat de implantar \href{https://etherpad.org/}{Etherpad} per al treball col.laboratiu d'escriptura, dins el nextcloud.
+
+Mirar tambe:
+
+\href{https://joplinapp.org/}{joplin}\\
+\href{https://github.com/rust-lang/mdBook}{mdbook}
+
+\href{https://ralph.blog.imixs.com/2021/05/07/libreoffice-online-how-to-integrate/}{libreoffice wopi collabora} \href{https://sdk.collaboraonline.com/docs/installation/Installation_from_packages.html}{collabora package}
+
+\hypertarget{pfsense}{%
+\section{Pfsense}\label{pfsense}}
+
+Per exposar el servidor a internet , configurar el tallafoc, i pensar les opcions de fer un vpn o exposar el ports dels serveis que es vol que ens connectem.
+
+\begin{itemize}
+\tightlist
+\item
+  Mes segur un VPN , en contra, el manteniment, el següent administrador ha de gestionar els certificats dels nous usuaris.
+\item
+  Exposar soles els ports de nextcloud, https 443, i des de aci accedir a la resta de serveis que es vol donar. Soles es ha de gestionar donar d'alta als nous usuaris, si es deixa configurat un nombre ampli de grups possibles, soles s'ha de afegir al tipus de grup que volem.
+\end{itemize}
+
+\hypertarget{servidor-1}{%
+\chapter{Servidor}\label{servidor-1}}
+
+Es proposa la compra d'un servidor d'ebay, per fer alli les màquines virtuals que requerim, per desenvolupar el projecte.
+
+\begin{itemize}
+\item
+  En el servidor es vol crear instàncies d'un servidor de disc.
+\item
+  Servidor de pàgines web.
+\item
+  Servidor de Nextcloud.
+\item
+  Maquina virtual per controlar el wifi de la sala.
+\item
+  Tallafocs i entorn de seguretat.
+\item
+  Mirar si es posa un Ldap o en l'entorn de Nextcloud es pot controlar els accessos i recursos servits als usuaris.
+\end{itemize}
+
+Tutorial \href{https://www.youtube.com/watch?v=sshqDf01Xyc}{nextcloud}
+
+\hypertarget{material}{%
+\section{Material}\label{material}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www1.la.dell.com/content/products/productdetails.aspx/poweredge-r320?c=ve\&l=es\&s=corp\&cs=vecorp1}{Servidor}. En \href{https://www.ebay.es/itm/125269454776?hash=item1d2aa42fb8:g:aTIAAOSw3ExiXvm5}{ebai} el podem trobar per uns 250 euros, amb 64G de Ram, podríem estirar més fins als 128G, Pero realment no esn fa falta tanta, per al que volem posar. (mirar més models), té 4 bahies per a hdd on podem fer un Raid 5 en tres d'ells i l'altre pe arrancar les VM. \includegraphics{imatges/server_hp.png} \href{https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/ja/jp/Dell-PowerEdge-R320Technical-Guide.pdf}{Documentació del model}, si va avant, mirar posar un ssd, no està clar. No veig comp amb \href{https://ubuntu.com/certified?category=Server\&vendor=Dell+EMC\&offset=20}{ubuntu}, igual mirar altre server.
+\item
+  Discs durs, admet segons documentació 4 SATA de 4Gb.
+\item
+  Segon targeta de xarxa.(redundància)
+\item
+  Preguntar a Toni el Hypervisor més adequat.
+\item
+  Un Sai, mirar potencia, quan es decideixen el server.
+\end{enumerate}
+
+\hypertarget{avantatges}{%
+\section{Avantatges}\label{avantatges}}
+
+La idea és muntar un servidor de Nextcloud, per l'emmagatzematge dels fitxers de la sala. aprofitar este entorn per a posar també, treball en grup de documents amb \href{https://www.collaboraoffice.com/}{Collabora}, o si els agrada més el plug de MS office en línia. Encara que hi ha altres solucions dins el mateix Nextcloud per a fer treball en grup. Provar d'integrar \href{https://etherpad.org/}{Etherpad} en Nextcoud, en un Docker i afegir-lo al menu.
+
+Crear grups de treball on es puga compartir fitxers, com per exemple, un de redactors de la revista, on puguen discutir sobre els articles a publicar. Un altre per als treballadors, per a l'administració, inclús es pot fer grups per a les companyies convidades per fer els seus espectacles.
+
+Es pot aprofitar el sistema de Talk que té, per poder fer comunicacions entre els membres de l'empresa, entre el comandament de llums i el vestuari dels actors, entre redactors i director de la revista per discutir els articles\ldots{} Amb el seu servei de comunicacions privat.
+
+\hypertarget{pfsense-1}{%
+\subsection{Pfsense}\label{pfsense-1}}
+
+Primer que res, hem de posar un sistema de seguretat o \href{https://en.wikipedia.org/wiki/DMZ_\%28computing\%29}{DZM}, o farem amb \href{https://www.pfsense.org/}{Pfsense}, mitjançant una VM en el servidor.
+
+\begin{rmdtip}{Tip}
+
+A l'hora de configurar el pfsese tenim dues opcions.
+
+\begin{itemize}
+\tightlist
+\item
+  Fer una VPN
+\item
+  Exposar els ports que volem, el 443
+\end{itemize}
+
+\end{rmdtip}
+
+El millor seria fer una VPN, pero per l'administració de després pot ser un poc complicat per a l'empresa, si no tenen un administrador.
+
+Ens decantarem per exposar el port 443.
+
+La configuració la posaré en un apartat posterior.
+
+\hypertarget{ddns}{%
+\subsection{DDNS}\label{ddns}}
+
+Traure conter en un DNS dinàmic. En fer la instal.lació de Nexctcloud VM pels scripts de guithub, ja en s crea un en dedyn.io, mirar altres opcions. A més ens crea un certificat d'aquest domini en Lets encrypt. Mirar la possibilitat de la creació d'un subdomini en el domini de l'empresa, preguntar si tenen les claus del seu domini.
+
+\hypertarget{nextcloud-1}{%
+\subsection{Nextcloud}\label{nextcloud-1}}
+
+Fem servir els \href{https://github.com/nextcloud/vm.git}{scripts} de instal.lacio, que afegeixen millores de seguretat i rendiment.
+
+\begin{rmdtip}{Tip}
+Fer un lvm en el RAID 5 del servidor i donar format ZFS, la VM de Nextcloud en el ssd si el podem posar o en el disc de les VM
+
+\end{rmdtip}
+
+\hypertarget{accuxe9s-point-del-wifi}{%
+\section{Accés point del wifi}\label{accuxe9s-point-del-wifi}}
+
+En una altra VM posar el software que controla les antenes del wifi
+
+\hypertarget{servidor-de-disc-per-al-video}{%
+\section{Servidor de disc per al video}\label{servidor-de-disc-per-al-video}}
+
+Normalment les càmeres ip funcionen en un servidor de ftp on es guarden les gravacions. En el Raid 5 fem una altra partició lvm d'espai per aquest propòsit, i posem un servidor de sftp en una altra VM on també tindrem el servidor web. Aquesta partició de dades la podem compartir per xarxa amb la VM de Nextcloud on podem muntar medis externs i compartir en els usuaris que volem, par a què es puga muntar també en ella, perquè els usuaris puguen veure les gravacions, sols dret de lectura.
 
   \bibliography{book.bib,packages.bib}
 

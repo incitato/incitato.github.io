@@ -14,7 +14,6 @@ installació-de-wifi-per-al-pati-de-butaques
 requeriments-per-a-la-seua-implantació
 potència-de-la-connexió-dinternet-per-donar-servei
 localització-dels-dispositius-de-retransmissió
-muntatge-1
 implantació-dentorn-git
 implantació-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre.
 beneficis-de-la-seua-implantació
@@ -48,3 +47,13 @@ configuració-del-servidor
 altres-coses-a-fer
 notes
 recordatoris
+nextcloud
+pfsense
+servidor-1
+material
+avantatges
+pfsense-1
+ddns
+nextcloud-1
+accés-point-del-wifi
+servidor-de-disc-per-al-video

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Arts escèniques</title>
+  <title>Projecte 10 Nextcloud | Arts escèniques</title>
   <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Arts escèniques" />
+  <meta property="og:title" content="Projecte 10 Nextcloud | Arts escèniques" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="github-repo" content="incitato/prova" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Arts escèniques" />
+  <meta name="twitter:title" content="Projecte 10 Nextcloud | Arts escèniques" />
   
   <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="streaming.html"/>
+<link rel="prev" href="notes.html"/>
+<link rel="next" href="servidor-1.html"/>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -250,27 +250,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Arts escèniques</h1>
-<h2 class="subtitle"><em><p>Projecte de pràctiques d’empresa del grau<br />
-F.P. ASISX<br />
-I.E. Maria Enriquez<br />
-<em>Gandia 2022</em></p></em></h2>
-<p class="author"><em>Ramiro Palau</em></p>
-<p class="date"><em>2022-04-29</em></p>
-</div>
-<div id="about" class="section level1 unnumbered hasAnchor">
-<h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available in PDF output-->
-<div class="rmdcuidao">
-<p><strong>Nota</strong>: El llibre encara està en fase de construcció, disculpeu les faltes ortogràfiques i la incoherència del text</p>
-</div>
-<p>Documentació dels projectes proposats a realitzar en el desenvolupament de les pràctiques realitzades en <strong>Espacio Inestable</strong>.</p>
-<div id="usage" class="section level2 unnumbered hasAnchor">
-<h2>Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Anirem detallant els diferents projectes que se suggereixen per a digitalitzar <em>les arts escèniques</em>, amb una breu descripció de la seua posada en funcionament, requisits, pros i contres.</p>
-<p>En cas afirmatiu s’aniria desenvolupant la manera d’implantar-lo, cost, i detallarem el seu funcionament i configuració.</p>
-<p>La idea, es que aquest document siga una guia per mantenir els projectes elaborats o replicar-los en altres llocs, i anar actualitzant els recursos, com forme evolucione la tecnologia i necessitats de l’empresa.</p>
+<div id="nextcloud" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Projecte 10</span> Nextcloud<a href="nextcloud.html#nextcloud" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>provem els scripts de <a href="https://github.com/nextcloud/vm">nextcloud/vm</a> Per instal.lar anem <a href="https://linuxiac.com/install-nextcloud-on-ubuntu/">inst nextcloud</a> fes la taua <a href="https://docs.hanssonit.se/s/W6fMouPiqQz3_Mog/W6fMouPiqQz3_Mog/d/bj0vl4ahv0jgrmfm0950/build-your-own-nextcloud-vm">vm</a></p>
+<p>sudo git clone <a href="https://github.com/nextcloud/vm.git" class="uri">https://github.com/nextcloud/vm.git</a></p>
+<p>Provar aço en una ubuntu 20.04 que es la compatible. a vore els scripts que tal van, diu que la harderitza a nivell A+</p>
+<hr />
+<p>per manual</p>
+<blockquote>
+<p>sudo unzip nextcloud-23.0.0.zip -d /var/www/html/<br />
+sudo mkdir /var/www/html/nextcloud/data<br />
+sudo chown -R www-<a href="data:www-data" class="uri">data:www-data</a> /var/www/html/nextcloud/</p>
+</blockquote>
+<p>a part afegim la carpeta on volem guardar les dades, normalment muntarem en mnt un disc per fer-ho, en este cas ho fem en la carpeta home/nextcloud i li donarem permisos a www-data.</p>
+<p>abans</p>
+<blockquote>
+<p>mkdir /home/nextcloud<br />
+sudo chown -R www-<a href="data:www-data" class="uri">data:www-data</a> /home/nextcloud</p>
+</blockquote>
+<p>install collabora <a href="https://docs.nextcloud.com/server/latest/admin_manual/office/installation.html">collabora</a> <a href="https://sdk.collaboraonline.com/docs/installation/index.html">altre oficial</a> , mirar també els connector de libreoffice, si en aço ja sobra… o si el que volen gastar es el Office, hi ha un connector, si ja tenen conter en el online,vincular.</p>
+<p><a href="https://thecustomizewindows.com/2018/11/installing-languagetool-grammer-checking-software-on-ubuntu-server/">languagetool</a> <a href="https://github.com/fiduswriter/fiduswriter-languagetool">fiduswriter</a></p>
+<p>Mirar la possibilitat de implantar <a href="https://etherpad.org/">Etherpad</a> per al treball col.laboratiu d’escriptura, dins el nextcloud.</p>
+<p>Mirar tambe:</p>
+<p><a href="https://joplinapp.org/">joplin</a><br />
+<a href="https://github.com/rust-lang/mdBook">mdbook</a></p>
+<p><a href="https://ralph.blog.imixs.com/2021/05/07/libreoffice-online-how-to-integrate/">libreoffice wopi collabora</a> <a href="https://sdk.collaboraonline.com/docs/installation/Installation_from_packages.html">collabora package</a></p>
+<div id="pfsense" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Pfsense<a href="nextcloud.html#pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Per exposar el servidor a internet , configurar el tallafoc, i pensar les opcions de fer un vpn o exposar el ports dels serveis que es vol que ens connectem.</p>
+<ul>
+<li>Mes segur un VPN , en contra, el manteniment, el següent administrador ha de gestionar els certificats dels nous usuaris.</li>
+<li>Exposar soles els ports de nextcloud, https 443, i des de aci accedir a la resta de serveis que es vol donar. Soles es ha de gestionar donar d’alta als nous usuaris, si es deixa configurat un nombre ampli de grups possibles, soles s’ha de afegir al tipus de grup que volem.</li>
+</ul>
 
 </div>
 </div>
@@ -279,8 +290,8 @@ I.E. Maria Enriquez<br />
           </div>
         </div>
       </div>
-
-<a href="streaming.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="servidor-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +322,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/incitato/prova/edit/main/index.Rmd",
+"link": "https://github.com/incitato/prova/edit/main/12-nextcloud.Rmd",
 "text": "Edit"
 },
 "history": {
