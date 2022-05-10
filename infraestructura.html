@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Projecte 7 Configuració del servidor | Arts escèniques</title>
+  <title>Projecte 12 Infraestructura | Arts escèniques</title>
   <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta property="og:title" content="Projecte 12 Infraestructura | Arts escèniques" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="github-repo" content="incitato/prova" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta name="twitter:title" content="Projecte 12 Infraestructura | Arts escèniques" />
   
   <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="remodelat-de-la-fulla-web-de-espacio-inestable.html"/>
-<link rel="next" href="notes.html"/>
+<link rel="prev" href="pfsense-2.html"/>
+<link rel="next" href="servidor-2.html"/>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -318,44 +318,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuració-del-servidor" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Projecte 7</span> Configuració del servidor<a href="configuració-del-servidor.html#configuració-del-servidor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriurem com seria la posada en funcionament del servidor.</p>
-<p>Per dur a terme aquest projecte anem a fer una simulació en una màquina virtual en un Ubuntu server que descarregarem <a href="https://ubuntu.com/download/server">d’Ubuntu server</a>. I simularem que tenim 3 discs durs per a fer un RAID.</p>
-<p><a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">Ubuntu en raid</a></p>
-<p>Anem a fer la instal·lació en format <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels">RAID</a> 5, farien falta 3 discos, però ens assegurem recuperació contra fallades, es pot fer també amb raid 0 on augmenta la velocitat, però no tenim recuperació en fallides d’un disc, es perd tot.</p>
-<p>Hem de decidir si volem el tipus 0, on es té tot l’espai dels discs durs, i augmentem la velocitat de funcionament, o fem un 5 on l’espai d’un dels discs es perd per a fer còpia de paritat, i no és tan ràpid, pel tipus d’empresa, la velocitat punta del 0 no és necessària, i jo primaria la seguretat.</p>
-<p><em>Recomane el tipus 5.</em></p>
-<p>Hem de comprar 3 hd sata depen de la mida valdrà un preu, per exemple <a href="https://www.amazon.es/Blue-256MB-3-5IN-SATA-Sint/dp/B08VH8R94B/ref=sr_1_4?hvadid=79852063937015&amp;hvbmt=be&amp;hvdev=c&amp;hvqmt=e&amp;keywords=hd+2tb+interno&amp;qid=1650128602&amp;refinements=p_n_size_browse-bin%3A10858611031&amp;rnid=949713031&amp;s=computers&amp;sr=1-4">WD Blue 2TB SATA</a> està en Amazon per 44 euros, per 3 discs, 132 euros, i tindríem una capacitat d’emmagatzemament de 4 TB en recuperació si falla un. Si no, es compren 2 per 88 i no fem un tipus 0.</p>
-<div class="rmdnote">
-<p>Exemple de configuració de <a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">RAID 1</a> en aquest tipus es fa una còpia espill dels discs. es perd el 50% de l’espai total per fer la còpia, no crec que interesse. <em>No es el cas que ens interessa.</em></p>
-</div>
-<div class="rmdinfo">
-<p>Aci tenim com muntar un <a href="https://www.tutorialspoint.com/how-to-create-a-raid-5-storage-array-with-mdadm-on-ubuntu-16-04">RAID 5 en Ubuntu</a>, ja en funcionament. Nosaltres començarem des de zero, fent una instal·lació neta.</p>
-</div>
-<p>Mira açò, igual es millor fer un vlm i posar raid després, o formatar en <a href="https://help.ubuntu.com/community/btrfs">btrsf</a> <a href="https://hetmanrecovery.com/recovery_news/how-to-create-software-raid-5-with-lvm.htm">LVM+RAID</a></p>
-<p>Possibilitat de no fer un RAID , fer un lvm en diversos discs i posar sistema de fitxer btrfs en compressió, encara que si el que es guarda es majoritàriament vídeos, no te massa sentit, es perd un poc de rendiment, i si el server no es massa potent, no valdria la pena, te millores en la recuperació d’erros, i em pareix millor per a un sistema en poc manteniment per al futur.</p>
-<p><em>El que cal pensar ara</em> és, sistema en home en espai per a usuaris, o muntar en mnt/espai perquè es guarden els vídeos.</p>
+<div id="infraestructura" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Projecte 12</span> Infraestructura<a href="infraestructura.html#infraestructura" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="xarxa-per-a-la-sala" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Xarxa per a la sala<a href="infraestructura.html#xarxa-per-a-la-sala" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Es proposa la següent configuració de xarxa per a la sala.</p>
 <ul>
-<li>Per una part, tindre carpetes d’usuaris, estaria be, si es posa al final servidor web, i fer que cada usuari servisca des del seu directori públic, o montar el directori per xarxa, per què guarden allí fitxers de recuperació.</li>
-<li>El més segur es que no ho gasten mai. L’opció de fer sol servidor de disc dur, i posar allí una carpeta perquè colguen el que es vol servir per web interna, igual seria millor opció.</li>
+<li>Xarxa de CCTV per al <em>registrament / reproducció en línia</em> de les obres de teatre.</li>
+<li>Xarxa de wifi, pública i una privada.</li>
+<li>Xarxa interna per als treballadors, amb connexió externa per VPN.</li>
 </ul>
-<div class="rmdnote">
-<p>Més que res, és pe a l’hora de fer les particions del disc dur, li donem més a home, o posem el pes de l’espai a la partició d’espai. Clarament, les he de separar, ja que no vull que per una d’aquestes es quede cense espai i que el servidor comence anar malament o directament no funcione per falta d’espai, i més si es guarden allí les captures de reproducció en línia, que per si una d’aquestes, es queda encés, el pot deixar cense disc en poc de temps.</p>
+<p>Pla de la sala</p>
+<div class="figure">
+<img src="imatges/teatre.jpeg" alt="" />
+<p class="caption">pla de la sala</p>
 </div>
-<p>Resoldre el problema dels permisos, que grups crear, que usuaris i que pot fer que.</p>
-<div id="altres-coses-a-fer" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Altres coses a fer<a href="configuració-del-servidor.html#altres-coses-a-fer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="descripció-de-les-instal.lacions" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Descripció de les instal.lacions<a href="infraestructura.html#descripció-de-les-instal.lacions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="oficina" class="section level3 hasAnchor" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> Oficina<a href="infraestructura.html#oficina" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En l’oficina tenim l’entrada de la connexió de fibra a internet. Des d’aci portem la connexió de xarxa al nucli de comunicacions on tenim la infraestructura de la xarxa, el commutador, el servidor, emmagatzematge de disc.
+Des del nucli de comunicacions, tornarem una connexió de xarxa cap a l’oficina per donar accés als serveis interns i eixida a internet.</p>
+</div>
+<div id="sala-despera" class="section level3 hasAnchor" number="12.2.2">
+<h3><span class="header-section-number">12.2.2</span> Sala d’espera<a href="infraestructura.html#sala-despera" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En aquest espai, tenim l’ordinador de venda d’entrades al que li donarem connexió, siga directa al commutador, per la connexió de l’oficina o el canal wifi privant.
+En el centre de la sala aniria l’antena wifi PoE connectada al nucli de comunicacions.</p>
+</div>
+<div id="escenari" class="section level3 hasAnchor" number="12.2.3">
+<h3><span class="header-section-number">12.2.3</span> Escenari<a href="infraestructura.html#escenari" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p>Possible instal·lació d’un NAS</p></li>
-<li><p>Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost, fer un de tipus 0, 1 o 5.</p></li>
-<li><p>Configurar un DNS en el servidor.</p></li>
-<li><p>Configurar un DHCP, de moment ho descartem, si anara a més el wifi en la sala, i es vulga fer més interaccions amb el públic, seria per a estudiar, soles per al número d’ordinador del centre, amb IP fixes, va que el mates.</p></li>
-<li><p>Servidor d’impressió, Configurar el server com a servidor d’impressió.</p></li>
-<li><p>Configurar un servidor web, per als serveis que es poden posar.</p></li>
-<li><p>La web de, es poden posar WordPress per a cada usuari, perquè facen les seues proves, o intentar convèncer de les bondats d’Hugo o Jenkyll, estudiar la seua configuració, creació d’un tema adequat per a la sala, i explicar la forma que el puguen gastar.</p></li>
+<li><p>En la sala d’espectacles es traurien 3 connexions de la xarxa video.</p>
+<ul>
+<li><strong>Central</strong>, baix de la taula de llums, on es connectara un Camera ip PoE fixa.</li>
+<li><strong>Lateral</strong>, una a cada banda de l’escenari, camera desmuntable que es pot traslladar lateralment segons les necessitats de l’obra representada. Es recomana que aquesta siga del tipus PTZ. Podent ser col.locada a la dreta o l’esquerra de l’escenari.</li>
+<li><strong>Micròfon ambient</strong> que el connectarem a la camera central que es fixa.</li>
+</ul></li>
+<li><p>Una connexió per a la xarxa pública, punt per l’antena wifi, al centre del sostre de l’escenari, per donar millor cobertura.</p></li>
+<li><p>Un punt de connexió en el vestuari, per comunicació amb la xarxa interna, que pot donar cobertura a l’escenari en cas de conferències, o altres actes que necessiten bona connexió de xarxa.</p></li>
 </ul>
+</div>
+</div>
+<div id="descripció-de-les-xarxes" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Descripció de les xarxes<a href="infraestructura.html#descripció-de-les-xarxes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>La configuració de les xarxes, la farem amb 3 VLAN.</em></p>
+<div id="vlan-video" class="section level3 hasAnchor" number="12.3.1">
+<h3><span class="header-section-number">12.3.1</span> VLAN Video<a href="infraestructura.html#vlan-video" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Xarxa interna per la qual anirà el circuit intern de televisió, siga per la reproducció en línia o per fer gravació de les obres en el servidor.
+Per aquest propòsit, muntarem en el servidor una VM on guardarem les còpies perquè no siga afectat el rendiment per la resta de serveis. Espai que compartirem en la VLAN d’oficina per poder editar el videos posteriorment.</p>
+<p>Configurarem accés a aquesta Vlan des del punt wifi de l’escenari, per poder gastar el movil com a camera en les representacions.</p>
+</div>
+<div id="vlan-pública" class="section level3 hasAnchor" number="12.3.2">
+<h3><span class="header-section-number">12.3.2</span> VLAN pública<a href="infraestructura.html#vlan-pública" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Xarxa amb connexió a internet per al públic general a través dels punts wifi.
+La podem configurar amb un portal captiu, amb pfSense, donat d’alta un usuari generic amb permís de connectar a certes hores coincidint en les representacions, canviant el password en cada obra, que oferirem al públic per un codi QR.
+Es pot aprofitar aquesta connexió per a redirigir als espectadors en un primer moment a un servidor web propi on publicitar properes obres, donar més informació de l’obra que van a veure, o interactuant amb ells via web en el transcurs de la representació.</p>
+</div>
+<div id="vlan-privat" class="section level3 hasAnchor" number="12.3.3">
+<h3><span class="header-section-number">12.3.3</span> VLAN privat<a href="infraestructura.html#vlan-privat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Xarxa amb connexió a internet i als serveis oferits per la sala.</p>
+<p>Es donaran els següents accessos.</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Taula de llums</em>, perquè puguen accedir a recursos guardats en el servidor, mantenir comunicació amb el vestuari.</p></li>
+<li><p><em>Vestuaris</em>, comunicació o recursos de xarxa a l’escenari.</p></li>
+<li><p><em>Oficines</em>, donar accés a recursos del servidor, donar xarxa a telèfon ip instal.lat.</p></li>
+<li><p><em>Punts wifi</em>, crearem una segona xarxa amb enquesta Vlan en les antenes wifi de sol accés per als treballadors de la sala.</p></li>
+</ol>
 
+</div>
 </div>
 </div>
             </section>
@@ -363,8 +394,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="remodelat-de-la-fulla-web-de-espacio-inestable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pfsense-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="servidor-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -395,7 +426,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/incitato/prova/edit/main/08-ConfiguracioDelServidor.rmd",
+"link": "https://github.com/incitato/prova/edit/main/14-infrastucutra.rmd",
 "text": "Edit"
 },
 "history": {

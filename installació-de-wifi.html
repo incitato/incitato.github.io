@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Projecte 7 Configuració del servidor | Arts escèniques</title>
+  <title>Projecte 15 Instal·lació de wifi | Arts escèniques</title>
   <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta property="og:title" content="Projecte 15 Instal·lació de wifi | Arts escèniques" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="github-repo" content="incitato/prova" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta name="twitter:title" content="Projecte 15 Instal·lació de wifi | Arts escèniques" />
   
   <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="remodelat-de-la-fulla-web-de-espacio-inestable.html"/>
-<link rel="next" href="notes.html"/>
+<link rel="prev" href="switch.html"/>
+<link rel="next" href="rack.html"/>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -318,44 +318,184 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuració-del-servidor" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Projecte 7</span> Configuració del servidor<a href="configuració-del-servidor.html#configuració-del-servidor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriurem com seria la posada en funcionament del servidor.</p>
-<p>Per dur a terme aquest projecte anem a fer una simulació en una màquina virtual en un Ubuntu server que descarregarem <a href="https://ubuntu.com/download/server">d’Ubuntu server</a>. I simularem que tenim 3 discs durs per a fer un RAID.</p>
-<p><a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">Ubuntu en raid</a></p>
-<p>Anem a fer la instal·lació en format <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels">RAID</a> 5, farien falta 3 discos, però ens assegurem recuperació contra fallades, es pot fer també amb raid 0 on augmenta la velocitat, però no tenim recuperació en fallides d’un disc, es perd tot.</p>
-<p>Hem de decidir si volem el tipus 0, on es té tot l’espai dels discs durs, i augmentem la velocitat de funcionament, o fem un 5 on l’espai d’un dels discs es perd per a fer còpia de paritat, i no és tan ràpid, pel tipus d’empresa, la velocitat punta del 0 no és necessària, i jo primaria la seguretat.</p>
-<p><em>Recomane el tipus 5.</em></p>
-<p>Hem de comprar 3 hd sata depen de la mida valdrà un preu, per exemple <a href="https://www.amazon.es/Blue-256MB-3-5IN-SATA-Sint/dp/B08VH8R94B/ref=sr_1_4?hvadid=79852063937015&amp;hvbmt=be&amp;hvdev=c&amp;hvqmt=e&amp;keywords=hd+2tb+interno&amp;qid=1650128602&amp;refinements=p_n_size_browse-bin%3A10858611031&amp;rnid=949713031&amp;s=computers&amp;sr=1-4">WD Blue 2TB SATA</a> està en Amazon per 44 euros, per 3 discs, 132 euros, i tindríem una capacitat d’emmagatzemament de 4 TB en recuperació si falla un. Si no, es compren 2 per 88 i no fem un tipus 0.</p>
-<div class="rmdnote">
-<p>Exemple de configuració de <a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">RAID 1</a> en aquest tipus es fa una còpia espill dels discs. es perd el 50% de l’espai total per fer la còpia, no crec que interesse. <em>No es el cas que ens interessa.</em></p>
+<div id="installació-de-wifi" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Projecte 15</span> Instal·lació de wifi<a href="installació-de-wifi.html#installació-de-wifi" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="requeriments-per-a-la-seua-implantació" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Requeriments per a la seua implantació<a href="installació-de-wifi.html#requeriments-per-a-la-seua-implantació" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Uns repetidors de wifi. S’haguera de pensar si realment es vol instal·lar per tindre cobertura per als 92 espectadors, o es pensa que no tots es connectaran, i començar per un sistema bàsic, ampliable a mesura que augmenten les necessitats. I si es posa, donar-li més ús, no sol accés a internet.</p>
+<div id="potència-de-la-connexió-dinternet-per-donar-servei" class="section level3 hasAnchor" number="15.1.1">
+<h3><span class="header-section-number">15.1.1</span> Potència de la connexió d’internet per donar servei<a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Es requereix que l’amplada de banda de la connexió d’internet puga donar servei almenys a 92 espectadors, que se l’afore del pati de butaques.</p>
+<p>S’ha de limitar l’amplada de banda que oferim als espectadors en cas de realitzar la reproducció en línia al mateix temps, açò ho realitzem assegurant l’amplada de banda en la xarxa del circuit d’imatge. En el commutador. Es recomana contractar una connexió d’amplada de banda minima 300Mb.</p>
 </div>
+<div id="localització-dels-dispositius-de-retransmissió" class="section level3 hasAnchor" number="15.1.2">
+<h3><span class="header-section-number">15.1.2</span> Localització dels dispositius de retransmissió<a href="installació-de-wifi.html#localització-dels-dispositius-de-retransmissió" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hem d’estudiar el número i posicions en la sala perquè la retransmissió siga òptima. En principi si l’antena és bona, en una en l’entrada de la sala d’actes, seria suficient, o en el sostre, damunt l’escenari. Pero en ser una casa vella de parets immenses, segur hi ha problemes, per a tot l’espai. Es poden posar altres no tan potents, no han de donar servei per a tanta gent.</p>
+</div>
+</div>
+<div id="muntatge-1" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Muntatge<a href="installació-de-wifi.html#muntatge-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antena, una d’aquestes de <a href="https://ui.com/wi-fi">Unifi</a>, recomane U6 Professional, pero no sé en les parets tan grans que hi ha en la sala, valdrà un sol per a tot l’espai. Es pot posar un altre repetidor sol per al despatx. La idea és fer dues xarxes, una per al públic, en accés a internet i al servidor web intern de promocions, i una altra que tinga accés a la xarxa de l’oficina i recursos del servidor, que podem utilitzar perquè el centre de llums comunique en el servidor de fitxers, utilitzar camera del movil en espectacles, i xat intern.</p>
+<p>Les antenes proposades són PoE, les alimentarem amb el switch, en portar cable de xarxa ja ho tenim.</p>
+<p><a href="https://www.ui.com/download/unifi/default/default/unifi-dream-router-datasheet">Software i documentació</a>, posar-lo en una VM, en el servidor.
+<a href="https://dl.ui.com/unifi/7.1.61/unifi_sysvinit_all.deb">Paquet .deb</a>, per instal.lar en la màquina que fem servir de servidor. min 2GB de Ram, 20 GB hd.
+<a href="https://dl.ui.com/ds/u6-pro_ds">Especificacions antena pro</a></p>
+</div>
+<div id="com-fer-ho" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Com fer-ho<a href="installació-de-wifi.html#com-fer-ho" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.adamintech.com/ubiquiti-unifi-with-pfsense-and-other-routers/">unifi wifi en pfsense</a></p>
+<p><a href="https://lawrence.technology/networking/unifi-pfsense-deployment-setup-and-planning-with-wifi-vlan-guest-network/">video de la festa</a></p>
+<p>Els punts d’accés WiFi tenen dos tipus: encaminadors híbrids SOHO on tant l’encaminador com els punts d’accés es combinen en un sol per simplificar l’experiència mitjana d’Internet de la casa. Un altre és simplement un punt d’accés WiFi autònom que funciona per si sol i que depèn d’un encaminador independent per a DHCP/encaminament a Internet. Per a això, estudiarem la configuració d’un punt d’accés WiFi autònom amb Ubiquiti UniFi.</p>
+<p>La Ubiquiti UniFi AP-AC Lite admet una velocitat wifi de fins a 300 Mbps a 2,4 GHz i 867 Mbps a una freqüència de 5 GHz.
+Els productes UniFi d’Ubiquiti utilitzen una cosa anomenada “controlador de xarxa UniFi”, que és un programari que s’executa al vostre ordinador/servidor per gestionar diversos punts d’accés i configuració/provisionalment. És necessari per al subministrament per primera vegada del nostre punt d’accés UniFi, però no és necessari que s’execute constantment, ja que tota la configuració s’emmagatzema al mateix dispositiu.</p>
+<p>Comenceu baixant l’instal·lador des d’aquí <a href="https://dl.ui.com/unifi/5.11.46/UniFi-installer.exe">UniFi-Installer</a> .per a windows. El controlador de xarxa UniFi depen de Java per funcionar.</p>
+<p><a href="https://blog.barclayhowe.com/setting-up-a-vlan-in-pfsense-and-unifi/">latra milloor vlan wifi</a></p>
+</div>
+<div id="unifi-ap-amb-pfsense-vlan" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> UniFi AP amb pfSense VLAN<a href="installació-de-wifi.html#unifi-ap-amb-pfsense-vlan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://brendonmatheson.com/2020/03/14/unifi-ap-with-pfsense-vlans.html">altra, una privada i altra publica, soles internet</a></p>
+<div id="infraestructura-1" class="section level3 hasAnchor" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> Infraestructura<a href="installació-de-wifi.html#infraestructura-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Tallafoc/encaminador pfSense construït en un mini-PC sense ventilador amb una CPU Core i5, 8 GB de RAM i 6 NIC en 2 sobra, una per a l’entrada amb l’encaminador i l’altra per a l’eixida.</li>
+<li>UniFi Controller que s’executa en un Raspberry Pi (part del meu projecte de node de control)</li>
+<li>Punt d’accés UniFi nano HD</li>
+</ul>
+<p>Passa del switch per fer les VLAN</p>
+</div>
+<div id="procediment" class="section level3 hasAnchor" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> Procediment<a href="installació-de-wifi.html#procediment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Definiu les VLAN i les subxarxes a pfSense</li>
+<li>Configureu DHCP a pfSense</li>
+<li>Configureu les regles del tallafoc a pfSense</li>
+<li>Mapar les VLAN al controlador UniFi</li>
+<li>Definiu els SSID WiFi al controlador UniFi</li>
+</ul>
+<p>Definir les xarxes wifi</p>
+<ul>
+<li>Privada</li>
+<li>Pública</li>
+<li>Video, No internet</li>
+</ul>
+<p>La diferència entre aquests és que la xarxa privada (Verda) pot accedir als recursos de la xarxa interna, Nextcloud, registrador de video …</p>
+</div>
+<div id="definiu-les-vlan-i-les-subxarxes-a-pfsense" class="section level3 hasAnchor" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> Definiu les VLAN i les subxarxes a pfSense<a href="installació-de-wifi.html#definiu-les-vlan-i-les-subxarxes-a-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Sense etiquetar - “VERD” - per a ordinadors i serveis de confiança a la LAN per cable.</li>
+<li>20 - “Privada” - per a dispositius WiFi de confiança, com ara els nostres telèfons i ordinadors portàtils.</li>
+<li>30 - “Pública” - per a dispositius WiFi no fiables i com ara telèfons i ordinadors portàtils dels convidats.</li>
+</ul>
+<p>Ja tinc el segon port de l’encaminador (igb1) configurat com a VERD amb la subxarxa 192.168.56.0/24.</p>
+<div id="per-crear-les-vlan" class="section level4 hasAnchor" number="15.4.3.1">
+<h4><span class="header-section-number">15.4.3.1</span> Per crear les VLAN:<a href="installació-de-wifi.html#per-crear-les-vlan" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Aneu a Interfícies &gt; Tasques</li>
+<li>Feu clic a la pestanya VLAN</li>
+<li>Feu clic al botó Afegeix per definir la primera VLAN que serà Privada</li>
+<li>Seleccioneu la interfície principal perquè siga igb1: la interfície on es troba la xarxa Verda LAN.</li>
+<li>Introduïu l’etiqueta “20”</li>
+<li>Introduïu la descripció Privada</li>
+<li>Desa</li>
+</ul>
+<p>Repetim els mateixos passos per a la pública i la de video amb 30 i 40 com a VLAN.</p>
+<p>Les tres aniran per la mateixa interface, la LAN em1, <em>mirar de crear tres virtuals, ja que totes estan dins el mateix server, no boba totes ha d’eixir cap a l’encaminador</em></p>
+<p>Més tard afegirem la configuració al commutador perquè puga mapar les VLAN a l’AP, però de moment hem de definir les xarxes per a aquestes VLAN:</p>
+</div>
+<div id="definir-xarxes" class="section level4 hasAnchor" number="15.4.3.2">
+<h4><span class="header-section-number">15.4.3.2</span> Definir xarxes<a href="installació-de-wifi.html#definir-xarxes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Feu clic a la pestanya Assignacions de la interfície</li>
+<li>A la fila inferior de la taula, seleccioneu la primera VLAN “VLAN 20 a igb1 - opt2 (Privat)” i feu clic a Afegeix</li>
+<li>Feu clic al nom de la interfície predeterminat que es va generar per a aquesta interfície per obrir-ne la configuració</li>
+<li>Marqueu Habilita la interfície</li>
+<li>Canvieu la descripció a “Privat” per a més claredat</li>
+<li>A Configuració IPv4 estàtica, introduïu l’adreça de la passarel·la per a aquesta interfície i especifiqueu la mida de la subxarxa. Per a la meua xarxa Privat, li vaig donar la passarel·la 192.168.56.1 amb la subxarxa /24.
+(Li donem la ip 1 de la xarxa a la interfade del pfsense d’aquesta xarxa)</li>
+</ul>
+<p>El mateix per a les altres dues xarxes</p>
+</div>
+<div id="configureu-dhcp-a-pfsense" class="section level4 hasAnchor" number="15.4.3.3">
+<h4><span class="header-section-number">15.4.3.3</span> Configureu DHCP a pfSense<a href="installació-de-wifi.html#configureu-dhcp-a-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ara configurem el servei DHCP per a aquestes tres xarxes VLAN noves:</p>
+<ul>
+<li>Seleccioneu Serveis &gt; Servidor DHCP</li>
+<li>Seleccioneu la pestanya Privat</li>
+<li>Marqueu Habilita DHCP</li>
+<li>Introduïu l’interval DHCP: en el meu cas, vaig triar de 192.168.56.100 a 192.168.56.254.</li>
+<li>Desa</li>
+</ul>
+<p>Repetir el mateix per a les altres dues. Amb xarxa 192.168.80.0/24 per a xarxa pública i 192.168.56.100/24 per a la de video.</p>
 <div class="rmdinfo">
-<p>Aci tenim com muntar un <a href="https://www.tutorialspoint.com/how-to-create-a-raid-5-storage-array-with-mdadm-on-ubuntu-16-04">RAID 5 en Ubuntu</a>, ja en funcionament. Nosaltres començarem des de zero, fent una instal·lació neta.</p>
+<p>L’antena wifi té capacitat per a 300 connexions, l’aforament de públic és de 92, igual haguérem de restringir a 150 la màscara de xarxa, la de video en principi serien és per si es vol connectar algun movil a la xarxa perquè faça de webcam a l’espectacle, l’enregistrador de video, i si es vol connectar la taula de llums, equip de reproducció en continu o edició. La privada els serveis, treballadors, VPN, per wifi, no seran molts, una 15 com a molt.
+Entre video i personal no crec que siguen més de 20 en el millor cas, pero tampoc vull limitar les connexions públiques per si es fa un altre acte amb més aforament. Si es podria reservar una 20 per si de cas amb la màscara de xarxa de la pública.</p>
 </div>
-<p>Mira açò, igual es millor fer un vlm i posar raid després, o formatar en <a href="https://help.ubuntu.com/community/btrfs">btrsf</a> <a href="https://hetmanrecovery.com/recovery_news/how-to-create-software-raid-5-with-lvm.htm">LVM+RAID</a></p>
-<p>Possibilitat de no fer un RAID , fer un lvm en diversos discs i posar sistema de fitxer btrfs en compressió, encara que si el que es guarda es majoritàriament vídeos, no te massa sentit, es perd un poc de rendiment, i si el server no es massa potent, no valdria la pena, te millores en la recuperació d’erros, i em pareix millor per a un sistema en poc manteniment per al futur.</p>
-<p><em>El que cal pensar ara</em> és, sistema en home en espai per a usuaris, o muntar en mnt/espai perquè es guarden els vídeos.</p>
-<ul>
-<li>Per una part, tindre carpetes d’usuaris, estaria be, si es posa al final servidor web, i fer que cada usuari servisca des del seu directori públic, o montar el directori per xarxa, per què guarden allí fitxers de recuperació.</li>
-<li>El més segur es que no ho gasten mai. L’opció de fer sol servidor de disc dur, i posar allí una carpeta perquè colguen el que es vol servir per web interna, igual seria millor opció.</li>
-</ul>
-<div class="rmdnote">
-<p>Més que res, és pe a l’hora de fer les particions del disc dur, li donem més a home, o posem el pes de l’espai a la partició d’espai. Clarament, les he de separar, ja que no vull que per una d’aquestes es quede cense espai i que el servidor comence anar malament o directament no funcione per falta d’espai, i més si es guarden allí les captures de reproducció en línia, que per si una d’aquestes, es queda encés, el pot deixar cense disc en poc de temps.</p>
 </div>
-<p>Resoldre el problema dels permisos, que grups crear, que usuaris i que pot fer que.</p>
-<div id="altres-coses-a-fer" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Altres coses a fer<a href="configuració-del-servidor.html#altres-coses-a-fer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="configura-les-regles-del-tallafoc-a-pfsense" class="section level4 hasAnchor" number="15.4.3.4">
+<h4><span class="header-section-number">15.4.3.4</span> Configura les regles del tallafoc a pfSense<a href="installació-de-wifi.html#configura-les-regles-del-tallafoc-a-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Estableix les regles com s’adrecen per permetre l’entrada o la sortida del trànsit. La diferència clau entre Pública i privat és que privat pot accedir a interna i internet, pública soles a internat, i Video no tindrà accés a internet.</p>
+<p>Això s’aconsegueix definint primer un àlies anomenat rfc1918_networks que agrupa els blocs CIDR per als dominis no encaminables
+Firewall -&gt; aliases -&gt; edit</p>
+<div class="figure">
+<img src="imatges/pfsense_aliase_prov.png" alt="" />
+<p class="caption">aliases providsional</p>
+</div>
+<p>A continuació, definim una regla per permetre les destinacions que no es troben en aquest rang (tingueu en compte el doble negatiu) mentre que la regla de catchall final bloqueja l’accés</p>
+<div class="figure">
+<img src="imatges/regles%20prov.png" alt="" />
+<p class="caption">regles prov</p>
+</div>
+<p>Això permet explícitament que Pública accedisca a Internet (adreces que no són rfc1918) mentre que la regla de catchall bloqueja l’accés a adreces locals a Pública.</p>
+<p><strong>Falta mirar video no vaja a internat, supose sera en action no pass</strong></p>
+</div>
+</div>
+<div id="assigna-les-vlan-al-controlador-unifi" class="section level3 hasAnchor" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> Assigna les VLAN al controlador UniFi<a href="installació-de-wifi.html#assigna-les-vlan-al-controlador-unifi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuació, anem a UniFi Controller per assignar les VLAN als SSID WiFi</p>
 <ul>
-<li><p>Possible instal·lació d’un NAS</p></li>
-<li><p>Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost, fer un de tipus 0, 1 o 5.</p></li>
-<li><p>Configurar un DNS en el servidor.</p></li>
-<li><p>Configurar un DHCP, de moment ho descartem, si anara a més el wifi en la sala, i es vulga fer més interaccions amb el públic, seria per a estudiar, soles per al número d’ordinador del centre, amb IP fixes, va que el mates.</p></li>
-<li><p>Servidor d’impressió, Configurar el server com a servidor d’impressió.</p></li>
-<li><p>Configurar un servidor web, per als serveis que es poden posar.</p></li>
-<li><p>La web de, es poden posar WordPress per a cada usuari, perquè facen les seues proves, o intentar convèncer de les bondats d’Hugo o Jenkyll, estudiar la seua configuració, creació d’un tema adequat per a la sala, i explicar la forma que el puguen gastar.</p></li>
+<li>A la configuració, feu clic a Xarxes i després a Crea una xarxa nova.</li>
+<li>Seleccioneu VLAN Només per al propòsit, poseu un nom a la xarxa Privat i doneu-li l’etiqueta VLAN 20 com vam fer a pfSense</li>
 </ul>
+<div class="figure">
+<img src="imatges/wifi/unifi_01_purple_vlan.png" alt="" />
+<p class="caption">crea wifi privat</p>
+</div>
+<ul>
+<li>Deseu la xarxa i feu el mateix per definir la VLAN Pública</li>
+<li>Després de desar aquestes dues xarxes, es mostraran a la llista de xarxes; confirmeu que són correctes</li>
+</ul>
+<div class="figure">
+<img src="imatges/wifi/unifi_03_vlans.png" alt="" />
+<p class="caption">xarxes wifi</p>
+</div>
+<div id="definiu-els-ssid-de-wifi-a-unifi-controller" class="section level4 hasAnchor" number="15.4.4.1">
+<h4><span class="header-section-number">15.4.4.1</span> Definiu els SSID de WiFi a UniFi Controller<a href="installació-de-wifi.html#definiu-els-ssid-de-wifi-a-unifi-controller" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A continuació, crearem els SSID de WiFi i els enllaçarem a les nostres VLAN</p>
+<ul>
+<li>Al menú Configuració, trieu Xarxes sense fil (just a sobre de Xarxes) i feu clic a Crea una xarxa sense fil nova</li>
+<li>Doneu el nom SSID “Privat” i configureu el xifratge com corresponga (p. ex. WPA-PSK)</li>
+<li>Feu clic a Opcions avançades per mostrar el camp de l’etiqueta VLAN i introduïu 20 perquè aquest SSID gestionarà el trànsit de la VLAN Privat.</li>
+</ul>
+<div class="figure">
+<img src="imatges/wifi/unifi_04_privat_ssid.png" alt="" />
+<p class="caption">xarxa privat ssdi</p>
+</div>
+<p>La publica i video, de la mateixa forma.</p>
+</div>
+</div>
+<div id="unifi-pfsense" class="section level3 hasAnchor" number="15.4.5">
+<h3><span class="header-section-number">15.4.5</span> unifi-pfsense<a href="installació-de-wifi.html#unifi-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un script que instal·la el programari UniFi Controller a pfSense i altres sistemes FreeBSD
+<a href="https://github.com/unofficial-unifi/unifi-pfsense">repositori</a></p>
+<p>Perill, es trenca si pfSense està en MBR
+Aquest script destruirà un sistema BIOS heretat arrencat des d’un volum arrel ZFS amb format MBR Per evitar aquest problema, utilitzeu el mode UEFI si està disponible, feu servir particions GPT o utilitzeu un sistema de fitxers diferent de ZFS.</p>
+<p>L’actualitzador de pfSense eliminarà tot el que instal·leu que no haja arribat a pfSense, inclosos els paquets instal·lats per aquest script.</p>
+<p>Després d’actualitzar pfSense, haureu de tornar a executar aquest script per restaurar les dependències i el programari.</p>
+<p>Massa pegues.</p>
 
+
+</div>
 </div>
 </div>
             </section>
@@ -363,8 +503,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="remodelat-de-la-fulla-web-de-espacio-inestable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="switch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rack.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -395,7 +535,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/incitato/prova/edit/main/08-ConfiguracioDelServidor.rmd",
+"link": "https://github.com/incitato/prova/edit/main/17-wifi.Rmd",
 "text": "Edit"
 },
 "history": {

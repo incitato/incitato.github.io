@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Projecte 11 pfSense | Arts escèniques</title>
+  <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Projecte 11 pfSense | Arts escèniques" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="github-repo" content="incitato/prova" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Projecte 11 pfSense | Arts escèniques" />
+  
+  <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
+  
+
+<meta name="author" content="Ramiro Palau" />
+
+
+<meta name="date" content="2022-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="servidor-1.html"/>
+<link rel="next" href="infraestructura.html"/>
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Arts esceniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html"><i class="fa fa-check"></i><b>1</b> Reproducció en línia</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#materials"><i class="fa fa-check"></i><b>1.1</b> Materials</a></li>
+<li class="chapter" data-level="1.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#projecte-dinstillació"><i class="fa fa-check"></i><b>1.2</b> Projecte d’instil·lació</a></li>
+<li class="chapter" data-level="1.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#pressupost"><i class="fa fa-check"></i><b>1.3</b> Pressupost</a></li>
+<li class="chapter" data-level="1.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#software"><i class="fa fa-check"></i><b>1.4</b> Software</a></li>
+<li class="chapter" data-level="1.5" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#hardware-necessari"><i class="fa fa-check"></i><b>1.5</b> Hardware necessari</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor"><i class="fa fa-check"></i><b>1.5.1</b> Servidor</a></li>
+<li class="chapter" data-level="1.5.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor-de-disc"><i class="fa fa-check"></i><b>1.5.2</b> Servidor de disc</a></li>
+<li class="chapter" data-level="1.5.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres-ip"><i class="fa fa-check"></i><b>1.5.3</b> Càmeres ip</a></li>
+<li class="chapter" data-level="1.5.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#el-compte-del-streaming"><i class="fa fa-check"></i><b>1.5.4</b> El compte del streaming</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#muntatge"><i class="fa fa-check"></i><b>1.6</b> Muntatge</a></li>
+<li class="chapter" data-level="1.7" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres"><i class="fa fa-check"></i><b>1.7</b> càmeres</a></li>
+<li class="chapter" data-level="1.8" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#la-gravadora-nvr"><i class="fa fa-check"></i><b>1.8</b> La gravadora (NVR)</a></li>
+<li class="chapter" data-level="1.9" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#zonaminder"><i class="fa fa-check"></i><b>1.9</b> <span>zonaminder</span></a></li>
+<li class="chapter" data-level="1.10" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#motioneye"><i class="fa fa-check"></i><b>1.10</b> Motioneye</a></li>
+<li class="chapter" data-level="1.11" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#camare-ip-barates"><i class="fa fa-check"></i><b>1.11</b> camare ip barates</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html"><i class="fa fa-check"></i><b>2</b> Implantació d’entorn Git</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#implantació-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre."><i class="fa fa-check"></i><b>2.1</b> Implantació del sistema col·laboratiu en el desenvolupament d’obres de teatre.</a></li>
+<li class="chapter" data-level="2.2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#beneficis-de-la-seua-implantació"><i class="fa fa-check"></i><b>2.2</b> Beneficis de la seua implantació</a></li>
+<li class="chapter" data-level="2.3" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#mode-de-funcionament"><i class="fa fa-check"></i><b>2.3</b> Mode de funcionament</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#breu-tutorial-per-al-funcionament"><i class="fa fa-check"></i><b>2.3.1</b> Breu tutorial per al funcionament</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#installació-dun-repositori-en-el-centre"><i class="fa fa-check"></i><b>2.4</b> Instal·lació d’un repositori en el centre</a></li>
+<li class="chapter" data-level="2.5" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#possible-implantació-en-el-repositori-en-internet"><i class="fa fa-check"></i><b>2.5</b> Possible implantació en el repositori en internet</a></li>
+<li class="chapter" data-level="2.6" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-obsidian"><i class="fa fa-check"></i><b>2.6</b> Explorar <span>Obsidian</span></a></li>
+<li class="chapter" data-level="2.7" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-wikimedia-per-a-la-realització-descriptura-collaborativa"><i class="fa fa-check"></i><b>2.7</b> Explorar Wikimedia per a la realització d’escriptura col·laborativa</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html"><i class="fa fa-check"></i><b>3</b> Migració de les fulles web a Hugo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#avantatges-de-la-migració"><i class="fa fa-check"></i><b>3.1</b> Avantatges de la migració</a></li>
+<li class="chapter" data-level="3.2" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#mode-dimplementar-la-migració"><i class="fa fa-check"></i><b>3.2</b> Mode d’implementar la migració</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#conversió-dels-posts-de-wordpress-a-md"><i class="fa fa-check"></i><b>3.2.1</b> Conversió dels posts de WordPress a md</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#organització-dels-diferents-apartats-de-les-fulles"><i class="fa fa-check"></i><b>3.3</b> Organització dels diferents apartats de les fulles</a></li>
+<li class="chapter" data-level="3.4" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#alternativa-merege-wordpress"><i class="fa fa-check"></i><b>3.4</b> Alternativa, merege WordPress</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html"><i class="fa fa-check"></i><b>4</b> Implantació de projectes Exelearning</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#proposta-dimplantar-donar-cursos-en-la-sala-o-patrocinats-per-la-mateixa"><i class="fa fa-check"></i><b>4.1</b> Proposta d’implantar donar cursos en la sala o patrocinats per la mateixa</a></li>
+<li class="chapter" data-level="4.2" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#funcionament-dexelearning"><i class="fa fa-check"></i><b>4.2</b> Funcionament d’exelearning</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#llocs-on-podem-penjar-el-material-educatiu"><i class="fa fa-check"></i><b>4.2.1</b> Llocs on podem penjar el material educatiu</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#possible-implantació-duna-plataforma-moodle"><i class="fa fa-check"></i><b>4.3</b> Possible implantació d’una plataforma Moodle</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html"><i class="fa fa-check"></i><b>5</b> Desenvolupament Appweb</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#desenvolupament-duna-app-de-gestió-dinformes-de-la-sala"><i class="fa fa-check"></i><b>5.1</b> Desenvolupament d’una app de gestió d’informes de la sala</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#alternatives"><i class="fa fa-check"></i><b>5.1.1</b> Alternatives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#tasques-a-realitzar"><i class="fa fa-check"></i><b>5.2</b> Tasques a realitzar</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html"><i class="fa fa-check"></i><b>6</b> Remodelat de la fulla web de <em>Espacio Inestable</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#reformulació-de-les-estratègies-de-venda-dentrades"><i class="fa fa-check"></i><b>6.1</b> Reformulació de les estratègies de venda d’entrades</a></li>
+<li class="chapter" data-level="6.2" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#installació-del-plugin-de-venda-dentrades-i-tema-per-a-la-fulla-web"><i class="fa fa-check"></i><b>6.2</b> Instal·lació del plugin de venda d’entrades i tema per a la fulla web</a></li>
+<li class="chapter" data-level="6.3" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#tasques-a-fer"><i class="fa fa-check"></i><b>6.3</b> Tasques a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html"><i class="fa fa-check"></i><b>7</b> Configuració del servidor</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html#altres-coses-a-fer"><i class="fa fa-check"></i><b>7.1</b> Altres coses a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>8</b> Notes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="notes.html"><a href="notes.html#recordatoris"><i class="fa fa-check"></i><b>8.1</b> Recordatoris</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="nextcloud.html"><a href="nextcloud.html"><i class="fa fa-check"></i><b>9</b> Nextcloud</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="nextcloud.html"><a href="nextcloud.html#pfsense"><i class="fa fa-check"></i><b>9.1</b> Pfsense</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="servidor-1.html"><a href="servidor-1.html"><i class="fa fa-check"></i><b>10</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="servidor-1.html"><a href="servidor-1.html#material"><i class="fa fa-check"></i><b>10.1</b> Material</a></li>
+<li class="chapter" data-level="10.2" data-path="servidor-1.html"><a href="servidor-1.html#avantatges"><i class="fa fa-check"></i><b>10.2</b> Avantatges</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="servidor-1.html"><a href="servidor-1.html#pfsense-1"><i class="fa fa-check"></i><b>10.2.1</b> Pfsense</a></li>
+<li class="chapter" data-level="10.2.2" data-path="servidor-1.html"><a href="servidor-1.html#ddns"><i class="fa fa-check"></i><b>10.2.2</b> DDNS</a></li>
+<li class="chapter" data-level="10.2.3" data-path="servidor-1.html"><a href="servidor-1.html#nextcloud-1"><i class="fa fa-check"></i><b>10.2.3</b> Nextcloud</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="servidor-1.html"><a href="servidor-1.html#accés-point-del-wifi"><i class="fa fa-check"></i><b>10.3</b> Accés point del wifi</a></li>
+<li class="chapter" data-level="10.4" data-path="servidor-1.html"><a href="servidor-1.html#servidor-de-disc-per-al-video"><i class="fa fa-check"></i><b>10.4</b> Servidor de disc per al video</a></li>
+<li class="chapter" data-level="10.5" data-path="servidor-1.html"><a href="servidor-1.html#pressupost-1"><i class="fa fa-check"></i><b>10.5</b> Pressupost</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="pfsense-2.html"><a href="pfsense-2.html"><i class="fa fa-check"></i><b>11</b> pfSense</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="pfsense-2.html"><a href="pfsense-2.html#per-a-què-el-farem-servir"><i class="fa fa-check"></i><b>11.1</b> Per a què el farem servir</a></li>
+<li class="chapter" data-level="11.2" data-path="pfsense-2.html"><a href="pfsense-2.html#requeriments"><i class="fa fa-check"></i><b>11.2</b> Requeriments</a></li>
+<li class="chapter" data-level="11.3" data-path="pfsense-2.html"><a href="pfsense-2.html#installació"><i class="fa fa-check"></i><b>11.3</b> Instal·lació</a></li>
+<li class="chapter" data-level="11.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració"><i class="fa fa-check"></i><b>11.4</b> Configuració</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="pfsense-2.html"><a href="pfsense-2.html#informació-general"><i class="fa fa-check"></i><b>11.4.1</b> Informació general</a></li>
+<li class="chapter" data-level="11.4.2" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-wan"><i class="fa fa-check"></i><b>11.4.2</b> Configuració WAN</a></li>
+<li class="chapter" data-level="11.4.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-lan"><i class="fa fa-check"></i><b>11.4.3</b> Configuració LAN</a></li>
+<li class="chapter" data-level="11.4.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-de-interfaces"><i class="fa fa-check"></i><b>11.4.4</b> Configuració de interfaces</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="pfsense-2.html"><a href="pfsense-2.html#vpn"><i class="fa fa-check"></i><b>11.5</b> vpn</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="pfsense-2.html"><a href="pfsense-2.html#autenticació"><i class="fa fa-check"></i><b>11.5.1</b> Autenticació</a></li>
+<li class="chapter" data-level="11.5.2" data-path="pfsense-2.html"><a href="pfsense-2.html#firewall"><i class="fa fa-check"></i><b>11.5.2</b> Firewall</a></li>
+<li class="chapter" data-level="11.5.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-òptima-de-xifratge"><i class="fa fa-check"></i><b>11.5.3</b> Configuració òptima de xifratge</a></li>
+<li class="chapter" data-level="11.5.4" data-path="pfsense-2.html"><a href="pfsense-2.html#udp"><i class="fa fa-check"></i><b>11.5.4</b> UDP</a></li>
+<li class="chapter" data-level="11.5.5" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-tls-només-per-a-lautenticació"><i class="fa fa-check"></i><b>11.5.5</b> Utilitzeu TLS només per a l’autenticació</a></li>
+<li class="chapter" data-level="11.5.6" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-la-negociació-de-xifrat-de-dades"><i class="fa fa-check"></i><b>11.5.6</b> Utilitzeu la negociació de xifrat de dades</a></li>
+<li class="chapter" data-level="11.5.7" data-path="pfsense-2.html"><a href="pfsense-2.html#túnels-dividits"><i class="fa fa-check"></i><b>11.5.7</b> Túnels dividits</a></li>
+<li class="chapter" data-level="11.5.8" data-path="pfsense-2.html"><a href="pfsense-2.html#desactiva-la-compressió"><i class="fa fa-check"></i><b>11.5.8</b> Desactiva la compressió</a></li>
+<li class="chapter" data-level="11.5.9" data-path="pfsense-2.html"><a href="pfsense-2.html#connexions-duplicades"><i class="fa fa-check"></i><b>11.5.9</b> Connexions duplicades</a></li>
+<li class="chapter" data-level="11.5.10" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-udp-fast-io"><i class="fa fa-check"></i><b>11.5.10</b> Utilitzeu UDP Fast I/O</a></li>
+<li class="chapter" data-level="11.5.11" data-path="pfsense-2.html"><a href="pfsense-2.html#augmenta-la-memòria-intermèdia-denviamentrecepció"><i class="fa fa-check"></i><b>11.5.11</b> Augmenta la memòria intermèdia d’enviament/recepció</a></li>
+<li class="chapter" data-level="11.5.12" data-path="pfsense-2.html"><a href="pfsense-2.html#openvpn-i-certificats"><i class="fa fa-check"></i><b>11.5.12</b> OpenVPN i certificats</a></li>
+<li class="chapter" data-level="11.5.13" data-path="pfsense-2.html"><a href="pfsense-2.html#mode-de-dispositiu"><i class="fa fa-check"></i><b>11.5.13</b> Mode de dispositiu</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-del-punt-final"><i class="fa fa-check"></i><b>11.6</b> Configuració del punt final</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="infraestructura.html"><a href="infraestructura.html"><i class="fa fa-check"></i><b>12</b> Infraestructura</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="infraestructura.html"><a href="infraestructura.html#xarxa-per-a-la-sala"><i class="fa fa-check"></i><b>12.1</b> Xarxa per a la sala</a></li>
+<li class="chapter" data-level="12.2" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-instal.lacions"><i class="fa fa-check"></i><b>12.2</b> Descripció de les instal.lacions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="infraestructura.html"><a href="infraestructura.html#oficina"><i class="fa fa-check"></i><b>12.2.1</b> Oficina</a></li>
+<li class="chapter" data-level="12.2.2" data-path="infraestructura.html"><a href="infraestructura.html#sala-despera"><i class="fa fa-check"></i><b>12.2.2</b> Sala d’espera</a></li>
+<li class="chapter" data-level="12.2.3" data-path="infraestructura.html"><a href="infraestructura.html#escenari"><i class="fa fa-check"></i><b>12.2.3</b> Escenari</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-xarxes"><i class="fa fa-check"></i><b>12.3</b> Descripció de les xarxes</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="infraestructura.html"><a href="infraestructura.html#vlan-video"><i class="fa fa-check"></i><b>12.3.1</b> VLAN Video</a></li>
+<li class="chapter" data-level="12.3.2" data-path="infraestructura.html"><a href="infraestructura.html#vlan-pública"><i class="fa fa-check"></i><b>12.3.2</b> VLAN pública</a></li>
+<li class="chapter" data-level="12.3.3" data-path="infraestructura.html"><a href="infraestructura.html#vlan-privat"><i class="fa fa-check"></i><b>12.3.3</b> VLAN privat</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="servidor-2.html"><a href="servidor-2.html"><i class="fa fa-check"></i><b>13</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="servidor-2.html"><a href="servidor-2.html#hardware"><i class="fa fa-check"></i><b>13.1</b> Hardware</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="switch.html"><a href="switch.html"><i class="fa fa-check"></i><b>14</b> switch</a></li>
+<li class="chapter" data-level="15" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html"><i class="fa fa-check"></i><b>15</b> Instal·lació de wifi</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#requeriments-per-a-la-seua-implantació"><i class="fa fa-check"></i><b>15.1</b> Requeriments per a la seua implantació</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei"><i class="fa fa-check"></i><b>15.1.1</b> Potència de la connexió d’internet per donar servei</a></li>
+<li class="chapter" data-level="15.1.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#localització-dels-dispositius-de-retransmissió"><i class="fa fa-check"></i><b>15.1.2</b> Localització dels dispositius de retransmissió</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#muntatge-1"><i class="fa fa-check"></i><b>15.2</b> Muntatge</a></li>
+<li class="chapter" data-level="15.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#com-fer-ho"><i class="fa fa-check"></i><b>15.3</b> Com fer-ho</a></li>
+<li class="chapter" data-level="15.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-ap-amb-pfsense-vlan"><i class="fa fa-check"></i><b>15.4</b> UniFi AP amb pfSense VLAN</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#infraestructura-1"><i class="fa fa-check"></i><b>15.4.1</b> Infraestructura</a></li>
+<li class="chapter" data-level="15.4.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#procediment"><i class="fa fa-check"></i><b>15.4.2</b> Procediment</a></li>
+<li class="chapter" data-level="15.4.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#definiu-les-vlan-i-les-subxarxes-a-pfsense"><i class="fa fa-check"></i><b>15.4.3</b> Definiu les VLAN i les subxarxes a pfSense</a></li>
+<li class="chapter" data-level="15.4.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#assigna-les-vlan-al-controlador-unifi"><i class="fa fa-check"></i><b>15.4.4</b> Assigna les VLAN al controlador UniFi</a></li>
+<li class="chapter" data-level="15.4.5" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-pfsense"><i class="fa fa-check"></i><b>15.4.5</b> unifi-pfsense</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="rack.html"><a href="rack.html"><i class="fa fa-check"></i><b>16</b> Rack</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arts escèniques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pfsense-2" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Projecte 11</span> pfSense<a href="pfsense-2.html#pfsense-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Utilitzem <a href="https://docs.netgate.com/pfsense/en/latest">pfsense</a> com a cor de la xarxa</em></p>
+<p>El projecte pfSense® és una distribució personalitzada gratuïta de codi obert de FreeBSD dissenyada per utilitzar-la com a tallafoc i encaminador gestionada completament per una interfície web fàcil d’utilitzar, el programari pfSense inclou una llarga llista de funcions relacionades. El sistema de paquets pfSense permet una major expansió sense afegir vulnerabilitats de seguretat potencials a la distribució base.</p>
+<div id="per-a-què-el-farem-servir" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Per a què el farem servir<a href="pfsense-2.html#per-a-què-el-farem-servir" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><em>Tallafocs perimetrals</em>, pfSense admet xarxes que requereixen diverses connexions a Internet, diverses xarxes LAN i diverses xarxes DMZ. De moment soles configurarem una WAN, pero estarà preparat pel seu escalat si fera falta en un futur, donar més amplada de banda o redundància de connexió a internet.</p></li>
+<li><p><em>Encaminador LAN</em>, per connectar diversos segments de xarxa interna amb VLAN configurades amb troncal 802.1Q.</p></li>
+<li><p><em>Dispositiu VPN</em>, com a dispositiu de xarxa privada virtual independent afegeix capacitats VPN sense interrompre la infraestructura del tallafoc existent i inclou diversos protocols VPN.</p></li>
+<li><p><em>Dispositiu de servidor DHCP</em>, permet que un dispositiu com el programari pfSense® assigne dinàmicament adreces IP als clients des d’un grup d’adreces predefinits. DHCP també envia informació de configuració als clients, com ara una passarel·la, servidors DNS, nom de domini i altres paràmetres útils.</p></li>
+<li><p><em>DNS resolver</em>, el gastarem com a DNS primari.</p></li>
+<li><p>Portal captiu, possibilitat de fer un <em>Hotspot</em> per a la wifi pública. Obliga els usuaris a autenticar-se abans de concedir accés a Internet. Quan siga possible, el tallafoc presenta automàticament una pàgina web d’inici de sessió en la qual l’usuari ha d’introduir credencials com ara un nom d’usuari/contrasenya, un codi de val o un simple acord de clic.</p></li>
+<li><p><em>DDNS</em>, per a configuració del DNS dinàmic i la renovació de credencials.</p></li>
+</ul>
+</div>
+<div id="requeriments" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Requeriments<a href="pfsense-2.html#requeriments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribució de programari pfSense® és compatible amb la majoria de maquinari compatible amb FreeBSD.
+Les versions actuals del programari pfSense són compatibles amb el maquinari d’arquitectura de 64 bits (amd64, x86-64)</p>
+<p><strong>Requisits mínims</strong></p>
+<ul>
+<li><p>CPU compatible amb amd64 (x86-64) de 64 bits</p></li>
+<li><p>1 GB o més de RAM, El propi sistema operatiu, juntament amb altres serveis, requerirà almenys 175-256 MB de RAM addicional i possiblement més segons les funcions utilitzades. Els tallafocs en entorns que requereixen un gran nombre d’estats simultanis han de tenir suficient RAM per a contenir la taula d’estats. Cada estat necessita aproximadament 1 KB de RAM. Cada connexió a través del tallafoc consumeix dos estats: un entrant al tallafoc i un altre que surt del tallafoc.</p></li>
+<li><p>Unitat de disc de 8 GB o més (SSD, HDD, etc.)</p></li>
+<li><p>Una o més targetes d’interfície de xarxa compatibles, <a href="https://www.freebsd.org/cgi/man.cgi?query=bge&amp;sektion=4&amp;format=html">Broadcom 5720</a>, amb driver bge.</p></li>
+</ul>
+<div class="rmdwarn">
+<p>Problemes específics de la targeta Broadcom bce, fer el que recomana el <a href="https://docs.netgate.com/pfsense/en/latest/hardware/tune.html#broadcom-bge-4-cards">manual</a>, La del servidor recomanat és bge, no hauria de tindre problemes.</p>
+</div>
+<ul>
+<li><p>Opcional, Suport de l’accelerador criptogràfic. el servidor recomanat te <a href="https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/ja/jp/Dell-PowerEdge-R320Technical-Guide.pdf">AES-NI</a> pag. 17 del manual. Recomanat per a VPN siga més fluid, i no sature la CPU. No cal seleccionar res perquè OpenVPN utilitze AES-NI, natiu.</p></li>
+<li><p>Unitat USB d’arrencada o unitat òptica d’alta capacitat (DVD o BD) per a la instal·lació inicial</p></li>
+</ul>
+</div>
+<div id="installació" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Instal·lació<a href="pfsense-2.html#installació" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mitjan un dispositiu <a href="https://www.netgate.com/pfsense-plus-software/how-to-buy#appliances">Netgate</a> o viralitzant que és el que gastarem. Descarreguem la <a href="https://www.pfsense.org/download/">imatge</a> AMD64 ISO
+Estem en fase de proves, farem l’instal.lació en Virtual Box.</p>
+<p>Configuració de prova VBox</p>
+<div class="figure">
+<img src="imatges/pfSense_vbox.png" alt="" />
+<p class="caption">pfSense VBox</p>
+</div>
+<div class="rmdnote">
+<p>Recomanem utilitzar hipervisors de tipus 1 per a ús de producció.
+Els hipervisors de tipus 2 com ara VirtualBox o VMware Workstation funcionen bé per a les proves, però eviteu utilitzar-los per a funcions de producció sempre que sigui possible.</p>
+</div>
+<p>La forma d’instal.lació és com qualsevol VM, hem baixat la versió 2.6</p>
+<div class="rmdnote">
+<p>En l’opció 2 definim les ip de les targetes, pfSense les detecta automàticament, pero les he canviat per les proves. En el meu cas de moment és 192.168.0.254 per a la WAN, la que comunica en internet, i la interna LAN 192.168.56.10 per comunicar en vboxnet amb l’amfitrió, no són definitives, la LAN es recomana ser una 172 si es vol fer VPN.</p>
+</div>
+<p>mirar lo de la ip de la WAN, ara es DHCP, canviar la nota</p>
+<p>El que tenim en consola</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="pfsense-2.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">VirtualBox</span> Virtual Machine <span class="at">-</span> Netgate Device ID: 8258d4ba8668f91ae9d7</span>
+<span id="cb6-2"><a href="pfsense-2.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="pfsense-2.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">***</span> Welcome to pfSense 2.6.0-RELEASE <span class="er">(</span><span class="ex">amd64</span><span class="kw">)</span> <span class="ex">on</span> pfsense <span class="pp">***</span></span>
+<span id="cb6-4"><a href="pfsense-2.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="pfsense-2.html#cb6-5" aria-hidden="true" tabindex="-1"></a> <span class="ex">WAN</span> <span class="er">(</span><span class="ex">wan</span><span class="kw">)</span>       <span class="ex">-</span><span class="op">&gt;</span> em0        <span class="at">-</span><span class="op">&gt;</span> v4: 192.168.0.254/24</span>
+<span id="cb6-6"><a href="pfsense-2.html#cb6-6" aria-hidden="true" tabindex="-1"></a> <span class="ex">LAN</span> <span class="er">(</span><span class="ex">lan</span><span class="kw">)</span>       <span class="ex">-</span><span class="op">&gt;</span> em1        <span class="at">-</span><span class="op">&gt;</span> v4: 192.168.56.10/24</span>
+<span id="cb6-7"><a href="pfsense-2.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="pfsense-2.html#cb6-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">0</span><span class="er">)</span> <span class="ex">Logout</span> <span class="er">(</span><span class="ex">SSH</span> only<span class="kw">)</span>                  <span class="ex">9</span><span class="er">)</span> <span class="ex">pfTop</span></span>
+<span id="cb6-9"><a href="pfsense-2.html#cb6-9" aria-hidden="true" tabindex="-1"></a> <span class="ex">1</span><span class="er">)</span> <span class="ex">Assign</span> Interfaces                 10<span class="er">)</span> <span class="ex">Filter</span> Logs</span>
+<span id="cb6-10"><a href="pfsense-2.html#cb6-10" aria-hidden="true" tabindex="-1"></a> <span class="ex">2</span><span class="er">)</span> <span class="ex">Set</span> interface<span class="er">(</span><span class="ex">s</span><span class="kw">)</span> <span class="ex">IP</span> address       11<span class="er">)</span> <span class="ex">Restart</span> webConfigurator</span>
+<span id="cb6-11"><a href="pfsense-2.html#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">3</span><span class="er">)</span> <span class="ex">Reset</span> webConfigurator password    12<span class="er">)</span> <span class="ex">PHP</span> shell + pfSense tools</span>
+<span id="cb6-12"><a href="pfsense-2.html#cb6-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">4</span><span class="er">)</span> <span class="ex">Reset</span> to factory defaults         13<span class="er">)</span> <span class="ex">Update</span> from console</span>
+<span id="cb6-13"><a href="pfsense-2.html#cb6-13" aria-hidden="true" tabindex="-1"></a> <span class="ex">5</span><span class="er">)</span> <span class="ex">Reboot</span> system                     14<span class="er">)</span> <span class="ex">Disable</span> Secure Shell <span class="er">(</span><span class="ex">sshd</span><span class="kw">)</span></span>
+<span id="cb6-14"><a href="pfsense-2.html#cb6-14" aria-hidden="true" tabindex="-1"></a> <span class="ex">6</span><span class="er">)</span> <span class="ex">Halt</span> system                       15<span class="er">)</span> <span class="ex">Restore</span> recent configuration</span>
+<span id="cb6-15"><a href="pfsense-2.html#cb6-15" aria-hidden="true" tabindex="-1"></a> <span class="ex">7</span><span class="er">)</span> <span class="ex">Ping</span> host                         16<span class="er">)</span> <span class="ex">Restart</span> PHP-FPM</span>
+<span id="cb6-16"><a href="pfsense-2.html#cb6-16" aria-hidden="true" tabindex="-1"></a> <span class="ex">8</span><span class="er">)</span> <span class="ex">Shell</span></span>
+<span id="cb6-17"><a href="pfsense-2.html#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="pfsense-2.html#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> an option: </span></code></pre></div>
+<p>Connectant via web i tenim: hem d’accedir des de la xarxa LAN, per defecte el tallafoc bloca la GUI des de la WAN.</p>
+<div class="figure">
+<img src="imatges/pfSense_gui1.png" alt="" />
+<p class="caption">pfsense gui</p>
+</div>
+<p>La resta de configuracions es pot fer mitjançant aquesta GUI.</p>
+</div>
+<div id="configuració" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Configuració<a href="pfsense-2.html#configuració" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Comencem la configuració del pfSense, es pot fer pel wizard o manualment, descriurem breument la manual.</p>
+<div id="informació-general" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> Informació general<a href="pfsense-2.html#informació-general" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En sistema -&gt; configuració general, donarem nom al host i el domini, així com l’idioma de la GUI, NTP, DNS primari.</p>
+<p>El nom del host sera pfsense, i el domini inestable.dedyn.io, ja que em tret un conter en el DDNS de <a href="https://desec.io/">deSEC</a> amb aquest nom.</p>
+<div class="figure">
+<img src="imatges/pfsense_conf1.png" alt="" />
+<p class="caption">pfsense_conf1</p>
+</div>
+<div class="rmdinfo">
+<p>El servidor DNS es poden deixar en blanc si el DNS Resolver està actiu mitjançant la configuració predeterminada. La configuració predeterminada té el DNS Resolver actiu en mode de resolució (no en mode de reenviament), quan s’estableix d’aquesta manera, el DNS Resolver no necessita reenviar servidors DNS, ja que es comunicarà directament amb els servidors DNS arrel i altres servidors DNS autoritzats. Per forçar el tallafoc a utilitzar aquests servidors DNS configurats, activeu el mode de reenviament al DNS Resolver. Mes tard podem fer un ns2 replica i configurar aquesta opció dels dos servidors.</p>
+</div>
+</div>
+<div id="configuració-wan" class="section level3 hasAnchor" number="11.4.2">
+<h3><span class="header-section-number">11.4.2</span> Configuració WAN<a href="pfsense-2.html#configuració-wan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aquesta és la xarxa externa que s’enfronta a l’ISP o a l’encaminador amunt, de manera que l’assistent ofereix opcions de configuració per admetre diversos tipus de connexió d’ISP comuns.</p>
+<ul>
+<li>Tipus WAN, El tipus seleccionat ha de coincidir amb el tipus de WAN requerit per l’ISP, l’opció predeterminada és DHCP a causa del fet que és el més comú, aquesta configuració permet que un tallafoc “Just Work” sense configuració addicional.</li>
+</ul>
+<div class="figure">
+<img src="imatges/pfsense_WAN.png" alt="" />
+<p class="caption">Configuracio WAN</p>
+</div>
+<div class="rmdtip">
+<p>Seleccionem en el tipus DHCP i ques proporcione una ip l’encaminador, la podríem posar en estàtica i ens apareix un nou menu on li donaríem una ip en la mateixa xarxa que l’encaminador, una màscara i la direcció del gateway, l’encaminador.</p>
+</div>
+<div id="bloqueja-les-xarxes" class="section level4 hasAnchor" number="11.4.2.1">
+<h4><span class="header-section-number">11.4.2.1</span> Bloqueja les xarxes<a href="pfsense-2.html#bloqueja-les-xarxes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>privades RFC 1918, Bloqueja les connexions procedents de xarxes privades registrades d’entrar a la interfície WAN.</li>
+<li>Bogon, el tallafoc bloqueja l’entrada de trànsit si prové d’espai IP reservat o no assignat que no s’hauria d’utilitzar. La llista de xarxes bogon s’actualitza periòdicament en segon pla i no requereix cap manteniment manual.</li>
+</ul>
+<p>Seleccionem els dos bloquejos.</p>
+<div class="figure">
+<img src="imatges/pfsense_reservado.png" alt="" />
+<p class="caption">Bloqueja les xarxes</p>
+</div>
+</div>
+</div>
+<div id="configuració-lan" class="section level3 hasAnchor" number="11.4.3">
+<h3><span class="header-section-number">11.4.3</span> Configuració LAN<a href="pfsense-2.html#configuració-lan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tenim dues opcions</p>
+<ul>
+<li>Si aquest tallafoc no es connecta a cap altra xarxa mitjançant VPN, és possible que la 192.168.1.0/24 xarxa predeterminada siga acceptable.</li>
+<li>Si aquesta xarxa s’ha de connectar a una altra xarxa, mitjançant VPN des d’ubicacions remotes, triarem un rang d’adreces IP privades molt més fosc que el predeterminat comú de 192.168.1.0/24. L’espai IP dins del 172.16.0.0/12 bloc d’adreces privades RFC 1918 és generalment el que s’utilitza amb menys freqüència, així que trieu alguna cosa 172.16.x.x per 172.31.x.x evitar les dificultats de connectivitat VPN.</li>
+</ul>
+<div class="rmdwarn">
+<p>Si un client remot es troba en un punt d’accés sense fil utilitzant 192.168.1.x (molt comú), el client no es podrà comunicar a través de la VPN. En aquest cas, 192.168.1.x és la xarxa local del client al punt d’accés, no la xarxa remota a través de la VPN.</p>
+</div>
+<div class="figure">
+<img src="imatges/pfsense_LAN.png" alt="" />
+<p class="caption">Configuració LAN</p>
+</div>
+<div class="rmdnote">
+<p>De moment ho deixarem en la 192.168.56.x per acabar la integració de tots els serveis, i ho modificarem en implementar la VPN.</p>
+</div>
+</div>
+<div id="configuració-de-interfaces" class="section level3 hasAnchor" number="11.4.4">
+<h3><span class="header-section-number">11.4.4</span> Configuració de interfaces<a href="pfsense-2.html#configuració-de-interfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="vpn" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> vpn<a href="pfsense-2.html#vpn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les VPN d’accés remot permeten als usuaris connectar-se de manera segura a una xarxa des de qualsevol lloc on hi haja una connexió a Internet disponible. Per oferir als empleats la possibilitat de treballar des de casa. També pot permetre als contractistes o venedors l’accés temporal a una xarxa. Amb la proliferació de telèfons intel·ligents, els usuaris tenen la necessitat d’accedir de manera segura als serveis interns des dels seus telèfons mitjançant una VPN d’accés remot.</p>
+<p>Les VPN d’accés remot es poden configurar de manera que passe tot el trànsit del sistema client a través de la VPN, té un impacte en el rendiment, LA farem soles per accedir als serveis de l’empresa.</p>
+<div id="autenticació" class="section level3 hasAnchor" number="11.5.1">
+<h3><span class="header-section-number">11.5.1</span> Autenticació<a href="pfsense-2.html#autenticació" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Possibilitats</p>
+<ul>
+<li>IPsec</li>
+<li>OpenVPN</li>
+<li>WireGuard (No recomanable)</li>
+</ul>
+<p>L’ús d’OpenVPN amb certificats, autenticació TLS i autenticació d’usuari és el mètode més segur i més senzill d’implementar. El xifratge es veu compromès si es comprometen les claus privades de l’estructura PKI, tot i que l’ús de múltiples factors com l’autenticació TLS a la part superior de la PKI pot mitigar part del perill.</p>
+<p>OpenVPN requereix l’ús de certificats per a l’accés remot a la majoria d’entorns, que inclou la seua pròpia corba d’aprenentatge i pot ser una mica difícil de gestionar. Hi ha un assistent per gestionar les configuracions d’accés remot d’OpenVPN més habituals i els paquets d’exportació de clients d’OpenVPN faciliten el procés de posar en funcionament els clients.</p>
+<p>OpenVPN té <a href="https://openvpn.net/vpn-client/">clients</a> disponibles per a Windows, Mac OS X, tots els BSD, Linux, Solaris i Windows Mobile, <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn">Android</a>, <a href="https://apps.apple.com/us/app/openvpn-connect/id590379981">iOS</a>, però el client no ve preinstal·lat en cap d’aquests sistemes operatius.
+En funció del desplegament, els clients mòbils (Accés remot) poden rebre una configuració automàtica en determinats casos, poden rebre automàticament una adreça IP (recomanat 172…) assignada des d’un grup, i es poden enviar nombroses opcions addicionals als clients per controlar el seu comportament des del costat del servidor (encaminament, DNS i molts altres).</p>
+</div>
+<div id="firewall" class="section level3 hasAnchor" number="11.5.2">
+<h3><span class="header-section-number">11.5.2</span> Firewall<a href="pfsense-2.html#firewall" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN és molt compatible amb el tallafoc. Com que utilitza un únic port UDP o TCP i no es veu afectat per les funcions NAT habituals. OpenVPN admet NAT entrant (per exemple, reenviaments de ports) i sortint mitjançant la pestanya OpenVPN del grup i també a les interfícies assignades. L’única dificultat possible és si el protocol i el port en ús estan bloquejats. Quan s’assignen com a interfície, les instàncies d’OpenVPN admeten completament les regles per túnel.</p>
+<div id="regles" class="section level4 hasAnchor" number="11.5.2.1">
+<h4><span class="header-section-number">11.5.2.1</span> Regles<a href="pfsense-2.html#regles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>L’assistent VPN d’accés remot d’OpenVPN ofereix, crear regles per passar el trànsit i el trànsit WAN a la interfície d’OpenVPN.
+El trànsit encapsulat dins d’una connexió OpenVPN activa es controla mitjançant regles definides per l’usuari a la pestanya OpenVPN a Firewall &gt; Regles.</p>
+<p>Mirar si fem un LDAP</p>
+</div>
+</div>
+<div id="configuració-òptima-de-xifratge" class="section level3 hasAnchor" number="11.5.3">
+<h3><span class="header-section-number">11.5.3</span> Configuració òptima de xifratge<a href="pfsense-2.html#configuració-òptima-de-xifratge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Utilitzeu maquinari compatible amb AES-NI.</li>
+<li>A la configuració de la Fase 1 (IKE), utilitzeu:
+<ul>
+<li>AES128-GCM amb longitud de clau de 128 bits per a l’algorisme</li>
+<li>AES-XCBC per al hash, que en aquest cas és efectivament una funció pseudoaleatòria (PRF). Això donarà el màxim rendiment en combinació amb AES128-GCM en maquinari que pot accelerar tots dos (per exemple, AES-NI)</li>
+</ul></li>
+<li>A la configuració de la Fase 2 (SA infantil), utilitzeu:
+<ul>
+<li>AES128-GCM amb longitud de clau de 128 bits per a l’algorisme</li>
+<li>No seleccioneu cap algoritme hash. Un algorisme hash no és necessari per a AES-GCM, ja que ja inclou l’autenticació.</li>
+</ul></li>
+</ul>
+</div>
+<div id="udp" class="section level3 hasAnchor" number="11.5.4">
+<h3><span class="header-section-number">11.5.4</span> UDP<a href="pfsense-2.html#udp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>UDP té menys despeses generals per a les dades tunelades i, si un client ha de retransmetre, no augmentarà el problema retransmetent tant dins com fora del túnel.</p>
+</div>
+<div id="utilitzeu-tls-només-per-a-lautenticació" class="section level3 hasAnchor" number="11.5.5">
+<h3><span class="header-section-number">11.5.5</span> Utilitzeu TLS només per a l’autenticació<a href="pfsense-2.html#utilitzeu-tls-només-per-a-lautenticació" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN pot utilitzar TLS tant per a l’autenticació com per al xifratge del canal de control. Realitzar el xifratge del canal de control afegeix més sobrecàrrega, que pot augmentar amb molts clients. Si no cal el xifratge del canal de control, considereu utilitzar TLS només per a l’autenticació. Independentment de quina opció escolliu, el trànsit transportat per OpenVPN està xifrat.</p>
+</div>
+<div id="utilitzeu-la-negociació-de-xifrat-de-dades" class="section level3 hasAnchor" number="11.5.6">
+<h3><span class="header-section-number">11.5.6</span> Utilitzeu la negociació de xifrat de dades<a href="pfsense-2.html#utilitzeu-la-negociació-de-xifrat-de-dades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La negociació de xifratge de dades es pot utilitzar per establir preferències de manera que els clients puguen preferir xifrats més eficients quan siga possible, però es poden utilitzar altres quan siga necessari. Estableix primer seleccions d’alta prioritat com ara AES-128-GCM, seguides d’altres com AES-128-CBC.</p>
+</div>
+<div id="túnels-dividits" class="section level3 hasAnchor" number="11.5.7">
+<h3><span class="header-section-number">11.5.7</span> Túnels dividits<a href="pfsense-2.html#túnels-dividits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El túnel dividit només envia trànsit per a subxarxes específiques a través de la VPN en lloc d’enviar tot el trànsit. Amb OpenVPN, això es pot fer desmarcant les opcions de redirecció de la passarel·la IPv4/IPv6 i configurant les entrades de xarxes locals IPv4/IPv6. Tanmateix, els clients encara poden anul·lar aquest comportament de forma remota, així que comproveu també les configuracions del client.</p>
+</div>
+<div id="desactiva-la-compressió" class="section level3 hasAnchor" number="11.5.8">
+<h3><span class="header-section-number">11.5.8</span> Desactiva la compressió<a href="pfsense-2.html#desactiva-la-compressió" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La majoria de les dades enviades a través de VPN en entorns moderns ja estan xifrades o no es poden comprimir, cosa que malgasta la CPU quan s’intenta comprimir. A més, vulnerabilitats com VORACLE poden permetre als atacants obtenir informació sobre dades xifrades quan s’han comprimit.</p>
+</div>
+<div id="connexions-duplicades" class="section level3 hasAnchor" number="11.5.9">
+<h3><span class="header-section-number">11.5.9</span> Connexions duplicades<a href="pfsense-2.html#connexions-duplicades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Normalment, si un client OpenVPN es connecta utilitzant el mateix nom d’usuari o certificat CN, la connexió anterior es trenca a favor de la nova connexió. Això és més segur, però no permet que cap usuari es connecte diverses vegades. És el cas que tenim, pot estar connectat via web i via app movil.</p>
+</div>
+<div id="utilitzeu-udp-fast-io" class="section level3 hasAnchor" number="11.5.10">
+<h3><span class="header-section-number">11.5.10</span> Utilitzeu UDP Fast I/O<a href="pfsense-2.html#utilitzeu-udp-fast-io" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aquesta opció és experimental, però per a aquells que l’han utilitzat, pot resultar en un rendiment molt més elevat.</p>
+</div>
+<div id="augmenta-la-memòria-intermèdia-denviamentrecepció" class="section level3 hasAnchor" number="11.5.11">
+<h3><span class="header-section-number">11.5.11</span> Augmenta la memòria intermèdia d’enviament/recepció<a href="pfsense-2.html#augmenta-la-memòria-intermèdia-denviamentrecepció" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La mida de memòria intermèdia predeterminada és segura, però no òptima. Augmentar la mida de la memòria intermèdia fins a 512 KiB a ambdós costats pot augmentar el rendiment.</p>
+</div>
+<div id="openvpn-i-certificats" class="section level3 hasAnchor" number="11.5.12">
+<h3><span class="header-section-number">11.5.12</span> OpenVPN i certificats<a href="pfsense-2.html#openvpn-i-certificats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La millor pràctica és utilitzar certificats per a l’accés remot i les VPN de lloc a lloc perquè permet revocar l’accés per a clients o llocs individuals. Idealment, els certificats haurien de ser únics per dispositiu o almenys per usuari.
+Si un client amb un certificat individual està compromès o l’accés s’ha de revocar per qualsevol altre motiu, simplement revoqueu aquest certificat. No hi ha cap altre client afectat.</p>
+<p>La GUI del programari pfSense inclou una interfície de gestió de certificats totalment integrada amb OpenVPN. Les autoritats de certificació (CA) i els certificats de servidor es gestionen al Gestor de certificats a la interfície web, que es troba a Sistema &gt; Gestor de certificats. Els certificats d’usuari també es gestionen a la interfície web, com a part del gestor d’usuaris integrat que es troba a Sistema &gt; Gestor d’usuaris. Els certificats es poden generar per a qualsevol compte d’usuari creat localment al tallafoc, excepte el compte d’administrador predeterminat.</p>
+<ul>
+<li>Peer to Peer (SSL/TLS)</li>
+<li>Peer to Peer (clau compartida)</li>
+<li>Accés remot (SSL/TLS)</li>
+<li>Accés remot (autenticació d’usuari)</li>
+<li>Accés remot (SSL/TLS + autenticació d’usuari)</li>
+</ul>
+<p>Utilitzarem <em>Accés remot (SSL/TLS + autenticació d’usuari)</em></p>
+<p>Aquesta és l’opció més segura disponible. No només obté els avantatges d’altres opcions SSL/TLS, sinó que també requereix un nom d’usuari i una contrasenya del client quan es connecta. L’accés del client es pot eliminar no només revocant el certificat, sinó també canviant la contrasenya. A més, si no es descobreix immediatament una clau compromesa, el perill es redueix perquè és poc probable que l’atacant tinga les claus i la contrasenya.</p>
+</div>
+<div id="mode-de-dispositiu" class="section level3 hasAnchor" number="11.5.13">
+<h3><span class="header-section-number">11.5.13</span> Mode de dispositiu<a href="pfsense-2.html#mode-de-dispositiu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN es pot executar en un dels dos modes de dispositiu:</p>
+<ul>
+<li><p>tun:
+Funciona a la capa 3 OSI i realitza l’encaminament en interfícies punt a punt.</p></li>
+<li><p>Toc:
+Pot funcionar a la capa 2 OSI i pot realitzar tant l’encaminament com el pont si és necessari.</p></li>
+</ul>
+<p>Els clients com els que es troben a Android i iOS només admeten el mode <em>tun</em> a les aplicacions que la majoria de la gent pot utilitzar. Farem servir aquest mode.</p>
+</div>
+</div>
+<div id="configuració-del-punt-final" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Configuració del punt final<a href="pfsense-2.html#configuració-del-punt-final" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="servidor-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="infraestructura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/incitato/prova/edit/main/13-pfsesnse.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Arts_Escèniques.pdf", "Arts_Escèniques.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Projecte 7 Configuració del servidor | Arts escèniques</title>
+  <title>Projecte 13 Servidor | Arts escèniques</title>
   <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta property="og:title" content="Projecte 13 Servidor | Arts escèniques" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
   <meta name="github-repo" content="incitato/prova" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Projecte 7 Configuració del servidor | Arts escèniques" />
+  <meta name="twitter:title" content="Projecte 13 Servidor | Arts escèniques" />
   
   <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="remodelat-de-la-fulla-web-de-espacio-inestable.html"/>
-<link rel="next" href="notes.html"/>
+<link rel="prev" href="infraestructura.html"/>
+<link rel="next" href="switch.html"/>
 <script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -318,43 +318,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="configuració-del-servidor" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Projecte 7</span> Configuració del servidor<a href="configuració-del-servidor.html#configuració-del-servidor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Descriurem com seria la posada en funcionament del servidor.</p>
-<p>Per dur a terme aquest projecte anem a fer una simulació en una màquina virtual en un Ubuntu server que descarregarem <a href="https://ubuntu.com/download/server">d’Ubuntu server</a>. I simularem que tenim 3 discs durs per a fer un RAID.</p>
-<p><a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">Ubuntu en raid</a></p>
-<p>Anem a fer la instal·lació en format <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels">RAID</a> 5, farien falta 3 discos, però ens assegurem recuperació contra fallades, es pot fer també amb raid 0 on augmenta la velocitat, però no tenim recuperació en fallides d’un disc, es perd tot.</p>
-<p>Hem de decidir si volem el tipus 0, on es té tot l’espai dels discs durs, i augmentem la velocitat de funcionament, o fem un 5 on l’espai d’un dels discs es perd per a fer còpia de paritat, i no és tan ràpid, pel tipus d’empresa, la velocitat punta del 0 no és necessària, i jo primaria la seguretat.</p>
-<p><em>Recomane el tipus 5.</em></p>
-<p>Hem de comprar 3 hd sata depen de la mida valdrà un preu, per exemple <a href="https://www.amazon.es/Blue-256MB-3-5IN-SATA-Sint/dp/B08VH8R94B/ref=sr_1_4?hvadid=79852063937015&amp;hvbmt=be&amp;hvdev=c&amp;hvqmt=e&amp;keywords=hd+2tb+interno&amp;qid=1650128602&amp;refinements=p_n_size_browse-bin%3A10858611031&amp;rnid=949713031&amp;s=computers&amp;sr=1-4">WD Blue 2TB SATA</a> està en Amazon per 44 euros, per 3 discs, 132 euros, i tindríem una capacitat d’emmagatzemament de 4 TB en recuperació si falla un. Si no, es compren 2 per 88 i no fem un tipus 0.</p>
-<div class="rmdnote">
-<p>Exemple de configuració de <a href="https://tonyfernandeztech.wordpress.com/2021/04/27/installing-ubuntu-20-04-with-software-raid-1/">RAID 1</a> en aquest tipus es fa una còpia espill dels discs. es perd el 50% de l’espai total per fer la còpia, no crec que interesse. <em>No es el cas que ens interessa.</em></p>
-</div>
-<div class="rmdinfo">
-<p>Aci tenim com muntar un <a href="https://www.tutorialspoint.com/how-to-create-a-raid-5-storage-array-with-mdadm-on-ubuntu-16-04">RAID 5 en Ubuntu</a>, ja en funcionament. Nosaltres començarem des de zero, fent una instal·lació neta.</p>
-</div>
-<p>Mira açò, igual es millor fer un vlm i posar raid després, o formatar en <a href="https://help.ubuntu.com/community/btrfs">btrsf</a> <a href="https://hetmanrecovery.com/recovery_news/how-to-create-software-raid-5-with-lvm.htm">LVM+RAID</a></p>
-<p>Possibilitat de no fer un RAID , fer un lvm en diversos discs i posar sistema de fitxer btrfs en compressió, encara que si el que es guarda es majoritàriament vídeos, no te massa sentit, es perd un poc de rendiment, i si el server no es massa potent, no valdria la pena, te millores en la recuperació d’erros, i em pareix millor per a un sistema en poc manteniment per al futur.</p>
-<p><em>El que cal pensar ara</em> és, sistema en home en espai per a usuaris, o muntar en mnt/espai perquè es guarden els vídeos.</p>
+<div id="servidor-2" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Projecte 13</span> Servidor<a href="servidor-2.html#servidor-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Es proposa la compra d’un servidor d’ebay, Per a fer funcionar els serveis que volem oferir.</p>
+<p>En el servidor volem implantar els següents serveis:</p>
 <ul>
-<li>Per una part, tindre carpetes d’usuaris, estaria be, si es posa al final servidor web, i fer que cada usuari servisca des del seu directori públic, o montar el directori per xarxa, per què guarden allí fitxers de recuperació.</li>
-<li>El més segur es que no ho gasten mai. L’opció de fer sol servidor de disc dur, i posar allí una carpeta perquè colguen el que es vol servir per web interna, igual seria millor opció.</li>
-</ul>
-<div class="rmdnote">
-<p>Més que res, és pe a l’hora de fer les particions del disc dur, li donem més a home, o posem el pes de l’espai a la partició d’espai. Clarament, les he de separar, ja que no vull que per una d’aquestes es quede cense espai i que el servidor comence anar malament o directament no funcione per falta d’espai, i més si es guarden allí les captures de reproducció en línia, que per si una d’aquestes, es queda encés, el pot deixar cense disc en poc de temps.</p>
-</div>
-<p>Resoldre el problema dels permisos, que grups crear, que usuaris i que pot fer que.</p>
-<div id="altres-coses-a-fer" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Altres coses a fer<a href="configuració-del-servidor.html#altres-coses-a-fer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<li><p>Un servidor de disc per a les gravacions de video.</p></li>
+<li><p>Servidor de pàgines web, per a le xarxa pública.</p></li>
+<li><p>Servidor de Nextcloud.</p>
 <ul>
-<li><p>Possible instal·lació d’un NAS</p></li>
-<li><p>Fer les funcions de NAS en el mateix servidor, fer RAID, depenent del pressupost, fer un de tipus 0, 1 o 5.</p></li>
-<li><p>Configurar un DNS en el servidor.</p></li>
-<li><p>Configurar un DHCP, de moment ho descartem, si anara a més el wifi en la sala, i es vulga fer més interaccions amb el públic, seria per a estudiar, soles per al número d’ordinador del centre, amb IP fixes, va que el mates.</p></li>
-<li><p>Servidor d’impressió, Configurar el server com a servidor d’impressió.</p></li>
-<li><p>Configurar un servidor web, per als serveis que es poden posar.</p></li>
-<li><p>La web de, es poden posar WordPress per a cada usuari, perquè facen les seues proves, o intentar convèncer de les bondats d’Hugo o Jenkyll, estudiar la seua configuració, creació d’un tema adequat per a la sala, i explicar la forma que el puguen gastar.</p></li>
+<li>Servei d’espai en el núvol.</li>
+<li>Comunicació entre els membres.</li>
+<li>Serveis ofimàtics col.laboratius.</li>
+<li>Agenda, calendari, integrar noves apps generades per a l’empresa.</li>
+<li>Connectar en enmagtcenament extern per visualitzar o descarregar les gravacions de video.</li>
+</ul></li>
+<li><p>Maquina virtual per controlar el wifi de la sala.</p></li>
+<li><p>Tallafocs, DNS, DHCP, VPN (pfSense).</p></li>
+<li><p>Servidor Ldap per gestionar usuaris Nextcloud i VPN.</p></li>
 </ul>
+<div id="hardware" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Hardware<a href="servidor-2.html#hardware" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><a href="https://www1.la.dell.com/content/products/productdetails.aspx/poweredge-r320?c=ve&amp;l=es&amp;s=corp&amp;cs=vecorp1">Servidor</a>. En <a href="https://www.ebay.es/itm/125269454776?hash=item1d2aa42fb8:g:aTIAAOSw3ExiXvm5">ebai</a> el podem trobar per uns 250 euros + IVA, amb 64G de ram.
+<img src="imatges/serverR320.png" alt="serverR320" /></li>
+</ol>
+<p><strong>Especificacions</strong></p>
+<div class="figure">
+<img src="imatges/server_hp.png" alt="" />
+<p class="caption">server</p>
+</div>
+<div class="rmdnote centre">
+<p><a href="https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/ja/jp/Dell-PowerEdge-R320Technical-Guide.pdf">Documentació del model</a>, i <a href="https://www.dell.com/support/home/en-us/product-support/product/poweredge-r320/docs">manuals</a>, <a href="https://dl.dell.com/topicspdf/poweredge-r320_owners-manual_en-us.pdf">owner manual</a>
+Compatibilitat amb <a href="https://ubuntu.com/certified?category=Server&amp;vendor=Dell+EMC&amp;offset=20">ubuntu server</a>, és compatible amb la versió 14 i posteriors. En la fulla de <a href="https://www.dell.com/support/contents/en-us/article/Product-Support/Self-support-Knowledgebase/enterprise-resource-center/server-operating-system-support">Dell</a></p>
+</div>
+<div class="rmdinfo centre">
+<p>És compatible amb la <a href="https://linux.dell.com/files/supportmatrix/Ubuntu_Support_Matrix.pdf">versió 14.04 LTS</a>, no apareix en la llista, manté la compatibilitat hardware amb les més recents. És un servidor del 2014, pero per als requisits que requerim, pocs usuaris, tràfic limitat, és suficient.
+A una mala Posem <a href="https://www.centos.org/">CentOS</a></p>
+</div>
+<p><em>Dimensions servidor</em>
+<img src="imatges/dimserver.png" alt="dimensions servidor" /></p>
+<p>Cal buscar un rack que done les dimensions.</p>
+<p><a href="https://www.dell.com/support/contents/es-es/videos/videoPlayer/os-deployment-installing-microsoft-windows-2012-r2-operating-system-by-using-lifecycle-controller/6079802988001">video de instal-lació</a></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><em>Discs durs</em>, admet segons documentació 4 SATA 3.5’’ o 8 de 2.5’’ Hot-plug. On fariem RAID per hardware.
+RAID: Kit RAID H710 Mini 512 MB NV (SAS/ SATA ) - 0/1/5/6/10/50/60
+<img src="imatges/ser_h710.png" alt="h710 RAID" />
+Caddies: 4 LFF (3.5”) incluidos</p>
+<p><img src="imatges/ser_hd.png" alt="hd i Raid" />
+Recomane
+<a href="https://www.pcbox.com/st4000dm004-seagate-barracuda--st4000dm004-4000gb-3-5--serial-ata-iii/p">SEAGATE Barracuda ST4000DM004 4000GB 3.5 Serial ATA III</a>
+<a href="https://www.amazon.es/Seagate-Barracuda-Disco-Interno-cach%C3%A9/dp/B0713R3Y6F/ref=sr_1_5?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=JR7AGWGKGDES&amp;keywords=hd%2Bsata%2B4tb&amp;qid=1651315567&amp;sprefix=hd%2Bsata%2B4tb%2Caps%2C93&amp;sr=8-5&amp;th=1">amazon</a>
+<a href="https://www.amazon.com/Seagate-BarraCuda-Internal-Drive-3-5-Inch/dp/B07D9C7SQH/ref=sr_1_1_sspa?keywords=4tb%2Bsata%2Bhard%2Bdrive&amp;qid=1651315472&amp;sr=8-1-spons&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExSldCREdJVFMzRUtNJmVuY3J5cHRlZElkPUEwNTc5NTIwMlRYQzQ0OTA0QVNDOCZlbmNyeXB0ZWRBZElkPUEwNjQxNjk2MjU1VkFSWjM1NVA4MiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU&amp;th=1">amazon usa</a></p>
+<p>Farien falta 3 per a fer Raid, estaria bé tindre un de reserva per si falla un disc, i regenerar el Raid. Si en compren 4, es pot fer un Raid 6 que té dos de paritat.</p>
+<p><code>Tindríem dos discs de 4 TB, que serien 8Gb d'espai efectiu i un de paritat.</code></p></li>
+<li><p>RAM: RAM registrada DDR3 de 64 GB. No és la més rapida del mercat, pero suficient per al que necessitem:</p>
+<ul>
+<li>pfSense Min 1GB (imatge oficial), 2GB</li>
+<li>Servidor HD video 4 GB, si sobra, posar un poc mes, estudiar les demandes de 3 càmeres ip.</li>
+<li>Nextcloud Min 2GB, recomenat + 8GB</li>
+<li>Ldap, web server, antenes wifi, Collabora office server, algun altre servei futur, si es vol mail intern … (he de pensar si fer una altra VM o repartir en vaires) 4GB.</li>
+</ul></li>
+<li><p>UPC: 1x Intel Xeon E5-2440 V2: 8 núcleos, 16 subprocesos, 1,90 GHz (aumento de 2,40 GHz, caché de 20 MB, TDP de 95 W)</p></li>
+<li><p>Segons la informació del venedor.
+&gt; Bisel: No incluido
+<a href="https://www.pccomponentes.com/salicru-rack-rail-kit-accesorio-de-bastidor-480-a-780mm">Rieles</a>: Rieles no incluidos
+Factor de forma: Montaje en rack 1U</p></li>
+</ol>
+<blockquote>
+<p>Parte trasera: 1 puerto RJ-45, Preguntar si no es uno doble. En la documentacio oficial, la serie porta
+<strong>I/O adapter options
+1Gb Ethernet:
+Broadcom 5720 Dual Port 1Gb NIC</strong>
+The Broadcom 5720 is a 14th generation 10/100/1000Base-T Ethernet LAN controller
+Broadcom 5720 2x1Gb Base-T
+<img src="imatges/ser_back.png" alt="server back view" /></p>
+</blockquote>
+<blockquote>
+<p>2 fonts d’alimentació redundants.
+Fuente de alimentación: 2 fuentes de alimentación intercambiables en caliente de Dell
+<strong>Platinum efficiency 350W or 550W power supply</strong></p>
+</blockquote>
+<blockquote>
+<p>Dell OpenManage Systems Management
+OpenManage Essentials</p>
+</blockquote>
+<blockquote>
+<p>Acustica, sobre 30db. El posarem en una habitació fora de l’oficina i la sala. No sera problema.</p>
+</blockquote>
 
 </div>
 </div>
@@ -363,8 +414,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="remodelat-de-la-fulla-web-de-espacio-inestable.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="infraestructura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="switch.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="assets/gitbook-2.6.7/js/app.min.js"></script>
@@ -395,7 +446,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/incitato/prova/edit/main/08-ConfiguracioDelServidor.rmd",
+"link": "https://github.com/incitato/prova/edit/main/15-servidor.rmd",
 "text": "Edit"
 },
 "history": {
