@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitol 19 FreeNas | Arts escèniques</title>
+  <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitol 19 FreeNas | Arts escèniques" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="github-repo" content="incitato/prova" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitol 19 FreeNas | Arts escèniques" />
+  
+  <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
+  
+
+<meta name="author" content="Ramiro Palau" />
+
+
+<meta name="date" content="2022-05-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="proxmox.html"/>
+
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Arts esceniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html"><i class="fa fa-check"></i><b>1</b> Reproducció en línia</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#materials"><i class="fa fa-check"></i><b>1.1</b> Materials</a></li>
+<li class="chapter" data-level="1.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#projecte-dinstillació"><i class="fa fa-check"></i><b>1.2</b> Projecte d’instil·lació</a></li>
+<li class="chapter" data-level="1.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#pressupost"><i class="fa fa-check"></i><b>1.3</b> Pressupost</a></li>
+<li class="chapter" data-level="1.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#software"><i class="fa fa-check"></i><b>1.4</b> Software</a></li>
+<li class="chapter" data-level="1.5" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#hardware-necessari"><i class="fa fa-check"></i><b>1.5</b> Hardware necessari</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor"><i class="fa fa-check"></i><b>1.5.1</b> Servidor</a></li>
+<li class="chapter" data-level="1.5.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor-de-disc"><i class="fa fa-check"></i><b>1.5.2</b> Servidor de disc</a></li>
+<li class="chapter" data-level="1.5.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres-ip"><i class="fa fa-check"></i><b>1.5.3</b> Càmeres ip</a></li>
+<li class="chapter" data-level="1.5.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#el-compte-del-streaming"><i class="fa fa-check"></i><b>1.5.4</b> El compte del streaming</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#muntatge"><i class="fa fa-check"></i><b>1.6</b> Muntatge</a></li>
+<li class="chapter" data-level="1.7" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres"><i class="fa fa-check"></i><b>1.7</b> càmeres</a></li>
+<li class="chapter" data-level="1.8" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#la-gravadora-nvr"><i class="fa fa-check"></i><b>1.8</b> La gravadora (NVR)</a></li>
+<li class="chapter" data-level="1.9" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#zonaminder"><i class="fa fa-check"></i><b>1.9</b> <span>zonaminder</span></a></li>
+<li class="chapter" data-level="1.10" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#motioneye"><i class="fa fa-check"></i><b>1.10</b> Motioneye</a></li>
+<li class="chapter" data-level="1.11" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#camare-ip-barates"><i class="fa fa-check"></i><b>1.11</b> camare ip barates</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html"><i class="fa fa-check"></i><b>2</b> Implantació d’entorn Git</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#implantació-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre."><i class="fa fa-check"></i><b>2.1</b> Implantació del sistema col·laboratiu en el desenvolupament d’obres de teatre.</a></li>
+<li class="chapter" data-level="2.2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#beneficis-de-la-seua-implantació"><i class="fa fa-check"></i><b>2.2</b> Beneficis de la seua implantació</a></li>
+<li class="chapter" data-level="2.3" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#mode-de-funcionament"><i class="fa fa-check"></i><b>2.3</b> Mode de funcionament</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#breu-tutorial-per-al-funcionament"><i class="fa fa-check"></i><b>2.3.1</b> Breu tutorial per al funcionament</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#installació-dun-repositori-en-el-centre"><i class="fa fa-check"></i><b>2.4</b> Instal·lació d’un repositori en el centre</a></li>
+<li class="chapter" data-level="2.5" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#possible-implantació-en-el-repositori-en-internet"><i class="fa fa-check"></i><b>2.5</b> Possible implantació en el repositori en internet</a></li>
+<li class="chapter" data-level="2.6" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-obsidian"><i class="fa fa-check"></i><b>2.6</b> Explorar <span>Obsidian</span></a></li>
+<li class="chapter" data-level="2.7" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-wikimedia-per-a-la-realització-descriptura-collaborativa"><i class="fa fa-check"></i><b>2.7</b> Explorar Wikimedia per a la realització d’escriptura col·laborativa</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html"><i class="fa fa-check"></i><b>3</b> Migració de les fulles web a Hugo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#avantatges-de-la-migració"><i class="fa fa-check"></i><b>3.1</b> Avantatges de la migració</a></li>
+<li class="chapter" data-level="3.2" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#mode-dimplementar-la-migració"><i class="fa fa-check"></i><b>3.2</b> Mode d’implementar la migració</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#conversió-dels-posts-de-wordpress-a-md"><i class="fa fa-check"></i><b>3.2.1</b> Conversió dels posts de WordPress a md</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#organització-dels-diferents-apartats-de-les-fulles"><i class="fa fa-check"></i><b>3.3</b> Organització dels diferents apartats de les fulles</a></li>
+<li class="chapter" data-level="3.4" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#alternativa-merege-wordpress"><i class="fa fa-check"></i><b>3.4</b> Alternativa, merege WordPress</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html"><i class="fa fa-check"></i><b>4</b> Implantació de projectes Exelearning</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#proposta-dimplantar-donar-cursos-en-la-sala-o-patrocinats-per-la-mateixa"><i class="fa fa-check"></i><b>4.1</b> Proposta d’implantar donar cursos en la sala o patrocinats per la mateixa</a></li>
+<li class="chapter" data-level="4.2" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#funcionament-dexelearning"><i class="fa fa-check"></i><b>4.2</b> Funcionament d’exelearning</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#llocs-on-podem-penjar-el-material-educatiu"><i class="fa fa-check"></i><b>4.2.1</b> Llocs on podem penjar el material educatiu</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#possible-implantació-duna-plataforma-moodle"><i class="fa fa-check"></i><b>4.3</b> Possible implantació d’una plataforma Moodle</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html"><i class="fa fa-check"></i><b>5</b> Desenvolupament Appweb</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#desenvolupament-duna-app-de-gestió-dinformes-de-la-sala"><i class="fa fa-check"></i><b>5.1</b> Desenvolupament d’una app de gestió d’informes de la sala</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#alternatives"><i class="fa fa-check"></i><b>5.1.1</b> Alternatives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#tasques-a-realitzar"><i class="fa fa-check"></i><b>5.2</b> Tasques a realitzar</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html"><i class="fa fa-check"></i><b>6</b> Remodelat de la fulla web de <em>Espacio Inestable</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#reformulació-de-les-estratègies-de-venda-dentrades"><i class="fa fa-check"></i><b>6.1</b> Reformulació de les estratègies de venda d’entrades</a></li>
+<li class="chapter" data-level="6.2" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#installació-del-plugin-de-venda-dentrades-i-tema-per-a-la-fulla-web"><i class="fa fa-check"></i><b>6.2</b> Instal·lació del plugin de venda d’entrades i tema per a la fulla web</a></li>
+<li class="chapter" data-level="6.3" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#tasques-a-fer"><i class="fa fa-check"></i><b>6.3</b> Tasques a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html"><i class="fa fa-check"></i><b>7</b> Configuració del servidor</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html#altres-coses-a-fer"><i class="fa fa-check"></i><b>7.1</b> Altres coses a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="nextcloud.html"><a href="nextcloud.html"><i class="fa fa-check"></i><b>8</b> Nextcloud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="nextcloud.html"><a href="nextcloud.html#pfsense"><i class="fa fa-check"></i><b>8.1</b> Pfsense</a></li>
+<li class="chapter" data-level="8.2" data-path="nextcloud.html"><a href="nextcloud.html#ova-a-raw"><i class="fa fa-check"></i><b>8.2</b> OVA a RAW</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="nextcloud.html"><a href="nextcloud.html#opcio-2"><i class="fa fa-check"></i><b>8.2.1</b> opcio 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="nextcloud.html"><a href="nextcloud.html#openldap"><i class="fa fa-check"></i><b>8.3</b> openLDAP</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>9</b> Notes</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="notes.html"><a href="notes.html#recordatoris"><i class="fa fa-check"></i><b>9.1</b> Recordatoris</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="servidor-1.html"><a href="servidor-1.html"><i class="fa fa-check"></i><b>10</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="servidor-1.html"><a href="servidor-1.html#material"><i class="fa fa-check"></i><b>10.1</b> Material</a></li>
+<li class="chapter" data-level="10.2" data-path="servidor-1.html"><a href="servidor-1.html#avantatges"><i class="fa fa-check"></i><b>10.2</b> Avantatges</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="servidor-1.html"><a href="servidor-1.html#pfsense-1"><i class="fa fa-check"></i><b>10.2.1</b> Pfsense</a></li>
+<li class="chapter" data-level="10.2.2" data-path="servidor-1.html"><a href="servidor-1.html#ddns"><i class="fa fa-check"></i><b>10.2.2</b> DDNS</a></li>
+<li class="chapter" data-level="10.2.3" data-path="servidor-1.html"><a href="servidor-1.html#nextcloud-1"><i class="fa fa-check"></i><b>10.2.3</b> Nextcloud</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="servidor-1.html"><a href="servidor-1.html#accés-point-del-wifi"><i class="fa fa-check"></i><b>10.3</b> Accés point del wifi</a></li>
+<li class="chapter" data-level="10.4" data-path="servidor-1.html"><a href="servidor-1.html#servidor-de-disc-per-al-video"><i class="fa fa-check"></i><b>10.4</b> Servidor de disc per al video</a></li>
+<li class="chapter" data-level="10.5" data-path="servidor-1.html"><a href="servidor-1.html#pressupost-1"><i class="fa fa-check"></i><b>10.5</b> Pressupost</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="pfsense-2.html"><a href="pfsense-2.html"><i class="fa fa-check"></i><b>11</b> pfSense</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="pfsense-2.html"><a href="pfsense-2.html#per-a-què-el-farem-servir"><i class="fa fa-check"></i><b>11.1</b> Per a què el farem servir</a></li>
+<li class="chapter" data-level="11.2" data-path="pfsense-2.html"><a href="pfsense-2.html#requeriments"><i class="fa fa-check"></i><b>11.2</b> Requeriments</a></li>
+<li class="chapter" data-level="11.3" data-path="pfsense-2.html"><a href="pfsense-2.html#installació"><i class="fa fa-check"></i><b>11.3</b> Instal·lació</a></li>
+<li class="chapter" data-level="11.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració"><i class="fa fa-check"></i><b>11.4</b> Configuració</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="pfsense-2.html"><a href="pfsense-2.html#informació-general"><i class="fa fa-check"></i><b>11.4.1</b> Informació general</a></li>
+<li class="chapter" data-level="11.4.2" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-wan"><i class="fa fa-check"></i><b>11.4.2</b> Configuració WAN</a></li>
+<li class="chapter" data-level="11.4.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-lan"><i class="fa fa-check"></i><b>11.4.3</b> Configuració LAN</a></li>
+<li class="chapter" data-level="11.4.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuracio-de-les-vlan"><i class="fa fa-check"></i><b>11.4.4</b> Configuracio de les VLAN</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="pfsense-2.html"><a href="pfsense-2.html#vpn"><i class="fa fa-check"></i><b>11.5</b> vpn</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="pfsense-2.html"><a href="pfsense-2.html#autenticació"><i class="fa fa-check"></i><b>11.5.1</b> Autenticació</a></li>
+<li class="chapter" data-level="11.5.2" data-path="pfsense-2.html"><a href="pfsense-2.html#firewall"><i class="fa fa-check"></i><b>11.5.2</b> Firewall</a></li>
+<li class="chapter" data-level="11.5.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-òptima-de-xifratge"><i class="fa fa-check"></i><b>11.5.3</b> Configuració òptima de xifratge</a></li>
+<li class="chapter" data-level="11.5.4" data-path="pfsense-2.html"><a href="pfsense-2.html#udp"><i class="fa fa-check"></i><b>11.5.4</b> UDP</a></li>
+<li class="chapter" data-level="11.5.5" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-tls-només-per-a-lautenticació"><i class="fa fa-check"></i><b>11.5.5</b> Utilitzeu TLS només per a l’autenticació</a></li>
+<li class="chapter" data-level="11.5.6" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-la-negociació-de-xifrat-de-dades"><i class="fa fa-check"></i><b>11.5.6</b> Utilitzeu la negociació de xifrat de dades</a></li>
+<li class="chapter" data-level="11.5.7" data-path="pfsense-2.html"><a href="pfsense-2.html#túnels-dividits"><i class="fa fa-check"></i><b>11.5.7</b> Túnels dividits</a></li>
+<li class="chapter" data-level="11.5.8" data-path="pfsense-2.html"><a href="pfsense-2.html#desactiva-la-compressió"><i class="fa fa-check"></i><b>11.5.8</b> Desactiva la compressió</a></li>
+<li class="chapter" data-level="11.5.9" data-path="pfsense-2.html"><a href="pfsense-2.html#connexions-duplicades"><i class="fa fa-check"></i><b>11.5.9</b> Connexions duplicades</a></li>
+<li class="chapter" data-level="11.5.10" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-udp-fast-io"><i class="fa fa-check"></i><b>11.5.10</b> Utilitzeu UDP Fast I/O</a></li>
+<li class="chapter" data-level="11.5.11" data-path="pfsense-2.html"><a href="pfsense-2.html#augmenta-la-memòria-intermèdia-denviamentrecepció"><i class="fa fa-check"></i><b>11.5.11</b> Augmenta la memòria intermèdia d’enviament/recepció</a></li>
+<li class="chapter" data-level="11.5.12" data-path="pfsense-2.html"><a href="pfsense-2.html#openvpn-i-certificats"><i class="fa fa-check"></i><b>11.5.12</b> OpenVPN i certificats</a></li>
+<li class="chapter" data-level="11.5.13" data-path="pfsense-2.html"><a href="pfsense-2.html#mode-de-dispositiu"><i class="fa fa-check"></i><b>11.5.13</b> Mode de dispositiu</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-del-punt-final"><i class="fa fa-check"></i><b>11.6</b> Configuració del punt final</a></li>
+<li class="chapter" data-level="11.7" data-path="pfsense-2.html"><a href="pfsense-2.html#setup-radius-for-authentication-with-a-pfsense-vpn-server-aci"><i class="fa fa-check"></i><b>11.7</b> Setup Radius For Authentication With A pfSense VPN Server <span>aci</span></a>
+<ul>
+<li class="chapter" data-level="11.7.1" data-path="pfsense-2.html"><a href="pfsense-2.html#configuracio-vlan-en-ubuntu-host"><i class="fa fa-check"></i><b>11.7.1</b> Configuracio VLAN en ubuntu host</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="infraestructura.html"><a href="infraestructura.html"><i class="fa fa-check"></i><b>12</b> Infraestructura</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="infraestructura.html"><a href="infraestructura.html#xarxa-per-a-la-sala"><i class="fa fa-check"></i><b>12.1</b> Xarxa per a la sala</a></li>
+<li class="chapter" data-level="12.2" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-instal.lacions"><i class="fa fa-check"></i><b>12.2</b> Descripció de les instal.lacions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="infraestructura.html"><a href="infraestructura.html#oficina"><i class="fa fa-check"></i><b>12.2.1</b> Oficina</a></li>
+<li class="chapter" data-level="12.2.2" data-path="infraestructura.html"><a href="infraestructura.html#sala-despera"><i class="fa fa-check"></i><b>12.2.2</b> Sala d’espera</a></li>
+<li class="chapter" data-level="12.2.3" data-path="infraestructura.html"><a href="infraestructura.html#escenari"><i class="fa fa-check"></i><b>12.2.3</b> Escenari</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-xarxes"><i class="fa fa-check"></i><b>12.3</b> Descripció de les xarxes</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="infraestructura.html"><a href="infraestructura.html#vlan-video"><i class="fa fa-check"></i><b>12.3.1</b> VLAN Video</a></li>
+<li class="chapter" data-level="12.3.2" data-path="infraestructura.html"><a href="infraestructura.html#vlan-pública"><i class="fa fa-check"></i><b>12.3.2</b> VLAN pública</a></li>
+<li class="chapter" data-level="12.3.3" data-path="infraestructura.html"><a href="infraestructura.html#vlan-privat"><i class="fa fa-check"></i><b>12.3.3</b> VLAN privat</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="servidor-2.html"><a href="servidor-2.html"><i class="fa fa-check"></i><b>13</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="servidor-2.html"><a href="servidor-2.html#hardware"><i class="fa fa-check"></i><b>13.1</b> Hardware</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="switch.html"><a href="switch.html"><i class="fa fa-check"></i><b>14</b> switch</a></li>
+<li class="chapter" data-level="15" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html"><i class="fa fa-check"></i><b>15</b> Instal·lació de wifi</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#requeriments-per-a-la-seua-implantació"><i class="fa fa-check"></i><b>15.1</b> Requeriments per a la seua implantació</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei"><i class="fa fa-check"></i><b>15.1.1</b> Potència de la connexió d’internet per donar servei</a></li>
+<li class="chapter" data-level="15.1.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#localització-dels-dispositius-de-retransmissió"><i class="fa fa-check"></i><b>15.1.2</b> Localització dels dispositius de retransmissió</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#muntatge-1"><i class="fa fa-check"></i><b>15.2</b> Muntatge</a></li>
+<li class="chapter" data-level="15.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#com-fer-ho"><i class="fa fa-check"></i><b>15.3</b> Com fer-ho</a></li>
+<li class="chapter" data-level="15.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-ap-amb-pfsense-vlan"><i class="fa fa-check"></i><b>15.4</b> UniFi AP amb pfSense VLAN</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#infraestructura-1"><i class="fa fa-check"></i><b>15.4.1</b> Infraestructura</a></li>
+<li class="chapter" data-level="15.4.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#procediment"><i class="fa fa-check"></i><b>15.4.2</b> Procediment</a></li>
+<li class="chapter" data-level="15.4.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#definiu-les-vlan-i-les-subxarxes-a-pfsense"><i class="fa fa-check"></i><b>15.4.3</b> Definiu les VLAN i les subxarxes a pfSense</a></li>
+<li class="chapter" data-level="15.4.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#assigna-les-vlan-al-controlador-unifi"><i class="fa fa-check"></i><b>15.4.4</b> Assigna les VLAN al controlador UniFi</a></li>
+<li class="chapter" data-level="15.4.5" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-pfsense"><i class="fa fa-check"></i><b>15.4.5</b> unifi-pfsense</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="cameres.html"><a href="cameres.html"><i class="fa fa-check"></i><b>16</b> cameres</a></li>
+<li class="chapter" data-level="17" data-path="open-vswitch.html"><a href="open-vswitch.html"><i class="fa fa-check"></i><b>17</b> Open vswitch</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="open-vswitch.html"><a href="open-vswitch.html#funcionament"><i class="fa fa-check"></i><b>17.1</b> Funcionament</a></li>
+<li class="chapter" data-level="17.2" data-path="open-vswitch.html"><a href="open-vswitch.html#configuració-de-la-xarxa-proxmox"><i class="fa fa-check"></i><b>17.2</b> Configuració de la xarxa Proxmox</a></li>
+<li class="chapter" data-level="17.3" data-path="open-vswitch.html"><a href="open-vswitch.html#configuració-de-pfsense"><i class="fa fa-check"></i><b>17.3</b> Configuració de pfSense</a></li>
+<li class="chapter" data-level="17.4" data-path="open-vswitch.html"><a href="open-vswitch.html#xarxa-pfsense"><i class="fa fa-check"></i><b>17.4</b> Xarxa pfSense</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="open-vswitch.html"><a href="open-vswitch.html#vlans"><i class="fa fa-check"></i><b>17.4.1</b> vlans</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="open-vswitch.html"><a href="open-vswitch.html#open-vswitch-en-ubuntu"><i class="fa fa-check"></i><b>17.5</b> open vswitch en Ubuntu</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="proxmox.html"><a href="proxmox.html"><i class="fa fa-check"></i><b>18</b> Proxmox</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="proxmox.html"><a href="proxmox.html#preliminars"><i class="fa fa-check"></i><b>18.1</b> Preliminars</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="proxmox.html"><a href="proxmox.html#segon-intercace-post-install"><i class="fa fa-check"></i><b>18.1.1</b> Segon intercace, post install</a></li>
+<li class="chapter" data-level="18.1.2" data-path="proxmox.html"><a href="proxmox.html#servidor-nfs-en-local"><i class="fa fa-check"></i><b>18.1.2</b> Servidor NFS en local</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="proxmox.html"><a href="proxmox.html#pasem-a-instal.lar-proxmox-en-una-vm-amb-kvm"><i class="fa fa-check"></i><b>18.2</b> Pasem a instal.lar Proxmox en una VM amb KVM</a></li>
+<li class="chapter" data-level="18.3" data-path="proxmox.html"><a href="proxmox.html#arranquem-la-instal.lacio"><i class="fa fa-check"></i><b>18.3</b> Arranquem la instal.lacio</a></li>
+<li class="chapter" data-level="18.4" data-path="proxmox.html"><a href="proxmox.html#primeres-configuracions"><i class="fa fa-check"></i><b>18.4</b> Primeres configuracions</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="proxmox.html"><a href="proxmox.html#afegir-un-nou-hd"><i class="fa fa-check"></i><b>18.4.1</b> Afegir un nou HD</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="freenas.html"><a href="freenas.html"><i class="fa fa-check"></i><b>19</b> FreeNas</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="freenas.html"><a href="freenas.html#instalar-truenass"><i class="fa fa-check"></i><b>19.1</b> instalar Truenass</a></li>
+<li class="chapter" data-level="19.2" data-path="freenas.html"><a href="freenas.html#afegim-els-discs-a-proxmox"><i class="fa fa-check"></i><b>19.2</b> Afegim els discs a Proxmox</a></li>
+<li class="chapter" data-level="19.3" data-path="freenas.html"><a href="freenas.html#volums"><i class="fa fa-check"></i><b>19.3</b> Volums</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="freenas.html"><a href="freenas.html#zfs"><i class="fa fa-check"></i><b>19.3.1</b> ZFS</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arts escèniques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="freenas" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">Capitol 19</span> FreeNas<a href="freenas.html#freenas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="instalar-truenass" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> instalar Truenass<a href="freenas.html#instalar-truenass" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Anem a instal.lar TrueNass</p>
+<div class="figure">
+<img src="imatges/proxmox/install_truenass.gif" alt="" />
+<p class="caption">instal.lar TrueNass</p>
+</div>
+<p>Afegirem disc de pas, discs reals</p>
+<p>Creant un amfitrió de virtualització Proxmox amb un servidor NAS integrat. Instal·leu el NAS com qualsevol altra màquina virtual amb el seu sistema operatiu residint en un disc virtual. Tanmateix, les unitats d’emmagatzematge reals residiran a l’emmagatzematge físic LVM assignat mitjançant una tècnica coneguda com a pas de maquinari.</p>
+<p>Aquest mètode permet una còpia de seguretat molt petita perquè només feu una còpia de seguretat del sistema operatiu NAS i NO de les dades. També proporciona un rendiment de disc moderadament millor per als cicles de lectura/escriptura</p>
+<p>El més gran avantatge és que les vostres dades NO s’emmagatzemen en un fitxer de disc virtual! Fins i tot si destruïu la VM, les dades romandran segures!</p>
+<p>Afegim el disc a FreeNas</p>
+<p>Per buscar els discs durs en FreeNas</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="freenas.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /proc/partitions</span></code></pre></div>
+<p>Podem crea un LVM o un ZFS, per aquest espai</p>
+<p>Afegim 3 discs durs, tenim dues opcions</p>
+<ul>
+<li><p>Fer una RAID0 en dos discs i un altre volum en l’altre disc per fer les còpies de seguretat.</p>
+<p>En el primer volum de dos discs, es on guardarem les dades del nextcloud i les captures de video, I en el segon volum, el tercer disc dur farem un volum on guardarem les còpies de seguretat de les VM i la còpia de seguretat de dades de Nextcloud i còpies de les captures de video se la carpeta ja editada, Per la forma de treballar, igual no ens interessa còpies de totes les captures de video de les obres, ja que es vol oferir com un servei per a les companyies que representen i després esborrar-les, i soles algunes còpies de les obres pròpies si que es voldrien guardar i tindre resguard. si fem un RAID 1 sobrecarreguem el sistema FreeNas en càlculs fent el disc de paritat, per a la major part de les dades no ens interessa.</p></li>
+</ul>
+<p>En cas de catàstrofe</p>
+<ol style="list-style-type: decimal">
+<li>En cas de catàstrofe d’un dels discs del volum 1, es canvia i es restaura les còpies de seguretat.</li>
+<li>En cas de desastre en disc de còpies de seguretat, es canvia i es regeneren les imatges de les VM i es torna a fer copia de seguretat de les dades</li>
+<li>En cas de catàstrofe en el ssd on esta el proxmox, el canviem, instal.lem altra vegada Proxmos, connectem en el volum de còpies de seguretat i restaurem la configuració de proxmox i les VM.</li>
+</ol>
+<blockquote>
+<p><strong>nota</strong> Una altra ventaja d’aquest mètode es que amb RAID0 la velocitat del disc format d’aquesta forma es mes rapid, ja que reparteix la lectura i escriptura entre els dos discs, si li donem molta resolució a les càmeres igual si vindria be este plus de velocitat front al de seguretat, si al mateix temps estan utilitzant el Nextcloud per llegir fitxers,</p>
+</blockquote>
+<ul>
+<li>Fer un RAID 1 en el tres discs. Fer un volum en el tres discs i guardar alli el backup, les dades i els videos, cada u en el seu subvolu.</li>
+</ul>
+<p>En cas de catàstrofe</p>
+<ol style="list-style-type: decimal">
+<li>En cas de catàstrofe del ssd, igual que en cas anterior</li>
+<li>En cas de catàstrofe d’un dels 3 discs, es canvia i es regenera el RAID automàticament, es procés pot ser mes lent que el de tornar a copiar les dades de des del backup. Ja que tindríem moltes dades que realment no volem que es tornarien a regenerar,</li>
+</ol>
+</div>
+<div id="afegim-els-discs-a-proxmox" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Afegim els discs a Proxmox<a href="freenas.html#afegim-els-discs-a-proxmox" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la realitat, li posaríem els discs en les valdes del servidor.
+En l’edició de proves, em creat tres discs durs virtuals en format qcow2 en la partició HD portàtil, no SSD.</p>
+<div class="figure">
+<img src="imatges/proxmox/Afegir_disc_pro1.png" alt="" />
+<p class="caption">seleccionar disc durs</p>
+</div>
+<div class="figure">
+<img src="imatges/proxmox/afegir_disc_pro2.png" alt="" />
+<p class="caption">afegir discs</p>
+</div>
+<p>Em elegit tipus de bus VirtiO que es el que en principi dona mes rendiment i ens deixa fer mes coses, si dona problemes es pot elegir SATA que es el real.</p>
+</div>
+<div id="volums" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Volums<a href="freenas.html#volums" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ara hem d’elegir el tipus de volum que volem crear, LVM o ZFS.</p>
+<p>En principi LVM es mes pràctic i els requisits de hardware, en concret de RAM es minim, arranque qualsevol linux, muntem el volum i accedim a les dades, en ZFS el mateix, pero no es tan usual i els requisits de RAM per aquest volum es mes alt, es recomana minim 4GiB pero l’òptim es 8GiB i 1GiB per cada Tera de mes, en el nostre cas, si es compra el servidor en 64GiB de RAM, no seria problema, ja que la resta de VM no tenen gran demanda de RAM.</p>
+<blockquote>
+<p><strong>nota</strong> ZFS depèn molt de la memòria, de manera que necessiteu almenys 8 GB per començar. A la pràctica, utilitzeu tot el que pugueu obtenir pel vostre maquinari/pressupost. Si no tenim tanta RAM es pot gastar un disc SSD que sol ser mes barat, es pot comprar en altre SSD de menor capacitat per fer aço, no recomane fer-ho en una particio del l’arrel de Proxmox, aço el desgasta molt i tenim mes probabilitat que falle mes rapaidament. Es posa un ecundari, i quant falle es canvia, pero si tenim RAM millor, i es el cas.</p>
+</blockquote>
+<blockquote>
+<p>Crea un grup nou amb memòria cau (L2ARC)
+És possible utilitzar una partició d’unitat de memòria cau dedicada per augmentar el rendiment (utilitza SSD).
+Com a device és possible utilitzar més dispositius, com es mostra a “Crea un grup nou amb RAID*“.</p>
+</blockquote>
+<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="freenas.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zpool create <span class="at">-f</span> <span class="at">-o</span> ashift=12 <span class="op">&lt;</span>pool<span class="op">&gt;</span> <span class="op">&lt;</span>device<span class="op">&gt;</span> cache <span class="op">&lt;</span>cache_device<span class="op">&gt;</span></span></code></pre></div>
+<p><strong>bla bla …pasando de explicar</strong></p>
+<p>Elegim ZFS</p>
+<div id="zfs" class="section level3 hasAnchor" number="19.3.1">
+<h3><span class="header-section-number">19.3.1</span> ZFS<a href="freenas.html#zfs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ZFS és un sistema de fitxers combinat i un gestor de volums lògics dissenyat per Sun Microsystems.
+L’emmagatzematge ZFS és una combinació de sistema de fitxers i LVM, que proporciona emmagatzematge d’alta capacitat amb funcions importants, com ara protecció de dades, compressió de dades, autocuració i instantànies. ZFS té un RAID definit per programari integrat, que fa que l’ús de RAID basat en maquinari sigui innecessari.</p>
+<blockquote>
+<p><strong>nota</strong> Una matriu de discs amb ZFS RAID es pot migrar a un node completament diferent i després importar-la completament sense reconstruir tota la matriu. Només podem emmagatzemar imatges de disc virtual en format .raw a l’emmagatzematge ZFS.</p>
+</blockquote>
+<p>Mitjançant l’ús de ZFS, és possible aconseguir les màximes funcions empresarials amb maquinari de baix pressupost, però també sistemes d’alt rendiment aprofitant la memòria cau SSD o fins i tot configuracions només SSD. ZFS pot substituir les targetes raid de maquinari de costos intensos per una càrrega moderada de CPU i memòria combinada amb una gestió fàcil.</p>
+<p>Ventages</p>
+<ul>
+<li><p>Fiable</p></li>
+<li><p>Protecció contra la corrupció de dades</p></li>
+<li><p>Compressió de dades a nivell de sistema de fitxers</p></li>
+<li><p>Imatges instantànies</p></li>
+<li><p>Clon de còpia sobre escriptura</p></li>
+<li><p>Diversos nivells de raid: RAID0, RAID1, RAID10, RAIDZ-1, RAIDZ-2 i RAIDZ-3</p></li>
+<li><p>Pot utilitzar SSD per a la memòria cau</p></li>
+<li><p>Autocuració</p></li>
+<li><p>Comprovació contínua d’integritat</p></li>
+<li><p>Dissenyat per a altes capacitats d’emmagatzematge</p></li>
+<li><p>Replicació asíncrona a la xarxa</p></li>
+<li><p>Encriptació</p></li>
+</ul>
+<p>Despres d’afegir els discs, en proxmox apareixen directament.
+Tenim els nous discs vdc. vdd i vde</p>
+<div class="figure">
+<img src="imatges/proxmox/prox_disc.png" alt="" />
+<p class="caption">Nous discs</p>
+</div>
+<p>Per fer RAID0 ho hem de fer des de consola, aquesta opció no la proporciona el GUI, i a mes no la recomana, si es perd un disc, es perden les dades.</p>
+<div class="figure">
+<img src="imatges/proxmox/prox_disc_no0.png" alt="" />
+<p class="caption">No es pot Crear RAID0 des de el GUI</p>
+</div>
+<p>Per fer-ho mirem la <a href="https://pve.proxmox.com/wiki/ZFS_on_Linux">documentacio</a> oficial.</p>
+<p>RAID0
+També s’anomena “striping”. La capacitat d’aquest volum és la suma de les capacitats de tots els discs. Però RAID0 no afegeix cap redundància, per la qual cosa la fallada d’una sola unitat fa que el volum no es pugui utilitzar.</p>
+<p>Quan s’escriu una matriu de paritat com ara RAID (1, 5, 6 o 10) , s’ha de sincronitzar la memòria cau de dades sense interrupcions o es degradarà. Si es degrada, es reconstruirà! Si es reconstrueix, introdueix un cicle de treball estès i una acumulació de calor. Aquesta acumulació de calor degrada els components de manera irreversible que condueix a una eventual fallada.</p>
+<p>Una matriu de striping com ara RAID-0 mai no es sincronitza ni es degrada. Això redueix el cicle de treball i l’acumulació de calor augmentant així la vida útil dels components.</p>
+<p>Construïm el nostre sistema utilitzant NOMÉS matrius de striping sense paritat i després fem servir RSync per replicar les dades en diverses màquines NAS . Això ofereix el rendiment de RAID-0 mantenint la redundància de dades.</p>
+<p>Sembla que es compleixen tots els requisits, excepte les sol·licituds de restauració de l’usuari final i minimitzar la corrupció de dades . per aço tindrem FreeNAS amb ZFS.</p>
+<p>Per crear l’agupacio ZFS</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="freenas.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zpool create <span class="op">&lt;</span>nom_agrupació<span class="op">&gt;</span> <span class="op">&lt;</span>tipus_raid<span class="op">&gt;</span> <span class="op">&lt;</span>nom_dev1<span class="op">&gt;</span> <span class="op">&lt;</span>nom_dev2<span class="op">&gt;</span></span></code></pre></div>
+<p>tipus de RAID ZFS</p>
+<table>
+<thead>
+<tr class="header">
+<th>Tipus RAID</th>
+<th>Parametre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RAID0</td>
+<td>no string (res)</td>
+</tr>
+<tr class="even">
+<td>RAID 1</td>
+<td>mirror</td>
+</tr>
+<tr class="odd">
+<td>RAIDZ-1</td>
+<td>raidz1</td>
+</tr>
+<tr class="even">
+<td>RAIDZ-2</td>
+<td>raidz2</td>
+</tr>
+</tbody>
+</table>
+<p>En el nostre cas li direm zfspool1 i del tipus RAID0 que es no string, es a dir, no posar res.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="freenas.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zpool create zfspool1 /dev/vdc /dev/vdd</span></code></pre></div>
+<blockquote>
+<p><strong>nota</strong> son <em>/dev/vdx</em> per que son discs virtuals, en el server seran <em>/dev/sdx</em></p>
+</blockquote>
+<p>Per verificar que el grup s’ha creat</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="freenas.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@proxmox:~#</span> zpool list</span>
+<span id="cb68-2"><a href="freenas.html#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="ex">NAME</span>       SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT</span>
+<span id="cb68-3"><a href="freenas.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="ex">rpool</span>       39G  1.24G  37.8G        <span class="at">-</span>         <span class="at">-</span>     1%     3%  1.00x    ONLINE  <span class="at">-</span></span>
+<span id="cb68-4"><a href="freenas.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="ex">vmZFS</span>     99.5G  16.6G  82.9G        <span class="at">-</span>         <span class="at">-</span>     3%    16%  1.00x    ONLINE  <span class="at">-</span></span>
+<span id="cb68-5"><a href="freenas.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="ex">zfspool1</span>    99G   105K  99.0G        <span class="at">-</span>         <span class="at">-</span>     0%     0%  1.00x    ONLINE  <span class="at">-</span></span></code></pre></div>
+<p>S’ha creat zfspool1 en l’espai sencer dels dos discs durs</p>
+<p>Podem utilitzar l’agrupació directament o podem crear un conjunt de dades dins de l’agrupació i connectar-lo per separat a Proxmox com a emmagatzematge individual. L’avantatge d’això és aïllar els diferents tipus de dades emmagatzemades en cada conjunt de dades. Aquesta part la farem en FreeNas, crearem volums par a cada servei.</p>
+<p>Cada conjunt de dades ZFS es pot configurar individualment amb el seu propi conjunt d’opcions de configuració.</p>
+<blockquote>
+<p><strong>nota</strong> podem activar la compressió per al conjunt de dades d’imatge de VM per comprimir els fitxers d’imatge de disc mentre mantenim la compressió desactivada per al conjunt de dades d’emmagatzematge de còpia de seguretat des dels fitxers de còpia de seguretat i video. Ja estan comprimits, estalviant així recursos valuosos</p>
+</blockquote>
+<p>Per crear els conjunts de dades, que es diu pool en ZFS</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="freenas.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zfs crea <span class="op">&lt;</span>zpool_name<span class="op">&gt;</span>/<span class="op">&lt;</span>zfs_dataset_name<span class="op">&gt;</span></span></code></pre></div>
+<p>El <em>zpool_name</em> es el que hem creat <em>zfspool1</em> i el <em>dataset</em> el que volem crear, video per exemple.</p>
+<p>Els conjunts de dades s’han de muntar en un directori abans que es puguin utilitzar. De manera predeterminada, un nou conjunt de dades o conjunt de dades zfs es munta al directori arrel.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="freenas.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zfs set mountpoint=/mnt/zfs-vm zfspool1/video</span></code></pre></div>
+<p>En el nostre cas li direm zfspool1 i del tipus RAID0 que es no string</p>
+<p>Per habilitar la compressió per al conjunt de dades</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="freenas.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> zfs set compression=on zfspool1/video</span></code></pre></div>
+<p>En combinar l’agrupació ZFS amb una compartició NFS, podem crear un emmagatzematge compartit amb funcions ZFS completes, creant d’aquesta forma un emmagatzematge compartit flexible, podríem muntar cada volum en la màquina virtual que el vol utilitzar, sense falta del FreeNas, pero tindríem que donar-li RAM suficient a cada màquina per a gestionar-ho i les tasques de còpia de seguretat serien mes laborioses. Millor centralitzar-ho tot en una VM dedicada a estes labors.</p>
+<p><strong>nota</strong> si tinguerem soles el FreeNas, tots els pasos de la creacio de la pool ens els podrem haver estalviat, es pot fer mitjançant la seua
+GUI,</p>
+<p>Ara l’hem d’afegir al nostre servidor proxmox</p>
+<p>En centre de dades -&gt; emmagatzemament -&gt; ZFS -&gt; afegir</p>
+<p>El ID es el nom que li volem donar que siga únic en el servidor. Elegim el
+<img src="imatges/proxmox/afegir_pool.png" alt="Afegir disc ZFS" /></p>
+<div class="figure">
+<img src="imatges/proxmox/afegirpool.gif" alt="" />
+<p class="caption">afegir disc ZFS</p>
+</div>
+<p>Ara l’afegirem a FreeNas.
+En la màquina virtual afegim el disc ZFS que acabem de crear. L’afegim d’aquesta forma perquè el disc siga real, no un disc dur virtual. Les dades estan en un disc real i no en una imatge de màquina virtual, i es pot accedir a elles encara que la VM es destruïsca.</p>
+<blockquote>
+<p><strong>nota</strong> no hem deixa posar mes de 93GiB, diu que el disc supera el espai.</p>
+</blockquote>
+<div class="figure">
+<img src="imatges/proxmox/disc_freenas.png" alt="" />
+<p class="caption">Afegir el disc a freeNas en mode pass</p>
+</div>
+<div class="figure">
+<img src="imatges/proxmox/disc_freenas.gif" alt="" />
+<p class="caption">Afegir el disc a freeNas en mode pass</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="proxmox.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/incitato/prova/edit/main/22-freenas.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Arts_Escèniques.pdf", "Arts_Escèniques.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

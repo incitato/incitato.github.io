@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitol 17 Open vswitch | Arts escèniques</title>
+  <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitol 17 Open vswitch | Arts escèniques" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="github-repo" content="incitato/prova" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitol 17 Open vswitch | Arts escèniques" />
+  
+  <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
+  
+
+<meta name="author" content="Ramiro Palau" />
+
+
+<meta name="date" content="2022-05-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cameres.html"/>
+<link rel="next" href="proxmox.html"/>
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Arts esceniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html"><i class="fa fa-check"></i><b>1</b> Reproducció en línia</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#materials"><i class="fa fa-check"></i><b>1.1</b> Materials</a></li>
+<li class="chapter" data-level="1.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#projecte-dinstillació"><i class="fa fa-check"></i><b>1.2</b> Projecte d’instil·lació</a></li>
+<li class="chapter" data-level="1.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#pressupost"><i class="fa fa-check"></i><b>1.3</b> Pressupost</a></li>
+<li class="chapter" data-level="1.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#software"><i class="fa fa-check"></i><b>1.4</b> Software</a></li>
+<li class="chapter" data-level="1.5" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#hardware-necessari"><i class="fa fa-check"></i><b>1.5</b> Hardware necessari</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor"><i class="fa fa-check"></i><b>1.5.1</b> Servidor</a></li>
+<li class="chapter" data-level="1.5.2" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#servidor-de-disc"><i class="fa fa-check"></i><b>1.5.2</b> Servidor de disc</a></li>
+<li class="chapter" data-level="1.5.3" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres-ip"><i class="fa fa-check"></i><b>1.5.3</b> Càmeres ip</a></li>
+<li class="chapter" data-level="1.5.4" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#el-compte-del-streaming"><i class="fa fa-check"></i><b>1.5.4</b> El compte del streaming</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#muntatge"><i class="fa fa-check"></i><b>1.6</b> Muntatge</a></li>
+<li class="chapter" data-level="1.7" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#càmeres"><i class="fa fa-check"></i><b>1.7</b> càmeres</a></li>
+<li class="chapter" data-level="1.8" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#la-gravadora-nvr"><i class="fa fa-check"></i><b>1.8</b> La gravadora (NVR)</a></li>
+<li class="chapter" data-level="1.9" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#zonaminder"><i class="fa fa-check"></i><b>1.9</b> <span>zonaminder</span></a></li>
+<li class="chapter" data-level="1.10" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#motioneye"><i class="fa fa-check"></i><b>1.10</b> Motioneye</a></li>
+<li class="chapter" data-level="1.11" data-path="reproducció-en-línia.html"><a href="reproducció-en-línia.html#camare-ip-barates"><i class="fa fa-check"></i><b>1.11</b> camare ip barates</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html"><i class="fa fa-check"></i><b>2</b> Implantació d’entorn Git</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#implantació-del-sistema-collaboratiu-en-el-desenvolupament-dobres-de-teatre."><i class="fa fa-check"></i><b>2.1</b> Implantació del sistema col·laboratiu en el desenvolupament d’obres de teatre.</a></li>
+<li class="chapter" data-level="2.2" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#beneficis-de-la-seua-implantació"><i class="fa fa-check"></i><b>2.2</b> Beneficis de la seua implantació</a></li>
+<li class="chapter" data-level="2.3" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#mode-de-funcionament"><i class="fa fa-check"></i><b>2.3</b> Mode de funcionament</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#breu-tutorial-per-al-funcionament"><i class="fa fa-check"></i><b>2.3.1</b> Breu tutorial per al funcionament</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#installació-dun-repositori-en-el-centre"><i class="fa fa-check"></i><b>2.4</b> Instal·lació d’un repositori en el centre</a></li>
+<li class="chapter" data-level="2.5" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#possible-implantació-en-el-repositori-en-internet"><i class="fa fa-check"></i><b>2.5</b> Possible implantació en el repositori en internet</a></li>
+<li class="chapter" data-level="2.6" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-obsidian"><i class="fa fa-check"></i><b>2.6</b> Explorar <span>Obsidian</span></a></li>
+<li class="chapter" data-level="2.7" data-path="implantació-dentorn-git.html"><a href="implantació-dentorn-git.html#explorar-wikimedia-per-a-la-realització-descriptura-collaborativa"><i class="fa fa-check"></i><b>2.7</b> Explorar Wikimedia per a la realització d’escriptura col·laborativa</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html"><i class="fa fa-check"></i><b>3</b> Migració de les fulles web a Hugo</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#avantatges-de-la-migració"><i class="fa fa-check"></i><b>3.1</b> Avantatges de la migració</a></li>
+<li class="chapter" data-level="3.2" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#mode-dimplementar-la-migració"><i class="fa fa-check"></i><b>3.2</b> Mode d’implementar la migració</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#conversió-dels-posts-de-wordpress-a-md"><i class="fa fa-check"></i><b>3.2.1</b> Conversió dels posts de WordPress a md</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#organització-dels-diferents-apartats-de-les-fulles"><i class="fa fa-check"></i><b>3.3</b> Organització dels diferents apartats de les fulles</a></li>
+<li class="chapter" data-level="3.4" data-path="migració-de-les-fulles-web-a-hugo.html"><a href="migració-de-les-fulles-web-a-hugo.html#alternativa-merege-wordpress"><i class="fa fa-check"></i><b>3.4</b> Alternativa, merege WordPress</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html"><i class="fa fa-check"></i><b>4</b> Implantació de projectes Exelearning</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#proposta-dimplantar-donar-cursos-en-la-sala-o-patrocinats-per-la-mateixa"><i class="fa fa-check"></i><b>4.1</b> Proposta d’implantar donar cursos en la sala o patrocinats per la mateixa</a></li>
+<li class="chapter" data-level="4.2" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#funcionament-dexelearning"><i class="fa fa-check"></i><b>4.2</b> Funcionament d’exelearning</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#llocs-on-podem-penjar-el-material-educatiu"><i class="fa fa-check"></i><b>4.2.1</b> Llocs on podem penjar el material educatiu</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="implantació-de-projectes-exelearning.html"><a href="implantació-de-projectes-exelearning.html#possible-implantació-duna-plataforma-moodle"><i class="fa fa-check"></i><b>4.3</b> Possible implantació d’una plataforma Moodle</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html"><i class="fa fa-check"></i><b>5</b> Desenvolupament Appweb</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#desenvolupament-duna-app-de-gestió-dinformes-de-la-sala"><i class="fa fa-check"></i><b>5.1</b> Desenvolupament d’una app de gestió d’informes de la sala</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#alternatives"><i class="fa fa-check"></i><b>5.1.1</b> Alternatives</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="desenvolupament-appweb.html"><a href="desenvolupament-appweb.html#tasques-a-realitzar"><i class="fa fa-check"></i><b>5.2</b> Tasques a realitzar</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html"><i class="fa fa-check"></i><b>6</b> Remodelat de la fulla web de <em>Espacio Inestable</em></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#reformulació-de-les-estratègies-de-venda-dentrades"><i class="fa fa-check"></i><b>6.1</b> Reformulació de les estratègies de venda d’entrades</a></li>
+<li class="chapter" data-level="6.2" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#installació-del-plugin-de-venda-dentrades-i-tema-per-a-la-fulla-web"><i class="fa fa-check"></i><b>6.2</b> Instal·lació del plugin de venda d’entrades i tema per a la fulla web</a></li>
+<li class="chapter" data-level="6.3" data-path="remodelat-de-la-fulla-web-de-espacio-inestable.html"><a href="remodelat-de-la-fulla-web-de-espacio-inestable.html#tasques-a-fer"><i class="fa fa-check"></i><b>6.3</b> Tasques a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html"><i class="fa fa-check"></i><b>7</b> Configuració del servidor</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="configuració-del-servidor.html"><a href="configuració-del-servidor.html#altres-coses-a-fer"><i class="fa fa-check"></i><b>7.1</b> Altres coses a fer</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="nextcloud.html"><a href="nextcloud.html"><i class="fa fa-check"></i><b>8</b> Nextcloud</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="nextcloud.html"><a href="nextcloud.html#pfsense"><i class="fa fa-check"></i><b>8.1</b> Pfsense</a></li>
+<li class="chapter" data-level="8.2" data-path="nextcloud.html"><a href="nextcloud.html#ova-a-raw"><i class="fa fa-check"></i><b>8.2</b> OVA a RAW</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="nextcloud.html"><a href="nextcloud.html#opcio-2"><i class="fa fa-check"></i><b>8.2.1</b> opcio 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="nextcloud.html"><a href="nextcloud.html#openldap"><i class="fa fa-check"></i><b>8.3</b> openLDAP</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i><b>9</b> Notes</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="notes.html"><a href="notes.html#recordatoris"><i class="fa fa-check"></i><b>9.1</b> Recordatoris</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="servidor-1.html"><a href="servidor-1.html"><i class="fa fa-check"></i><b>10</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="servidor-1.html"><a href="servidor-1.html#material"><i class="fa fa-check"></i><b>10.1</b> Material</a></li>
+<li class="chapter" data-level="10.2" data-path="servidor-1.html"><a href="servidor-1.html#avantatges"><i class="fa fa-check"></i><b>10.2</b> Avantatges</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="servidor-1.html"><a href="servidor-1.html#pfsense-1"><i class="fa fa-check"></i><b>10.2.1</b> Pfsense</a></li>
+<li class="chapter" data-level="10.2.2" data-path="servidor-1.html"><a href="servidor-1.html#ddns"><i class="fa fa-check"></i><b>10.2.2</b> DDNS</a></li>
+<li class="chapter" data-level="10.2.3" data-path="servidor-1.html"><a href="servidor-1.html#nextcloud-1"><i class="fa fa-check"></i><b>10.2.3</b> Nextcloud</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="servidor-1.html"><a href="servidor-1.html#accés-point-del-wifi"><i class="fa fa-check"></i><b>10.3</b> Accés point del wifi</a></li>
+<li class="chapter" data-level="10.4" data-path="servidor-1.html"><a href="servidor-1.html#servidor-de-disc-per-al-video"><i class="fa fa-check"></i><b>10.4</b> Servidor de disc per al video</a></li>
+<li class="chapter" data-level="10.5" data-path="servidor-1.html"><a href="servidor-1.html#pressupost-1"><i class="fa fa-check"></i><b>10.5</b> Pressupost</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="pfsense-2.html"><a href="pfsense-2.html"><i class="fa fa-check"></i><b>11</b> pfSense</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="pfsense-2.html"><a href="pfsense-2.html#per-a-què-el-farem-servir"><i class="fa fa-check"></i><b>11.1</b> Per a què el farem servir</a></li>
+<li class="chapter" data-level="11.2" data-path="pfsense-2.html"><a href="pfsense-2.html#requeriments"><i class="fa fa-check"></i><b>11.2</b> Requeriments</a></li>
+<li class="chapter" data-level="11.3" data-path="pfsense-2.html"><a href="pfsense-2.html#installació"><i class="fa fa-check"></i><b>11.3</b> Instal·lació</a></li>
+<li class="chapter" data-level="11.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració"><i class="fa fa-check"></i><b>11.4</b> Configuració</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="pfsense-2.html"><a href="pfsense-2.html#informació-general"><i class="fa fa-check"></i><b>11.4.1</b> Informació general</a></li>
+<li class="chapter" data-level="11.4.2" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-wan"><i class="fa fa-check"></i><b>11.4.2</b> Configuració WAN</a></li>
+<li class="chapter" data-level="11.4.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-lan"><i class="fa fa-check"></i><b>11.4.3</b> Configuració LAN</a></li>
+<li class="chapter" data-level="11.4.4" data-path="pfsense-2.html"><a href="pfsense-2.html#configuracio-de-les-vlan"><i class="fa fa-check"></i><b>11.4.4</b> Configuracio de les VLAN</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="pfsense-2.html"><a href="pfsense-2.html#vpn"><i class="fa fa-check"></i><b>11.5</b> vpn</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="pfsense-2.html"><a href="pfsense-2.html#autenticació"><i class="fa fa-check"></i><b>11.5.1</b> Autenticació</a></li>
+<li class="chapter" data-level="11.5.2" data-path="pfsense-2.html"><a href="pfsense-2.html#firewall"><i class="fa fa-check"></i><b>11.5.2</b> Firewall</a></li>
+<li class="chapter" data-level="11.5.3" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-òptima-de-xifratge"><i class="fa fa-check"></i><b>11.5.3</b> Configuració òptima de xifratge</a></li>
+<li class="chapter" data-level="11.5.4" data-path="pfsense-2.html"><a href="pfsense-2.html#udp"><i class="fa fa-check"></i><b>11.5.4</b> UDP</a></li>
+<li class="chapter" data-level="11.5.5" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-tls-només-per-a-lautenticació"><i class="fa fa-check"></i><b>11.5.5</b> Utilitzeu TLS només per a l’autenticació</a></li>
+<li class="chapter" data-level="11.5.6" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-la-negociació-de-xifrat-de-dades"><i class="fa fa-check"></i><b>11.5.6</b> Utilitzeu la negociació de xifrat de dades</a></li>
+<li class="chapter" data-level="11.5.7" data-path="pfsense-2.html"><a href="pfsense-2.html#túnels-dividits"><i class="fa fa-check"></i><b>11.5.7</b> Túnels dividits</a></li>
+<li class="chapter" data-level="11.5.8" data-path="pfsense-2.html"><a href="pfsense-2.html#desactiva-la-compressió"><i class="fa fa-check"></i><b>11.5.8</b> Desactiva la compressió</a></li>
+<li class="chapter" data-level="11.5.9" data-path="pfsense-2.html"><a href="pfsense-2.html#connexions-duplicades"><i class="fa fa-check"></i><b>11.5.9</b> Connexions duplicades</a></li>
+<li class="chapter" data-level="11.5.10" data-path="pfsense-2.html"><a href="pfsense-2.html#utilitzeu-udp-fast-io"><i class="fa fa-check"></i><b>11.5.10</b> Utilitzeu UDP Fast I/O</a></li>
+<li class="chapter" data-level="11.5.11" data-path="pfsense-2.html"><a href="pfsense-2.html#augmenta-la-memòria-intermèdia-denviamentrecepció"><i class="fa fa-check"></i><b>11.5.11</b> Augmenta la memòria intermèdia d’enviament/recepció</a></li>
+<li class="chapter" data-level="11.5.12" data-path="pfsense-2.html"><a href="pfsense-2.html#openvpn-i-certificats"><i class="fa fa-check"></i><b>11.5.12</b> OpenVPN i certificats</a></li>
+<li class="chapter" data-level="11.5.13" data-path="pfsense-2.html"><a href="pfsense-2.html#mode-de-dispositiu"><i class="fa fa-check"></i><b>11.5.13</b> Mode de dispositiu</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="pfsense-2.html"><a href="pfsense-2.html#configuració-del-punt-final"><i class="fa fa-check"></i><b>11.6</b> Configuració del punt final</a></li>
+<li class="chapter" data-level="11.7" data-path="pfsense-2.html"><a href="pfsense-2.html#setup-radius-for-authentication-with-a-pfsense-vpn-server-aci"><i class="fa fa-check"></i><b>11.7</b> Setup Radius For Authentication With A pfSense VPN Server <span>aci</span></a>
+<ul>
+<li class="chapter" data-level="11.7.1" data-path="pfsense-2.html"><a href="pfsense-2.html#configuracio-vlan-en-ubuntu-host"><i class="fa fa-check"></i><b>11.7.1</b> Configuracio VLAN en ubuntu host</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="infraestructura.html"><a href="infraestructura.html"><i class="fa fa-check"></i><b>12</b> Infraestructura</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="infraestructura.html"><a href="infraestructura.html#xarxa-per-a-la-sala"><i class="fa fa-check"></i><b>12.1</b> Xarxa per a la sala</a></li>
+<li class="chapter" data-level="12.2" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-instal.lacions"><i class="fa fa-check"></i><b>12.2</b> Descripció de les instal.lacions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="infraestructura.html"><a href="infraestructura.html#oficina"><i class="fa fa-check"></i><b>12.2.1</b> Oficina</a></li>
+<li class="chapter" data-level="12.2.2" data-path="infraestructura.html"><a href="infraestructura.html#sala-despera"><i class="fa fa-check"></i><b>12.2.2</b> Sala d’espera</a></li>
+<li class="chapter" data-level="12.2.3" data-path="infraestructura.html"><a href="infraestructura.html#escenari"><i class="fa fa-check"></i><b>12.2.3</b> Escenari</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="infraestructura.html"><a href="infraestructura.html#descripció-de-les-xarxes"><i class="fa fa-check"></i><b>12.3</b> Descripció de les xarxes</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="infraestructura.html"><a href="infraestructura.html#vlan-video"><i class="fa fa-check"></i><b>12.3.1</b> VLAN Video</a></li>
+<li class="chapter" data-level="12.3.2" data-path="infraestructura.html"><a href="infraestructura.html#vlan-pública"><i class="fa fa-check"></i><b>12.3.2</b> VLAN pública</a></li>
+<li class="chapter" data-level="12.3.3" data-path="infraestructura.html"><a href="infraestructura.html#vlan-privat"><i class="fa fa-check"></i><b>12.3.3</b> VLAN privat</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="servidor-2.html"><a href="servidor-2.html"><i class="fa fa-check"></i><b>13</b> Servidor</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="servidor-2.html"><a href="servidor-2.html#hardware"><i class="fa fa-check"></i><b>13.1</b> Hardware</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="switch.html"><a href="switch.html"><i class="fa fa-check"></i><b>14</b> switch</a></li>
+<li class="chapter" data-level="15" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html"><i class="fa fa-check"></i><b>15</b> Instal·lació de wifi</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#requeriments-per-a-la-seua-implantació"><i class="fa fa-check"></i><b>15.1</b> Requeriments per a la seua implantació</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei"><i class="fa fa-check"></i><b>15.1.1</b> Potència de la connexió d’internet per donar servei</a></li>
+<li class="chapter" data-level="15.1.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#localització-dels-dispositius-de-retransmissió"><i class="fa fa-check"></i><b>15.1.2</b> Localització dels dispositius de retransmissió</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#muntatge-1"><i class="fa fa-check"></i><b>15.2</b> Muntatge</a></li>
+<li class="chapter" data-level="15.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#com-fer-ho"><i class="fa fa-check"></i><b>15.3</b> Com fer-ho</a></li>
+<li class="chapter" data-level="15.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-ap-amb-pfsense-vlan"><i class="fa fa-check"></i><b>15.4</b> UniFi AP amb pfSense VLAN</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#infraestructura-1"><i class="fa fa-check"></i><b>15.4.1</b> Infraestructura</a></li>
+<li class="chapter" data-level="15.4.2" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#procediment"><i class="fa fa-check"></i><b>15.4.2</b> Procediment</a></li>
+<li class="chapter" data-level="15.4.3" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#definiu-les-vlan-i-les-subxarxes-a-pfsense"><i class="fa fa-check"></i><b>15.4.3</b> Definiu les VLAN i les subxarxes a pfSense</a></li>
+<li class="chapter" data-level="15.4.4" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#assigna-les-vlan-al-controlador-unifi"><i class="fa fa-check"></i><b>15.4.4</b> Assigna les VLAN al controlador UniFi</a></li>
+<li class="chapter" data-level="15.4.5" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#unifi-pfsense"><i class="fa fa-check"></i><b>15.4.5</b> unifi-pfsense</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="cameres.html"><a href="cameres.html"><i class="fa fa-check"></i><b>16</b> cameres</a></li>
+<li class="chapter" data-level="17" data-path="open-vswitch.html"><a href="open-vswitch.html"><i class="fa fa-check"></i><b>17</b> Open vswitch</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="open-vswitch.html"><a href="open-vswitch.html#funcionament"><i class="fa fa-check"></i><b>17.1</b> Funcionament</a></li>
+<li class="chapter" data-level="17.2" data-path="open-vswitch.html"><a href="open-vswitch.html#configuració-de-la-xarxa-proxmox"><i class="fa fa-check"></i><b>17.2</b> Configuració de la xarxa Proxmox</a></li>
+<li class="chapter" data-level="17.3" data-path="open-vswitch.html"><a href="open-vswitch.html#configuració-de-pfsense"><i class="fa fa-check"></i><b>17.3</b> Configuració de pfSense</a></li>
+<li class="chapter" data-level="17.4" data-path="open-vswitch.html"><a href="open-vswitch.html#xarxa-pfsense"><i class="fa fa-check"></i><b>17.4</b> Xarxa pfSense</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="open-vswitch.html"><a href="open-vswitch.html#vlans"><i class="fa fa-check"></i><b>17.4.1</b> vlans</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="open-vswitch.html"><a href="open-vswitch.html#open-vswitch-en-ubuntu"><i class="fa fa-check"></i><b>17.5</b> open vswitch en Ubuntu</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="proxmox.html"><a href="proxmox.html"><i class="fa fa-check"></i><b>18</b> Proxmox</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="proxmox.html"><a href="proxmox.html#preliminars"><i class="fa fa-check"></i><b>18.1</b> Preliminars</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="proxmox.html"><a href="proxmox.html#segon-intercace-post-install"><i class="fa fa-check"></i><b>18.1.1</b> Segon intercace, post install</a></li>
+<li class="chapter" data-level="18.1.2" data-path="proxmox.html"><a href="proxmox.html#servidor-nfs-en-local"><i class="fa fa-check"></i><b>18.1.2</b> Servidor NFS en local</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="proxmox.html"><a href="proxmox.html#pasem-a-instal.lar-proxmox-en-una-vm-amb-kvm"><i class="fa fa-check"></i><b>18.2</b> Pasem a instal.lar Proxmox en una VM amb KVM</a></li>
+<li class="chapter" data-level="18.3" data-path="proxmox.html"><a href="proxmox.html#arranquem-la-instal.lacio"><i class="fa fa-check"></i><b>18.3</b> Arranquem la instal.lacio</a></li>
+<li class="chapter" data-level="18.4" data-path="proxmox.html"><a href="proxmox.html#primeres-configuracions"><i class="fa fa-check"></i><b>18.4</b> Primeres configuracions</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="proxmox.html"><a href="proxmox.html#afegir-un-nou-hd"><i class="fa fa-check"></i><b>18.4.1</b> Afegir un nou HD</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="freenas.html"><a href="freenas.html"><i class="fa fa-check"></i><b>19</b> FreeNas</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="freenas.html"><a href="freenas.html#instalar-truenass"><i class="fa fa-check"></i><b>19.1</b> instalar Truenass</a></li>
+<li class="chapter" data-level="19.2" data-path="freenas.html"><a href="freenas.html#afegim-els-discs-a-proxmox"><i class="fa fa-check"></i><b>19.2</b> Afegim els discs a Proxmox</a></li>
+<li class="chapter" data-level="19.3" data-path="freenas.html"><a href="freenas.html#volums"><i class="fa fa-check"></i><b>19.3</b> Volums</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="freenas.html"><a href="freenas.html#zfs"><i class="fa fa-check"></i><b>19.3.1</b> ZFS</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arts escèniques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="open-vswitch" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Capitol 17</span> Open vswitch<a href="open-vswitch.html#open-vswitch" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><a href="https://www.openvswitch.org/">Open vswitch</a></p>
+<p><a href="https://webworxshop.com/virtualised-pfsense-on-proxmox-with-open-vswitch/">Emllaç explicacio</a></p>
+<p>El tallafoc és un sistema pfSense virtualitzat que s’executa en un host Proxmox,
+faig servir Open vSwitch a la meva configuració pfSense/Proxmox,Tot el trànsit entre VLAN i Internet de la meva xarxa passa per aci.</p>
+<div id="funcionament" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Funcionament<a href="open-vswitch.html#funcionament" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La premissa bàsica de tot això és un amfitrió Proxmox amb dues NIC físiques. Un d’aquests és el port LAN on l’amfitrió tindrà la seva IP interna. El segon és el port WAN, que s’assigna directament a la màquina virtual pfSense.</p>
+<p>la interfície WAN s’assigna directament a la màquina virtual, tot això es gestiona internament a pfSense. Això vol dir que la màquina host no està exposada a la xarxa externa. ( això no és estrictament cert. L’amfitrió s’exposarà als nivells inferiors de la pila de xarxa per permetre-li reenviar paquets a la màquina virtual. Tanmateix, com que no té una adreça IP en aquesta interfície, no es podrà accedir des d’Internet.)</p>
+<p>Al costat de la LAN, creem un commutador Open vSwitch i hi afegim la interfície LAN com a tronc de VLAN. Una altra interfície troncal (virtual) entra a la VM pfSense i es converteix en la seva interfície LAN. Aço, ens permet connectar altres màquines virtuals de l’amfitrió al vSwitch. Aquests poden estar en diverses VLAN diferents.</p>
+<div class="figure">
+<img src="imatges/pfsense_proxmox.png" alt="" />
+<p class="caption">pfsense Proxmox</p>
+</div>
+</div>
+<div id="configuració-de-la-xarxa-proxmox" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Configuració de la xarxa Proxmox<a href="open-vswitch.html#configuració-de-la-xarxa-proxmox" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Proxmox enumera les dues NIC com a ens1(LAN) i enp1s0(WAN). Amb el port WAN, vaig crear un pont Linux senzill vmbr1per permetre que s’afegeixi a la VM pfSense.</p>
+<p>Al costat de la LAN, vaig crear un port “OVS Bridge” i vaig afegir un “OVS IntPort” anomenat adminque serà la interfície principal de la màquina amfitriona. Com a tal, a aquesta interfície se li assigna una IP estàtica i s’assigna a la VLAN on volem que estigui l’amfitrió.</p>
+<blockquote>
+<p><strong>nota</strong>
+Per disseny, Proxmox no aplica cap canvi de xarxa fins que reinicieu. Això és molt útil per evitar que et bloquegin. Si esteu connectat directament a la interfície LAN (amb una IP estàtica), hauríeu d’assegurar-vos que tot sigui correcte abans de reiniciar. Després del reinici, torneu a configurar la vostra interfície local a la VLAN que heu triat a la configuració i una IP estàtica. Aleshores hauríeu de poder accedir de nou a la interfície web de Proxmox.</p>
+</blockquote>
+</div>
+<div id="configuració-de-pfsense" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Configuració de pfSense<a href="open-vswitch.html#configuració-de-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><strong>nota</strong>
+Vaig seleccionar un processador “Westmere” per posar les instruccions<br />
+AES-NI disponibles per a la VM</p>
+</blockquote>
+</div>
+<div id="xarxa-pfsense" class="section level2 hasAnchor" number="17.4">
+<h2><span class="header-section-number">17.4</span> Xarxa pfSense<a href="open-vswitch.html#xarxa-pfsense" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>la meva connexió WAN. Primer vaig afegir una VLAN amb l’etiqueta 10 al vtnet0dispositiu, que és el dispositiu que correspon al pont WAN físic tal com enumera pfSense.</p>
+<p>?
+El segon avantatge important és que puc executar màquines virtuals i contenidors addicionals a la màquina amfitriona, cosa que no podia quan era un tallafoc dedicat. He utilitzat això per implementar la meva petita DMZ per als serveis d’Internet. Això té l’avantatge afegit que el trànsit DMZ només transita el vSwitch intern a l’amfitrió i no s’ha de moure d’anada i tornada per la infraestructura de xarxa física.</p>
+<p><a href="https://webworxshop.com/tag/pfsense/">mirar aço ZFS</a></p>
+<div id="vlans" class="section level3 hasAnchor" number="17.4.1">
+<h3><span class="header-section-number">17.4.1</span> vlans<a href="open-vswitch.html#vlans" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>La xarxa LAN principal, allotja els dispositius client de confiança (ordinadors portàtils, telèfons intel·ligents, etc.). Aquesta xarxa té accés a la majoria de les altres amb finalitats de manteniment.</li>
+<li>La xarxa IOT, que allotja dispositius intel·ligents que requereixen absolutament accés a Internet. De moment, això és només el meu Smart TV, Neato Botvac i un Chromecast Ultra. El Neato és l’únic dispositiu que utilitza la WLAN associada. Aquesta xarxa està protegida de totes les altres, però pot accedir a Internet.</li>
+<li>The NOT (Network of Things - nom robat de la sèrie de vídeos The Hook Up , enllaçat més amunt). Allotja dispositius intel·ligents que es controlen localment, com ara els meus dispositius ESPHome. Alguns dels dispositius d’aquesta xarxa (com ara les meves bombetes Yeelight , Milight Gateway i Broadlink RM Mini ) volen connectar-se a Internet però estan bloquejats pel tallafoc. Per facilitar-ne l’ús, poso la VM que allotja els meus serveis de domòtica en aquesta xarxa i en faig una excepció al tallafoc. Espero canviar això eventualment. Aquesta xarxa està bloquejada tant de les altres xarxes locals com d’Internet, a part d’algunes excepcions.</li>
+<li>La xarxa de mitjans, allotja tots els dispositius i servidors que transmeten contingut multimèdia a casa meva. Això inclou els meus sistemes Kodi, un HDHomerun antic i els servidors Emby , tvheadend i Mopidy / Snapcast . De moment, l’RPi que condueix els meus altaveus exteriors viu a la xarxa NOT. Això es deu al fet que està en wifi i no volia crear-ne un altre AP. Finalment, es migrarà, una vegada que faci passar un cable al sostre. Tenir els dispositius multimèdia en una VLAN separada m’hauria de permetre fer una mica de configuració del trànsit en el futur per prioritzar-ne el trànsit (si cal, ara mateix no tinc cap problema). Aquesta xarxa no està bloquejada de cap de les altres i té accés a Internet.</li>
+<li>La DMZ, allotja tots els serveis que estiguin disponibles fora de la meva xarxa. Està bloquejat a totes les xarxes locals, però té accés a Internet.</li>
+<li>La xarxa de convidats, que està lligada directament a una WLAN específica només per a dispositius convidats. Això em permet proporcionar accés a Internet als hostes sense donar-los accés a res més. Bloquejat de totes les xarxes locals, però òbviament té accés a Internet.</li>
+</ul>
+</div>
+</div>
+<div id="open-vswitch-en-ubuntu" class="section level2 hasAnchor" number="17.5">
+<h2><span class="header-section-number">17.5</span> open vswitch en Ubuntu<a href="open-vswitch.html#open-vswitch-en-ubuntu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://github.com/nbonnand/ovs-toolbox">ovs-toolbox</a></p>
+<p>Abans de passar a proxmox, farem les proves en ubuntu, com si aquest fora del hypervisor</p>
+<p>Passem a instal.lar open switch</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="open-vswitch.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install openvswitch-switch</span></code></pre></div>
+<p><a href="https://www.xmodulo.com/install-configure-kvm-open-vswitch-ubuntu-debian.html">segons</a></p>
+<p>Dependencies</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="open-vswitch.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install build-essential libssl-dev linux-headers-<span class="va">$(</span><span class="fu">uname</span> <span class="at">-r</span><span class="va">)</span></span></code></pre></div>
+<p>Hi ha un paquet en snap, fen esta instal.lacio.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="open-vswitch.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> snap install openvswitch <span class="at">--edge</span></span></code></pre></div>
+<blockquote>
+<p>$ sudo openvswitch.ovs-vsctl show
+a7a5dae8-3c0c-4f81-a410-5cbf88f8a946
+ovs_version: “2.17.0”</p>
+</blockquote>
+<p><a href="https://github.com/nbonnand/ovs-toolbox">Gui ovs-toolbox</a></p>
+<p><a href="https://leftasexercise.com/2020/01/10/virtual-networking-labs-open-vswitch-in-practice/">mirar laboratoris de xarxes</a></p>
+<p>creem 4 targetes de xarxa
+<a href="https://sites.google.com/site/nandydandyoracle/openvswitch-ovs/configuring-virtualbox-vms-for-openvswitch-networking">mirar CONFIGURING VIRTUALBOX VMS FOR OPENVSWITCH NETWORKING</a></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="open-vswitch.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip tuntap add s1 mode tap</span>
+<span id="cb35-2"><a href="open-vswitch.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip tuntap add s2 mode tap</span>
+<span id="cb35-3"><a href="open-vswitch.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip tuntap add s3 mode tap</span>
+<span id="cb35-4"><a href="open-vswitch.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip tuntap add s4 mode tap</span></code></pre></div>
+<p>les alcem</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="open-vswitch.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set s1 up </span>
+<span id="cb36-2"><a href="open-vswitch.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set s2 up </span>
+<span id="cb36-3"><a href="open-vswitch.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set s3 up </span>
+<span id="cb36-4"><a href="open-vswitch.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set s4 up</span></code></pre></div>
+<p>fem un pont en open vswitch o un switch ara no se</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="open-vswitch.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set s1 up </span></code></pre></div>
+<p>li afegim els ports</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="open-vswitch.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl add-port sw1 s1</span>
+<span id="cb38-2"><a href="open-vswitch.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl add-port sw1 s2</span>
+<span id="cb38-3"><a href="open-vswitch.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
+<p>el conectem a venp3s0 la tarjeta de xarxa del servidor, en este cas el meu host que anira el switch fisic real, on estan conectades les cameres, les antenes wifi ….</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="open-vswitch.html#cb39-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">sudo</span> openvswitch.ovs-vsctl add-port sw1 enp3s0</span></code></pre></div>
+<p>alcem es switch</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="open-vswitch.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link set up dev sw1</span></code></pre></div>
+<p>li donem ip al switch</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="open-vswitch.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip addr add 172.16.40.1/24 dev sw1</span></code></pre></div>
+<p>fem un trunk a la vlan400</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="open-vswitch.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port sw1 trunks=400</span></code></pre></div>
+<p>el afegim al la vlan400</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="open-vswitch.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port sw1 tag=400</span></code></pre></div>
+<p>i afegim aquests ports a la vlan400</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="open-vswitch.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port s1 tag=400</span>
+<span id="cb44-2"><a href="open-vswitch.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port s2 tag=400</span>
+<span id="cb44-3"><a href="open-vswitch.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port s3 tag=400</span>
+<span id="cb44-4"><a href="open-vswitch.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl set port s4 tag=400</span>
+<span id="cb44-5"><a href="open-vswitch.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
+<p>ara tenim</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="open-vswitch.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> openvswitch.ovs-vsctl show</span>
+<span id="cb45-2"><a href="open-vswitch.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">a7a5dae8-3c0c-4f81-a410-5cbf88f8a946</span></span>
+<span id="cb45-3"><a href="open-vswitch.html#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Bridge</span> sw1</span>
+<span id="cb45-4"><a href="open-vswitch.html#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s6</span>
+<span id="cb45-5"><a href="open-vswitch.html#cb45-5" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-6"><a href="open-vswitch.html#cb45-6" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s6</span>
+<span id="cb45-7"><a href="open-vswitch.html#cb45-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s3</span>
+<span id="cb45-8"><a href="open-vswitch.html#cb45-8" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-9"><a href="open-vswitch.html#cb45-9" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s3</span>
+<span id="cb45-10"><a href="open-vswitch.html#cb45-10" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s5</span>
+<span id="cb45-11"><a href="open-vswitch.html#cb45-11" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-12"><a href="open-vswitch.html#cb45-12" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s5</span>
+<span id="cb45-13"><a href="open-vswitch.html#cb45-13" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s2</span>
+<span id="cb45-14"><a href="open-vswitch.html#cb45-14" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-15"><a href="open-vswitch.html#cb45-15" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s2</span>
+<span id="cb45-16"><a href="open-vswitch.html#cb45-16" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s1</span>
+<span id="cb45-17"><a href="open-vswitch.html#cb45-17" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-18"><a href="open-vswitch.html#cb45-18" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s1</span>
+<span id="cb45-19"><a href="open-vswitch.html#cb45-19" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> s4</span>
+<span id="cb45-20"><a href="open-vswitch.html#cb45-20" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-21"><a href="open-vswitch.html#cb45-21" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> s4</span>
+<span id="cb45-22"><a href="open-vswitch.html#cb45-22" aria-hidden="true" tabindex="-1"></a>        <span class="ex">Port</span> sw1</span>
+<span id="cb45-23"><a href="open-vswitch.html#cb45-23" aria-hidden="true" tabindex="-1"></a>            <span class="ex">tag:</span> 400</span>
+<span id="cb45-24"><a href="open-vswitch.html#cb45-24" aria-hidden="true" tabindex="-1"></a>            <span class="ex">trunks:</span> [400]</span>
+<span id="cb45-25"><a href="open-vswitch.html#cb45-25" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Interface</span> sw1</span>
+<span id="cb45-26"><a href="open-vswitch.html#cb45-26" aria-hidden="true" tabindex="-1"></a>                <span class="ex">type:</span> internal1</span>
+<span id="cb45-27"><a href="open-vswitch.html#cb45-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ovs_version:</span> <span class="st">&quot;2.17.0&quot;</span></span></code></pre></div>
+<p>llllllalallallala</p>
+<p>Commands used in this video:
+* show ovs current config summary
+ovs-vsctl show</p>
+<ul>
+<li><p>add a bridge
+ovs-vsctl add-br mybridge</p></li>
+<li><p>turn up mybridge interface
+ifconfig mybridge up</p></li>
+<li><p>add eth0
+ovs-vsctl add-port mybridge eth0</p></li>
+<li><p>remove eth0’s IP addressing
+ifconfig eth0 0</p></li>
+<li><p>make mybridge interface get a DHCP IP
+dhclient mybridge</p></li>
+<li><p>add tap interfaces
+ip tuntap add mode tap vport1
+ip tuntap add mode tap vport 2</p></li>
+<li><p>add tap interfaces to mybridge
+ovs-vsctl add-port mybridge vport1 – add-port mybridge vport2</p></li>
+<li><p>view forwarding table (mac address table)
+ovs-appctl fdb/show</p></li>
+<li><p>see mapping of OpenFlow ports to system ports
+ovs-ofctl show mybridge</p></li>
+<li><p>see flow entries (OpenFlow) on mybridge
+ovs-ofctl dump-flows mybridge</p></li>
+<li><p>see records in ovsdb-server tables
+ovs-vsctl list Bridge
+ovs-vsctl list Port
+ovs-vsctl list Interface</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cameres.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proxmox.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/incitato/prova/edit/main/19-vswitch.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Arts_Escèniques.pdf", "Arts_Escèniques.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
