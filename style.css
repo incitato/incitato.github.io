@@ -80,7 +80,9 @@ figcaption {
 }
 
 img {
-    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     box-shadow: 10px 10px 5px rgba(0.1, 0.5, 0, 0.20);
 }

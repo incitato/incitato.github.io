@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7.2 volum de dades NFS | Arts escèniques</title>
+  <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7.2 volum de dades NFS | Arts escèniques" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="github-repo" content="incitato/prova" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7.2 volum de dades NFS | Arts escèniques" />
+  
+  <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
+  
+
+<meta name="author" content="Ramiro Palau Gregori" />
+
+
+<meta name="date" content="2022-06-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="importar-imatge-.html"/>
+<link rel="next" href="gestió-dusuaris-openldap.html"/>
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Arts esceniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>A proposit del treball</a>
+<ul>
+<li class="chapter" data-level="" data-path="propòsit.html"><a href="propòsit.html"><i class="fa fa-check"></i>Propòsit</a>
+<ul>
+<li class="chapter" data-level="" data-path="propòsit.html"><a href="propòsit.html#plan-b"><i class="fa fa-check"></i>Plan B</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="infraestructura.html"><a href="infraestructura.html"><i class="fa fa-check"></i><b>1</b> Infraestructura</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="xarxa-per-a-la-sala.html"><a href="xarxa-per-a-la-sala.html"><i class="fa fa-check"></i><b>1.1</b> Xarxa per a la sala</a></li>
+<li class="chapter" data-level="1.2" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html"><i class="fa fa-check"></i><b>1.2</b> Descripció de les instal·lacions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#oficina"><i class="fa fa-check"></i><b>1.2.1</b> Oficina</a></li>
+<li class="chapter" data-level="1.2.2" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#sala-despera"><i class="fa fa-check"></i><b>1.2.2</b> Sala d’espera</a></li>
+<li class="chapter" data-level="1.2.3" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#escenari"><i class="fa fa-check"></i><b>1.2.3</b> Escenari</a></li>
+<li class="chapter" data-level="1.2.4" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#rebost"><i class="fa fa-check"></i><b>1.2.4</b> Rebost</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html"><i class="fa fa-check"></i><b>1.3</b> Descripció de les xarxes</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-1-administració"><i class="fa fa-check"></i><b>1.3.1</b> VLAN 1 Administració</a></li>
+<li class="chapter" data-level="1.3.2" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-20-privat"><i class="fa fa-check"></i><b>1.3.2</b> VLAN 20 Privat</a></li>
+<li class="chapter" data-level="1.3.3" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-30-video"><i class="fa fa-check"></i><b>1.3.3</b> VLAN 30 Video</a></li>
+<li class="chapter" data-level="1.3.4" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-40-pública"><i class="fa fa-check"></i><b>1.3.4</b> VLAN 40 pública</a></li>
+<li class="chapter" data-level="1.3.5" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#xarxa-interna-dels-serveis"><i class="fa fa-check"></i><b>1.3.5</b> Xarxa interna dels serveis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="proposta-de-projecte.html"><a href="proposta-de-projecte.html"><i class="fa fa-check"></i><b>2</b> Proposta de projecte</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="serveis-proposats.html"><a href="serveis-proposats.html"><i class="fa fa-check"></i><b>2.1</b> Serveis proposats</a></li>
+<li class="chapter" data-level="2.2" data-path="pressupost-del-maquinari.html"><a href="pressupost-del-maquinari.html"><i class="fa fa-check"></i><b>2.2</b> Pressupost del maquinari</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="servidor.html"><a href="servidor.html"><i class="fa fa-check"></i><b>3</b> Servidor</a></li>
+<li class="chapter" data-level="4" data-path="proxmox.html"><a href="proxmox.html"><i class="fa fa-check"></i><b>4</b> Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="preliminars.html"><a href="preliminars.html"><i class="fa fa-check"></i><b>4.1</b> Preliminars</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="preliminars.html"><a href="preliminars.html#servidor-nfs-en-local"><i class="fa fa-check"></i><b>4.1.1</b> Servidor NFS en local</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="installacio-de-proxmox-en-una-vm-amb-kvm.html"><a href="installacio-de-proxmox-en-una-vm-amb-kvm.html"><i class="fa fa-check"></i><b>4.2</b> Instal·lacio de Proxmox en una VM amb KVM</a></li>
+<li class="chapter" data-level="4.3" data-path="arranquem-la-installacio.html"><a href="arranquem-la-installacio.html"><i class="fa fa-check"></i><b>4.3</b> Arranquem la instal·lacio</a></li>
+<li class="chapter" data-level="4.4" data-path="primeres-configuracions.html"><a href="primeres-configuracions.html"><i class="fa fa-check"></i><b>4.4</b> Primeres configuracions</a></li>
+<li class="chapter" data-level="4.5" data-path="actualitzar-repositoris.html"><a href="actualitzar-repositoris.html"><i class="fa fa-check"></i><b>4.5</b> Actualitzar repositoris</a></li>
+<li class="chapter" data-level="4.6" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html"><i class="fa fa-check"></i><b>4.6</b> Afegir nous HD al servidor</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html#procediment"><i class="fa fa-check"></i><b>4.6.1</b> Procediment</a></li>
+<li class="chapter" data-level="4.6.2" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html#configuracio-del-nou-ssd-per-a-les-vm"><i class="fa fa-check"></i><b>4.6.2</b> Configuracio del nou SSD per a les VM</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="afegir-lemmagatzenament-de-còpia-de-seguretat.html"><a href="afegir-lemmagatzenament-de-còpia-de-seguretat.html"><i class="fa fa-check"></i><b>4.7</b> Afegir l’emmagatzenament de còpia de seguretat</a></li>
+<li class="chapter" data-level="4.8" data-path="crear-nova-vm.html"><a href="crear-nova-vm.html"><i class="fa fa-check"></i><b>4.8</b> Crear nova VM</a></li>
+<li class="chapter" data-level="4.9" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html"><i class="fa fa-check"></i><b>4.9</b> Contenidors LXC en Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#distribucions-suportades"><i class="fa fa-check"></i><b>4.9.1</b> Distribucions suportades</a></li>
+<li class="chapter" data-level="4.9.2" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#imatges-de-contenidors"><i class="fa fa-check"></i><b>4.9.2</b> Imatges de contenidors</a></li>
+<li class="chapter" data-level="4.9.3" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#creem-una-ct-amb-la-imatge-que-acabem-de-baixar"><i class="fa fa-check"></i><b>4.9.3</b> Creem una CT amb la imatge que acabem de baixar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="subxarxes-en-proxmox.html"><a href="subxarxes-en-proxmox.html"><i class="fa fa-check"></i><b>4.10</b> Subxarxes en Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="subxarxes-en-proxmox.html"><a href="subxarxes-en-proxmox.html#segon-intercace-post-install"><i class="fa fa-check"></i><b>4.10.1</b> Segon intercace, post install</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html"><i class="fa fa-check"></i><b>4.11</b> Còpies de seguretat</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#copia-de-seguretat-de-truena"><i class="fa fa-check"></i><b>4.11.1</b> Copia de seguretat de truena</a></li>
+<li class="chapter" data-level="4.11.2" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#còpia-de-seguretat-de-proxmox"><i class="fa fa-check"></i><b>4.11.2</b> Còpia de seguretat de Proxmox</a></li>
+<li class="chapter" data-level="4.11.3" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#pve-zsync"><i class="fa fa-check"></i><b>4.11.3</b> pve-zsync</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="pfsense.html"><a href="pfsense.html"><i class="fa fa-check"></i><b>5</b> pfSense</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="per-a-què-el-farem-servir.html"><a href="per-a-què-el-farem-servir.html"><i class="fa fa-check"></i><b>5.1</b> Per a què el farem servir</a></li>
+<li class="chapter" data-level="5.2" data-path="requeriments.html"><a href="requeriments.html"><i class="fa fa-check"></i><b>5.2</b> Requeriments</a></li>
+<li class="chapter" data-level="5.3" data-path="installació.html"><a href="installació.html"><i class="fa fa-check"></i><b>5.3</b> Instal·lació</a></li>
+<li class="chapter" data-level="5.4" data-path="configuració.html"><a href="configuració.html"><i class="fa fa-check"></i><b>5.4</b> Configuració</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="configuració.html"><a href="configuració.html#informació-general"><i class="fa fa-check"></i><b>5.4.1</b> Informació general</a></li>
+<li class="chapter" data-level="5.4.2" data-path="configuració.html"><a href="configuració.html#configuració-wan"><i class="fa fa-check"></i><b>5.4.2</b> Configuració WAN</a></li>
+<li class="chapter" data-level="5.4.3" data-path="configuració.html"><a href="configuració.html#configuració-lan"><i class="fa fa-check"></i><b>5.4.3</b> Configuració LAN</a></li>
+<li class="chapter" data-level="5.4.4" data-path="configuració.html"><a href="configuració.html#configuració-de-les-vlan"><i class="fa fa-check"></i><b>5.4.4</b> Configuració de les VLAN</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="configuració-dns.html"><a href="configuració-dns.html"><i class="fa fa-check"></i><b>5.5</b> Configuració DNS</a></li>
+<li class="chapter" data-level="5.6" data-path="firewall.html"><a href="firewall.html"><i class="fa fa-check"></i><b>5.6</b> Firewall</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="firewall.html"><a href="firewall.html#vlan-1"><i class="fa fa-check"></i><b>5.6.1</b> VLAN 1</a></li>
+<li class="chapter" data-level="5.6.2" data-path="firewall.html"><a href="firewall.html#vlan-20"><i class="fa fa-check"></i><b>5.6.2</b> VLAN 20</a></li>
+<li class="chapter" data-level="5.6.3" data-path="firewall.html"><a href="firewall.html#vlan-30-soles-interna-no-internet"><i class="fa fa-check"></i><b>5.6.3</b> VLAN 30 soles interna, no internet</a></li>
+<li class="chapter" data-level="5.6.4" data-path="firewall.html"><a href="firewall.html#vlan-40-soles-internet"><i class="fa fa-check"></i><b>5.6.4</b> VLAN 40 Soles internet</a></li>
+<li class="chapter" data-level="5.6.5" data-path="firewall.html"><a href="firewall.html#lan"><i class="fa fa-check"></i><b>5.6.5</b> LAN</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="dns-dinàmic.html"><a href="dns-dinàmic.html"><i class="fa fa-check"></i><b>5.7</b> DNS dinàmic</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="dns-dinàmic.html"><a href="dns-dinàmic.html#renovacions-del-servei"><i class="fa fa-check"></i><b>5.7.1</b> Renovacions del servei</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="vpn.html"><a href="vpn.html"><i class="fa fa-check"></i><b>5.8</b> vpn</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="vpn.html"><a href="vpn.html#autenticació"><i class="fa fa-check"></i><b>5.8.1</b> Autenticació</a></li>
+<li class="chapter" data-level="5.8.2" data-path="vpn.html"><a href="vpn.html#firewall-1"><i class="fa fa-check"></i><b>5.8.2</b> Firewall</a></li>
+<li class="chapter" data-level="5.8.3" data-path="vpn.html"><a href="vpn.html#configuració-òptima-de-xifratge"><i class="fa fa-check"></i><b>5.8.3</b> Configuració òptima de xifratge</a></li>
+<li class="chapter" data-level="5.8.4" data-path="vpn.html"><a href="vpn.html#udp"><i class="fa fa-check"></i><b>5.8.4</b> UDP</a></li>
+<li class="chapter" data-level="5.8.5" data-path="vpn.html"><a href="vpn.html#utilitzeu-tls-només-per-a-lautenticació"><i class="fa fa-check"></i><b>5.8.5</b> Utilitzeu TLS només per a l’autenticació</a></li>
+<li class="chapter" data-level="5.8.6" data-path="vpn.html"><a href="vpn.html#utilitzeu-la-negociació-de-xifratge-de-dades"><i class="fa fa-check"></i><b>5.8.6</b> Utilitzeu la negociació de xifratge de dades</a></li>
+<li class="chapter" data-level="5.8.7" data-path="vpn.html"><a href="vpn.html#túnels-dividits"><i class="fa fa-check"></i><b>5.8.7</b> Túnels dividits</a></li>
+<li class="chapter" data-level="5.8.8" data-path="vpn.html"><a href="vpn.html#desactiva-la-compressió"><i class="fa fa-check"></i><b>5.8.8</b> Desactiva la compressió</a></li>
+<li class="chapter" data-level="5.8.9" data-path="vpn.html"><a href="vpn.html#connexions-duplicades"><i class="fa fa-check"></i><b>5.8.9</b> Connexions duplicades</a></li>
+<li class="chapter" data-level="5.8.10" data-path="vpn.html"><a href="vpn.html#augmenta-la-memòria-intermèdia-denviamentrecepció"><i class="fa fa-check"></i><b>5.8.10</b> Augmenta la memòria intermèdia d’enviament/recepció</a></li>
+<li class="chapter" data-level="5.8.11" data-path="vpn.html"><a href="vpn.html#openvpn-i-certificats"><i class="fa fa-check"></i><b>5.8.11</b> OpenVPN i certificats</a></li>
+<li class="chapter" data-level="5.8.12" data-path="vpn.html"><a href="vpn.html#mode-de-dispositiu"><i class="fa fa-check"></i><b>5.8.12</b> Mode de dispositiu</a></li>
+<li class="chapter" data-level="5.8.13" data-path="vpn.html"><a href="vpn.html#configuració-1"><i class="fa fa-check"></i><b>5.8.13</b> Configuració</a></li>
+<li class="chapter" data-level="5.8.14" data-path="vpn.html"><a href="vpn.html#configuracio-del-servidor"><i class="fa fa-check"></i><b>5.8.14</b> Configuracio del servidor</a></li>
+<li class="chapter" data-level="5.8.15" data-path="vpn.html"><a href="vpn.html#servidors-dautentificacio"><i class="fa fa-check"></i><b>5.8.15</b> Servidors d’autentificacio</a></li>
+<li class="chapter" data-level="5.8.16" data-path="vpn.html"><a href="vpn.html#exportar-els-arxius-de-configuracio-vpn-dels-clients"><i class="fa fa-check"></i><b>5.8.16</b> Exportar els arxius de configuracio VPN dels clients</a></li>
+<li class="chapter" data-level="5.8.17" data-path="vpn.html"><a href="vpn.html#configuracio-vlan-en-ubuntu-host"><i class="fa fa-check"></i><b>5.8.17</b> Configuracio VLAN en ubuntu host</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="truenas.html"><a href="truenas.html"><i class="fa fa-check"></i><b>6</b> TrueNas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="installar-truenass.html"><a href="installar-truenass.html"><i class="fa fa-check"></i><b>6.1</b> Instal·lar Truenass</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="installar-truenass.html"><a href="installar-truenass.html#afegirem-disc-de-pas-discs-reals"><i class="fa fa-check"></i><b>6.1.1</b> Afegirem disc de pas, discs reals</a></li>
+<li class="chapter" data-level="6.1.2" data-path="installar-truenass.html"><a href="installar-truenass.html#afegim-el-disc-a-truenas"><i class="fa fa-check"></i><b>6.1.2</b> Afegim el disc a Truenas</a></li>
+<li class="chapter" data-level="6.1.3" data-path="installar-truenass.html"><a href="installar-truenass.html#afegim-els-discs-a-proxmox"><i class="fa fa-check"></i><b>6.1.3</b> Afegim els discs a Proxmox</a></li>
+<li class="chapter" data-level="6.1.4" data-path="installar-truenass.html"><a href="installar-truenass.html#volums"><i class="fa fa-check"></i><b>6.1.4</b> Volums</a></li>
+<li class="chapter" data-level="6.1.5" data-path="installar-truenass.html"><a href="installar-truenass.html#zfs"><i class="fa fa-check"></i><b>6.1.5</b> ZFS</a></li>
+<li class="chapter" data-level="6.1.6" data-path="installar-truenass.html"><a href="installar-truenass.html#configurar-el-nou-disk"><i class="fa fa-check"></i><b>6.1.6</b> Configurar el nou disk</a></li>
+<li class="chapter" data-level="6.1.7" data-path="installar-truenass.html"><a href="installar-truenass.html#passthrough-disc-físic-a-màquina-virtual-forma-correcta"><i class="fa fa-check"></i><b>6.1.7</b> Passthrough disc físic a màquina virtual (forma correcta)</a></li>
+<li class="chapter" data-level="6.1.8" data-path="installar-truenass.html"><a href="installar-truenass.html#crear-dataset"><i class="fa fa-check"></i><b>6.1.8</b> Crear dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="politaca-de-volums.html"><a href="politaca-de-volums.html"><i class="fa fa-check"></i><b>6.2</b> Politaca de volums</a></li>
+<li class="chapter" data-level="6.3" data-path="configuracio-del-disc-backup-total.html"><a href="configuracio-del-disc-backup-total.html"><i class="fa fa-check"></i><b>6.3</b> Configuracio del disc Backup Total</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="configuracio-del-disc-backup-total.html"><a href="configuracio-del-disc-backup-total.html#treballs-de-sincronitzacio"><i class="fa fa-check"></i><b>6.3.1</b> Treballs de sincronitzacio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="nextcloud.html"><a href="nextcloud.html"><i class="fa fa-check"></i><b>7</b> Nextcloud</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importar-imatge-.html"><a href="importar-imatge-.html"><i class="fa fa-check"></i><b>7.1</b> Importar imatge .vmdk</a></li>
+<li class="chapter" data-level="7.2" data-path="volum-de-dades-nfs.html"><a href="volum-de-dades-nfs.html"><i class="fa fa-check"></i><b>7.2</b> volum de dades NFS</a></li>
+<li class="chapter" data-level="7.3" data-path="gestió-dusuaris-openldap.html"><a href="gestió-dusuaris-openldap.html"><i class="fa fa-check"></i><b>7.3</b> Gestió d’usuaris openLDAP</a></li>
+<li class="chapter" data-level="7.4" data-path="certificat-lets-encrypt.html"><a href="certificat-lets-encrypt.html"><i class="fa fa-check"></i><b>7.4</b> Certificat Let’s Encrypt</a></li>
+<li class="chapter" data-level="7.5" data-path="configuracio-daplicacions-nextcloud.html"><a href="configuracio-daplicacions-nextcloud.html"><i class="fa fa-check"></i><b>7.5</b> Configuracio d’aplicacions Nextcloud</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="zoneminder.html"><a href="zoneminder.html"><i class="fa fa-check"></i><b>8</b> Zoneminder</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ldap-apache.html"><a href="ldap-apache.html"><i class="fa fa-check"></i><b>8.1</b> LDAP Apache</a></li>
+<li class="chapter" data-level="8.2" data-path="vlan.html"><a href="vlan.html"><i class="fa fa-check"></i><b>8.2</b> VLAN</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="vlan.html"><a href="vlan.html#configuracio-de-les-targetes-de-xarxa"><i class="fa fa-check"></i><b>8.2.1</b> Configuracio de les targetes de xarxa</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="configuració-de-les-càmeres.html"><a href="configuració-de-les-càmeres.html"><i class="fa fa-check"></i><b>8.3</b> Configuració de les càmeres</a></li>
+<li class="chapter" data-level="8.4" data-path="espai-demmagatzematge.html"><a href="espai-demmagatzematge.html"><i class="fa fa-check"></i><b>8.4</b> Espai d’emmagatzematge</a></li>
+<li class="chapter" data-level="8.5" data-path="proves-pendents.html"><a href="proves-pendents.html"><i class="fa fa-check"></i><b>8.5</b> Proves pendents</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html"><i class="fa fa-check"></i><b>9</b> Instal·lació de wifi</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei"><i class="fa fa-check"></i><b>9.0.1</b> Potència de la connexió d’internet per donar servei</a></li>
+<li class="chapter" data-level="9.1" data-path="muntatge.html"><a href="muntatge.html"><i class="fa fa-check"></i><b>9.1</b> Muntatge</a></li>
+<li class="chapter" data-level="9.2" data-path="com-fer-ho.html"><a href="com-fer-ho.html"><i class="fa fa-check"></i><b>9.2</b> Com fer-ho</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="com-fer-ho.html"><a href="com-fer-ho.html#procediment-1"><i class="fa fa-check"></i><b>9.2.1</b> Procediment</a></li>
+<li class="chapter" data-level="9.2.2" data-path="com-fer-ho.html"><a href="com-fer-ho.html#assigna-les-vlan-al-controlador-unifi"><i class="fa fa-check"></i><b>9.2.2</b> Assigna les VLAN al controlador UniFi</a></li>
+<li class="chapter" data-level="9.2.3" data-path="com-fer-ho.html"><a href="com-fer-ho.html#unifi-pfsense-on-instal.lar-el-controlador-de-les-antenes"><i class="fa fa-check"></i><b>9.2.3</b> unifi-pfsense, on instal.lar el controlador de les antenes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arts escèniques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="volum-de-dades-nfs" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> volum de dades NFS<a href="volum-de-dades-nfs.html#volum-de-dades-nfs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una vegada arrancada la VM, li afegirem el recurs d’espai on volem que es guarden les dades de l’usuari. Sera un recurs compartit per Turenas en NFS</p>
+<p>Instal·lem en el la VM Nextcloud el client de NFS</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="volum-de-dades-nfs.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt <span class="at">-y</span> install nfs-common</span></code></pre></div>
+<p>Actualitzem el domini.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="volum-de-dades-nfs.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/idmapd.conf</span></code></pre></div>
+<p>I posem el nostre.</p>
+<div class="figure">
+<img src="imatges/proxmox/actualDominiNext.png" style="width:80.0%" alt="" />
+<p class="caption">Domini en Nextcloud</p>
+</div>
+<p>Ara muntem el volum que estem servint en Truenas</p>
+<div class="rmdinfo centre">
+<p>En la secció de Truenas s’explica com compartir recursos, aci soles el muntarem.
+Directori servit per Tuenas
+<em>/mnt/datatruenas/next</em></p>
+</div>
+<p>Primer creem el directori en mnt on muntar el recurs i li donem propietari, li donarem els mateixos permisos que te el que per defecte crea, ncdata.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="volum-de-dades-nfs.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> ls <span class="at">-la</span></span>
+<span id="cb58-2"><a href="volum-de-dades-nfs.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 12</span>
+<span id="cb58-3"><a href="volum-de-dades-nfs.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  3 root     root     4096 Oct 21  2021 .</span>
+<span id="cb58-4"><a href="volum-de-dades-nfs.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 20 root     root     4096 Oct 21  2021 ..</span>
+<span id="cb58-5"><a href="volum-de-dades-nfs.html#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span>  6 www-data www-data 4096 May 28 17:52 ncdata</span>
+<span id="cb58-6"><a href="volum-de-dades-nfs.html#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> mkdir <span class="at">-p</span> /mn/datanext</span>
+<span id="cb58-7"><a href="volum-de-dades-nfs.html#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> chown www-data:www-data /mnt/datanext</span>
+<span id="cb58-8"><a href="volum-de-dades-nfs.html#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> chmod 770 /mnt/datanext</span>
+<span id="cb58-9"><a href="volum-de-dades-nfs.html#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> ls <span class="at">-la</span></span>
+<span id="cb58-10"><a href="volum-de-dades-nfs.html#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 16</span>
+<span id="cb58-11"><a href="volum-de-dades-nfs.html#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span>  4 root     root     4096 May 28 18:51 .</span>
+<span id="cb58-12"><a href="volum-de-dades-nfs.html#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 20 root     root     4096 Oct 21  2021 ..</span>
+<span id="cb58-13"><a href="volum-de-dades-nfs.html#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span>  2 www-data www-data 4096 May 28 18:49 datanext</span>
+<span id="cb58-14"><a href="volum-de-dades-nfs.html#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span>  6 www-data www-data 4096 May 28 17:52 ncdata</span></code></pre></div>
+<p>Ara muntem el volum</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="volum-de-dades-nfs.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> mount <span class="at">-t</span> nfs Truenas.inestable.dedyn.io:/mnt/dataTruenas/next<span class="dt">\</span></span>
+<span id="cb59-2"><a href="volum-de-dades-nfs.html#cb59-2" aria-hidden="true" tabindex="-1"></a>/mnt/datanext/</span></code></pre></div>
+<p>Si tot va bé, l’afegim a /etc/fstab perquè el munte automàticament en l’arracada.</p>
+<p>Comprovem que anat tot be</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="volum-de-dades-nfs.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> df <span class="at">-h</span></span>
+<span id="cb60-2"><a href="volum-de-dades-nfs.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Filesystem</span>                             Size  Used Avail Use% Mounted on</span>
+<span id="cb60-3"><a href="volum-de-dades-nfs.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="ex">udev</span>                                   3.8G     0  3.8G   0% /dev</span>
+<span id="cb60-4"><a href="volum-de-dades-nfs.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tmpfs</span>                                  778M  1.2M  777M   1% /run</span>
+<span id="cb60-5"><a href="volum-de-dades-nfs.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/mapper/ubuntu--vg-ubuntu--lv</span>       39G  5.9G   31G  17% /</span>
+<span id="cb60-6"><a href="volum-de-dades-nfs.html#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="ex">tmpfs</span>                                  3.8G   16K  3.8G   1% /dev/shm</span>
+<span id="cb60-7"><a href="volum-de-dades-nfs.html#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="ex">tmpfs</span>                                  5.0M     0  5.0M   0% /run/lock</span>
+<span id="cb60-8"><a href="volum-de-dades-nfs.html#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="ex">tmpfs</span>                                  3.8G     0  3.8G   0% /sys/fs/cgroup</span>
+<span id="cb60-9"><a href="volum-de-dades-nfs.html#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/vda2</span>                              976M  103M  806M  12% /boot</span>
+<span id="cb60-10"><a href="volum-de-dades-nfs.html#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop1</span>                              56M   56M     0 100% /snap/core18/2128</span>
+<span id="cb60-11"><a href="volum-de-dades-nfs.html#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop3</span>                              62M   62M     0 100% /snap/core20/1169</span>
+<span id="cb60-12"><a href="volum-de-dades-nfs.html#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop5</span>                              68M   68M     0 100% /snap/lxd/21545</span>
+<span id="cb60-13"><a href="volum-de-dades-nfs.html#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop7</span>                              56M   56M     0 100% /snap/core18/2409</span>
+<span id="cb60-14"><a href="volum-de-dades-nfs.html#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop8</span>                              62M   62M     0 100% /snap/core20/1494</span>
+<span id="cb60-15"><a href="volum-de-dades-nfs.html#cb60-15" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop0</span>                              45M   45M     0 100% /snap/snapd/15904</span>
+<span id="cb60-16"><a href="volum-de-dades-nfs.html#cb60-16" aria-hidden="true" tabindex="-1"></a><span class="ex">/dev/loop6</span>                              68M   68M     0 100% /snap/lxd/22753</span>
+<span id="cb60-17"><a href="volum-de-dades-nfs.html#cb60-17" aria-hidden="true" tabindex="-1"></a><span class="ex">tmpfs</span>                                  778M     0  778M   0% /run/user/1000</span>
+<span id="cb60-18"><a href="volum-de-dades-nfs.html#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="ex">Truenas.inestable.dedyn.io:/mnt/dataTruenas/next</span>   30G  128K   30G   1% /mnt/datanext</span></code></pre></div>
+<p>Modifique el /etc/fstab per fer persistent aquest directori, afegint la linea</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb61-1"><a href="volum-de-dades-nfs.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Truenas.inestable.dedyn.io:/mnt/dataTruenas/next</span><span class="dt">\</span></span>
+<span id="cb61-2"><a href="volum-de-dades-nfs.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/mnt/datanext</span> nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0</span></code></pre></div>
+<div class="figure">
+<img src="imatges/proxmox/next_fstab.png" style="width:80.0%" alt="" />
+<p class="caption">editem fstab</p>
+</div>
+<p>Ara hem de passar els fitxers creats en ncdata al nou directori i configurar en <em>/var/www/nextcloud/config/config.php</em> de nextcloud el nou directori.</p>
+<div class="rmdcuidao">
+<p>Realment els arxius importants son el .htaccess i .ocdata pero copiarem també el index i els logs</p>
+</div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="volum-de-dades-nfs.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> ls <span class="at">-hla</span> /mnt/ncdata/</span>
+<span id="cb62-2"><a href="volum-de-dades-nfs.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 40K</span>
+<span id="cb62-3"><a href="volum-de-dades-nfs.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span> 6 www-data www-data 4.0K May 28 17:52 .</span>
+<span id="cb62-4"><a href="volum-de-dades-nfs.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 root     root     4.0K May 28 18:51 ..</span>
+<span id="cb62-5"><a href="volum-de-dades-nfs.html#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data 4.0K May 28 17:05 2585289c-72e1-103c-8cae-9fbe74979792</span>
+<span id="cb62-6"><a href="volum-de-dades-nfs.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 8 www-data www-data 4.0K May 28 16:38 appdata_ocru8ytkzh2p</span>
+<span id="cb62-7"><a href="volum-de-dades-nfs.html#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 Oct 21  2021 audit.log</span>
+<span id="cb62-8"><a href="volum-de-dades-nfs.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data  542 Oct 21  2021 .htaccess</span>
+<span id="cb62-9"><a href="volum-de-dades-nfs.html#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data 4.0K May 28 16:38 incitato</span>
+<span id="cb62-10"><a href="volum-de-dades-nfs.html#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 16:35 index.html</span>
+<span id="cb62-11"><a href="volum-de-dades-nfs.html#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 16:35 .ocdata</span>
+<span id="cb62-12"><a href="volum-de-dades-nfs.html#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data  11K May 28 16:35 updater.log</span>
+<span id="cb62-13"><a href="volum-de-dades-nfs.html#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x</span> 4 www-data www-data 4.0K May 28 16:35 updater-oc</span></code></pre></div>
+<p>Per poder fer aço, primer hem de donar permisos al root en el recurs compartit en Truenas.</p>
+<div class="rmdwarn">
+<p>Hem de posar en el Truenas permís per al root per poder copiar els arxius, després ho canviarem a www</p>
+<div class="figure">
+<img src="imatges/proxmox/permis_root.png" style="width:80.0%" alt="" />
+<p class="caption">permis temporal a root</p>
+</div>
+</div>
+<p>Apaguem el servei apache en VM Nextcloud, perquè no canvie els arxius mentre els estem copiant per si de cas.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="volum-de-dades-nfs.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sytemctl</span> stop apache2</span>
+<span id="cb63-2"><a href="volum-de-dades-nfs.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-R</span> /mnt/ncdate/ /mnt/datanext/</span></code></pre></div>
+<p>Hem de canviar el directori que apunta les dates en el fitxer de configuració</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="volum-de-dades-nfs.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/home/ncadmin#</span> nano /var/www/nextcloud/config/config.php</span></code></pre></div>
+<p>i canviar datadirectory pel nou</p>
+<blockquote>
+<p>‘datadirectory’ =&gt; ‘/mnt/datanext’,</p>
+</blockquote>
+<div class="figure">
+<img src="imatges/proxmox/datanext.png" style="width:80.0%" alt="" />
+<p class="caption">Canvi de directori de dades</p>
+</div>
+<p>Copiem el .htaccess i li donem els mateixos permisos que tenia</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="volum-de-dades-nfs.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> cp ncdata/audit.log index.html .ocdata /mnt/datanext/</span>
+<span id="cb65-2"><a href="volum-de-dades-nfs.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> ls <span class="at">-la</span> /mnt/ncdata/.htaccess </span>
+<span id="cb65-3"><a href="volum-de-dades-nfs.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root www-data 542 Oct 21  2021 /mnt/ncdata/.htaccess</span></code></pre></div>
+<p>Li posem els mateixos permisos</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="volum-de-dades-nfs.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> ls <span class="at">-la</span> ncdata/</span>
+<span id="cb66-2"><a href="volum-de-dades-nfs.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 40</span>
+<span id="cb66-3"><a href="volum-de-dades-nfs.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span> 6 www-data www-data  4096 May 28 20:30 .</span>
+<span id="cb66-4"><a href="volum-de-dades-nfs.html#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 root     root      4096 May 28 18:51 ..</span>
+<span id="cb66-5"><a href="volum-de-dades-nfs.html#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data  4096 May 28 17:05 2585289c-72e1-103c-8cae-9fbe74979792</span>
+<span id="cb66-6"><a href="volum-de-dades-nfs.html#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 8 www-data www-data  4096 May 28 16:38 appdata_ocru8ytkzh2p</span>
+<span id="cb66-7"><a href="volum-de-dades-nfs.html#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data     0 Oct 21  2021 audit.log</span>
+<span id="cb66-8"><a href="volum-de-dades-nfs.html#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data   542 Oct 21  2021 .htaccess</span>
+<span id="cb66-9"><a href="volum-de-dades-nfs.html#cb66-9" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data  4096 May 28 16:38 incitato</span>
+<span id="cb66-10"><a href="volum-de-dades-nfs.html#cb66-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data     0 May 28 16:35 index.html</span>
+<span id="cb66-11"><a href="volum-de-dades-nfs.html#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data     0 May 28 16:35 .ocdata</span>
+<span id="cb66-12"><a href="volum-de-dades-nfs.html#cb66-12" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data 10870 May 28 16:35 updater.log</span>
+<span id="cb66-13"><a href="volum-de-dades-nfs.html#cb66-13" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwxr-x</span> 4 www-data www-data  4096 May 28 16:35 updater-ocru8ytkzh2p</span>
+<span id="cb66-14"><a href="volum-de-dades-nfs.html#cb66-14" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt#</span> cd ncdata/</span>
+<span id="cb66-15"><a href="volum-de-dades-nfs.html#cb66-15" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/ncdata#</span> cp audit.log index.html .ocdata /mnt/datanext/</span>
+<span id="cb66-16"><a href="volum-de-dades-nfs.html#cb66-16" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/ncdata#</span> ls <span class="at">-la</span> /mnt/datanext/</span>
+<span id="cb66-17"><a href="volum-de-dades-nfs.html#cb66-17" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 19</span>
+<span id="cb66-18"><a href="volum-de-dades-nfs.html#cb66-18" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span> 3 root     www-data    7 May 28 20:48 .</span>
+<span id="cb66-19"><a href="volum-de-dades-nfs.html#cb66-19" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 root     root     4096 May 28 18:51 ..</span>
+<span id="cb66-20"><a href="volum-de-dades-nfs.html#cb66-20" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 www-data www-data    3 May 28 20:43 appdata_ocru8ytkzh2p</span>
+<span id="cb66-21"><a href="volum-de-dades-nfs.html#cb66-21" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data    0 May 28 20:48 audit.log</span>
+<span id="cb66-22"><a href="volum-de-dades-nfs.html#cb66-22" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 www-data www-data  542 May 28 20:27 .htaccess</span>
+<span id="cb66-23"><a href="volum-de-dades-nfs.html#cb66-23" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data    0 May 28 20:48 index.html</span>
+<span id="cb66-24"><a href="volum-de-dades-nfs.html#cb66-24" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data    0 May 28 20:48 .ocdata</span>
+<span id="cb66-25"><a href="volum-de-dades-nfs.html#cb66-25" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/ncdata#</span> cd /mnt/datanext/</span>
+<span id="cb66-26"><a href="volum-de-dades-nfs.html#cb66-26" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> chown www-data audit.log index.html .ocdata </span>
+<span id="cb66-27"><a href="volum-de-dades-nfs.html#cb66-27" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> chown root .htaccess </span>
+<span id="cb66-28"><a href="volum-de-dades-nfs.html#cb66-28" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> chmod 664 audit.log index.html .ocdata</span>
+<span id="cb66-29"><a href="volum-de-dades-nfs.html#cb66-29" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> ls <span class="at">-la</span></span>
+<span id="cb66-30"><a href="volum-de-dades-nfs.html#cb66-30" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 19</span>
+<span id="cb66-31"><a href="volum-de-dades-nfs.html#cb66-31" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span> 3 root     www-data    7 May 28 20:48 .</span>
+<span id="cb66-32"><a href="volum-de-dades-nfs.html#cb66-32" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 root     root     4096 May 28 18:51 ..</span>
+<span id="cb66-33"><a href="volum-de-dades-nfs.html#cb66-33" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data    4 May 28 20:50 appdata_ocru8ytkzh2p</span>
+<span id="cb66-34"><a href="volum-de-dades-nfs.html#cb66-34" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 audit.log</span>
+<span id="cb66-35"><a href="volum-de-dades-nfs.html#cb66-35" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data  542 May 28 20:27 .htaccess</span>
+<span id="cb66-36"><a href="volum-de-dades-nfs.html#cb66-36" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 index.html</span>
+<span id="cb66-37"><a href="volum-de-dades-nfs.html#cb66-37" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 .ocdata</span></code></pre></div>
+<p>Canviem el propietari en Truenas per al recurs compartit per a www</p>
+<div class="figure">
+<img src="imatges/proxmox/datanext_www.png" style="width:50.0%" alt="" />
+<p class="caption">Canviar de propietari a www</p>
+</div>
+<p>Entrem en Nextclown com a usuari i veiem que es crea la seua carpeta en el nou directori de dades</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="volum-de-dades-nfs.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> ls <span class="at">-la</span></span>
+<span id="cb67-2"><a href="volum-de-dades-nfs.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 20</span>
+<span id="cb67-3"><a href="volum-de-dades-nfs.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxrwx---</span> 4 root     www-data    8 May 28 21:03 .</span>
+<span id="cb67-4"><a href="volum-de-dades-nfs.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 root     root     4096 May 28 18:51 ..</span>
+<span id="cb67-5"><a href="volum-de-dades-nfs.html#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 5 www-data www-data    5 May 28 21:03 appdata_ocru8ytkzh2p</span>
+<span id="cb67-6"><a href="volum-de-dades-nfs.html#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 audit.log</span>
+<span id="cb67-7"><a href="volum-de-dades-nfs.html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-r--r--</span> 1 root     www-data  542 May 28 20:27 .htaccess</span>
+<span id="cb67-8"><a href="volum-de-dades-nfs.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 4 www-data www-data    4 May 28 21:04 incitato</span>
+<span id="cb67-9"><a href="volum-de-dades-nfs.html#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 index.html</span>
+<span id="cb67-10"><a href="volum-de-dades-nfs.html#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="ex">-rw-rw-r--</span> 1 www-data www-data    0 May 28 20:48 .ocdata</span></code></pre></div>
+<p>Ara creem una carpeta en l’usuari i en el GUI la crea i en el directori tambe apareix.</p>
+<div class="figure">
+<img src="imatges/proxmox/carpetaProva.png" style="width:80.0%" alt="" />
+<p class="caption">Afegim una carpeta de prova</p>
+</div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="volum-de-dades-nfs.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@nextcloud:/mnt/datanext#</span> ls <span class="at">-la</span> incitato/files/</span>
+<span id="cb68-2"><a href="volum-de-dades-nfs.html#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="ex">total</span> 2</span>
+<span id="cb68-3"><a href="volum-de-dades-nfs.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 3 www-data www-data 3 May 28 21:09 .</span>
+<span id="cb68-4"><a href="volum-de-dades-nfs.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 5 www-data www-data 5 May 28 21:09 ..</span>
+<span id="cb68-5"><a href="volum-de-dades-nfs.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="ex">drwxr-xr-x</span> 2 www-data www-data 2 May 28 21:09 carpetaProva</span></code></pre></div>
+<div class="rmdtip">
+<p>En afegir-lo com a recurs per xarxa, en fer les còpies de seguretat de les VM des de Proxmox, aquest recurs no entra en el Backup, soles guarda la VM.</p>
+<div class="figure">
+<img src="imatges/proxmox/copiaSeg_prova_mnt_nfs.png" alt="" />
+<p class="caption">còpia de seguretat</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="importar-imatge-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gestió-dusuaris-openldap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/incitato/prova/edit/main/07-nextcloud.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Arts_Escèniques.pdf", "Arts_Escèniques.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

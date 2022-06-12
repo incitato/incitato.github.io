@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.8 vpn | Arts escèniques</title>
+  <meta name="description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.8 vpn | Arts escèniques" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Projecte Asisx I.E. Maria Enriques" />
+  <meta name="github-repo" content="incitato/prova" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.8 vpn | Arts escèniques" />
+  
+  <meta name="twitter:description" content="Projecte Asisx I.E. Maria Enriques" />
+  
+
+<meta name="author" content="Ramiro Palau Gregori" />
+
+
+<meta name="date" content="2022-06-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dns-dinàmic.html"/>
+<link rel="next" href="truenas.html"/>
+<script src="assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Arts esceniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>A proposit del treball</a>
+<ul>
+<li class="chapter" data-level="" data-path="propòsit.html"><a href="propòsit.html"><i class="fa fa-check"></i>Propòsit</a>
+<ul>
+<li class="chapter" data-level="" data-path="propòsit.html"><a href="propòsit.html#plan-b"><i class="fa fa-check"></i>Plan B</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="infraestructura.html"><a href="infraestructura.html"><i class="fa fa-check"></i><b>1</b> Infraestructura</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="xarxa-per-a-la-sala.html"><a href="xarxa-per-a-la-sala.html"><i class="fa fa-check"></i><b>1.1</b> Xarxa per a la sala</a></li>
+<li class="chapter" data-level="1.2" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html"><i class="fa fa-check"></i><b>1.2</b> Descripció de les instal·lacions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#oficina"><i class="fa fa-check"></i><b>1.2.1</b> Oficina</a></li>
+<li class="chapter" data-level="1.2.2" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#sala-despera"><i class="fa fa-check"></i><b>1.2.2</b> Sala d’espera</a></li>
+<li class="chapter" data-level="1.2.3" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#escenari"><i class="fa fa-check"></i><b>1.2.3</b> Escenari</a></li>
+<li class="chapter" data-level="1.2.4" data-path="descripció-de-les-installacions.html"><a href="descripció-de-les-installacions.html#rebost"><i class="fa fa-check"></i><b>1.2.4</b> Rebost</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html"><i class="fa fa-check"></i><b>1.3</b> Descripció de les xarxes</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-1-administració"><i class="fa fa-check"></i><b>1.3.1</b> VLAN 1 Administració</a></li>
+<li class="chapter" data-level="1.3.2" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-20-privat"><i class="fa fa-check"></i><b>1.3.2</b> VLAN 20 Privat</a></li>
+<li class="chapter" data-level="1.3.3" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-30-video"><i class="fa fa-check"></i><b>1.3.3</b> VLAN 30 Video</a></li>
+<li class="chapter" data-level="1.3.4" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#vlan-40-pública"><i class="fa fa-check"></i><b>1.3.4</b> VLAN 40 pública</a></li>
+<li class="chapter" data-level="1.3.5" data-path="descripció-de-les-xarxes.html"><a href="descripció-de-les-xarxes.html#xarxa-interna-dels-serveis"><i class="fa fa-check"></i><b>1.3.5</b> Xarxa interna dels serveis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="proposta-de-projecte.html"><a href="proposta-de-projecte.html"><i class="fa fa-check"></i><b>2</b> Proposta de projecte</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="serveis-proposats.html"><a href="serveis-proposats.html"><i class="fa fa-check"></i><b>2.1</b> Serveis proposats</a></li>
+<li class="chapter" data-level="2.2" data-path="pressupost-del-maquinari.html"><a href="pressupost-del-maquinari.html"><i class="fa fa-check"></i><b>2.2</b> Pressupost del maquinari</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="servidor.html"><a href="servidor.html"><i class="fa fa-check"></i><b>3</b> Servidor</a></li>
+<li class="chapter" data-level="4" data-path="proxmox.html"><a href="proxmox.html"><i class="fa fa-check"></i><b>4</b> Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="preliminars.html"><a href="preliminars.html"><i class="fa fa-check"></i><b>4.1</b> Preliminars</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="preliminars.html"><a href="preliminars.html#servidor-nfs-en-local"><i class="fa fa-check"></i><b>4.1.1</b> Servidor NFS en local</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="installacio-de-proxmox-en-una-vm-amb-kvm.html"><a href="installacio-de-proxmox-en-una-vm-amb-kvm.html"><i class="fa fa-check"></i><b>4.2</b> Instal·lacio de Proxmox en una VM amb KVM</a></li>
+<li class="chapter" data-level="4.3" data-path="arranquem-la-installacio.html"><a href="arranquem-la-installacio.html"><i class="fa fa-check"></i><b>4.3</b> Arranquem la instal·lacio</a></li>
+<li class="chapter" data-level="4.4" data-path="primeres-configuracions.html"><a href="primeres-configuracions.html"><i class="fa fa-check"></i><b>4.4</b> Primeres configuracions</a></li>
+<li class="chapter" data-level="4.5" data-path="actualitzar-repositoris.html"><a href="actualitzar-repositoris.html"><i class="fa fa-check"></i><b>4.5</b> Actualitzar repositoris</a></li>
+<li class="chapter" data-level="4.6" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html"><i class="fa fa-check"></i><b>4.6</b> Afegir nous HD al servidor</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html#procediment"><i class="fa fa-check"></i><b>4.6.1</b> Procediment</a></li>
+<li class="chapter" data-level="4.6.2" data-path="afegir-nous-hd-al-servidor.html"><a href="afegir-nous-hd-al-servidor.html#configuracio-del-nou-ssd-per-a-les-vm"><i class="fa fa-check"></i><b>4.6.2</b> Configuracio del nou SSD per a les VM</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="afegir-lemmagatzenament-de-còpia-de-seguretat.html"><a href="afegir-lemmagatzenament-de-còpia-de-seguretat.html"><i class="fa fa-check"></i><b>4.7</b> Afegir l’emmagatzenament de còpia de seguretat</a></li>
+<li class="chapter" data-level="4.8" data-path="crear-nova-vm.html"><a href="crear-nova-vm.html"><i class="fa fa-check"></i><b>4.8</b> Crear nova VM</a></li>
+<li class="chapter" data-level="4.9" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html"><i class="fa fa-check"></i><b>4.9</b> Contenidors LXC en Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#distribucions-suportades"><i class="fa fa-check"></i><b>4.9.1</b> Distribucions suportades</a></li>
+<li class="chapter" data-level="4.9.2" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#imatges-de-contenidors"><i class="fa fa-check"></i><b>4.9.2</b> Imatges de contenidors</a></li>
+<li class="chapter" data-level="4.9.3" data-path="contenidors-lxc-en-proxmox.html"><a href="contenidors-lxc-en-proxmox.html#creem-una-ct-amb-la-imatge-que-acabem-de-baixar"><i class="fa fa-check"></i><b>4.9.3</b> Creem una CT amb la imatge que acabem de baixar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="subxarxes-en-proxmox.html"><a href="subxarxes-en-proxmox.html"><i class="fa fa-check"></i><b>4.10</b> Subxarxes en Proxmox</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="subxarxes-en-proxmox.html"><a href="subxarxes-en-proxmox.html#segon-intercace-post-install"><i class="fa fa-check"></i><b>4.10.1</b> Segon intercace, post install</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html"><i class="fa fa-check"></i><b>4.11</b> Còpies de seguretat</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#copia-de-seguretat-de-truena"><i class="fa fa-check"></i><b>4.11.1</b> Copia de seguretat de truena</a></li>
+<li class="chapter" data-level="4.11.2" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#còpia-de-seguretat-de-proxmox"><i class="fa fa-check"></i><b>4.11.2</b> Còpia de seguretat de Proxmox</a></li>
+<li class="chapter" data-level="4.11.3" data-path="còpies-de-seguretat.html"><a href="còpies-de-seguretat.html#pve-zsync"><i class="fa fa-check"></i><b>4.11.3</b> pve-zsync</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="pfsense.html"><a href="pfsense.html"><i class="fa fa-check"></i><b>5</b> pfSense</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="per-a-què-el-farem-servir.html"><a href="per-a-què-el-farem-servir.html"><i class="fa fa-check"></i><b>5.1</b> Per a què el farem servir</a></li>
+<li class="chapter" data-level="5.2" data-path="requeriments.html"><a href="requeriments.html"><i class="fa fa-check"></i><b>5.2</b> Requeriments</a></li>
+<li class="chapter" data-level="5.3" data-path="installació.html"><a href="installació.html"><i class="fa fa-check"></i><b>5.3</b> Instal·lació</a></li>
+<li class="chapter" data-level="5.4" data-path="configuració.html"><a href="configuració.html"><i class="fa fa-check"></i><b>5.4</b> Configuració</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="configuració.html"><a href="configuració.html#informació-general"><i class="fa fa-check"></i><b>5.4.1</b> Informació general</a></li>
+<li class="chapter" data-level="5.4.2" data-path="configuració.html"><a href="configuració.html#configuració-wan"><i class="fa fa-check"></i><b>5.4.2</b> Configuració WAN</a></li>
+<li class="chapter" data-level="5.4.3" data-path="configuració.html"><a href="configuració.html#configuració-lan"><i class="fa fa-check"></i><b>5.4.3</b> Configuració LAN</a></li>
+<li class="chapter" data-level="5.4.4" data-path="configuració.html"><a href="configuració.html#configuració-de-les-vlan"><i class="fa fa-check"></i><b>5.4.4</b> Configuració de les VLAN</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="configuració-dns.html"><a href="configuració-dns.html"><i class="fa fa-check"></i><b>5.5</b> Configuració DNS</a></li>
+<li class="chapter" data-level="5.6" data-path="firewall.html"><a href="firewall.html"><i class="fa fa-check"></i><b>5.6</b> Firewall</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="firewall.html"><a href="firewall.html#vlan-1"><i class="fa fa-check"></i><b>5.6.1</b> VLAN 1</a></li>
+<li class="chapter" data-level="5.6.2" data-path="firewall.html"><a href="firewall.html#vlan-20"><i class="fa fa-check"></i><b>5.6.2</b> VLAN 20</a></li>
+<li class="chapter" data-level="5.6.3" data-path="firewall.html"><a href="firewall.html#vlan-30-soles-interna-no-internet"><i class="fa fa-check"></i><b>5.6.3</b> VLAN 30 soles interna, no internet</a></li>
+<li class="chapter" data-level="5.6.4" data-path="firewall.html"><a href="firewall.html#vlan-40-soles-internet"><i class="fa fa-check"></i><b>5.6.4</b> VLAN 40 Soles internet</a></li>
+<li class="chapter" data-level="5.6.5" data-path="firewall.html"><a href="firewall.html#lan"><i class="fa fa-check"></i><b>5.6.5</b> LAN</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="dns-dinàmic.html"><a href="dns-dinàmic.html"><i class="fa fa-check"></i><b>5.7</b> DNS dinàmic</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="dns-dinàmic.html"><a href="dns-dinàmic.html#renovacions-del-servei"><i class="fa fa-check"></i><b>5.7.1</b> Renovacions del servei</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="vpn.html"><a href="vpn.html"><i class="fa fa-check"></i><b>5.8</b> vpn</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="vpn.html"><a href="vpn.html#autenticació"><i class="fa fa-check"></i><b>5.8.1</b> Autenticació</a></li>
+<li class="chapter" data-level="5.8.2" data-path="vpn.html"><a href="vpn.html#firewall-1"><i class="fa fa-check"></i><b>5.8.2</b> Firewall</a></li>
+<li class="chapter" data-level="5.8.3" data-path="vpn.html"><a href="vpn.html#configuració-òptima-de-xifratge"><i class="fa fa-check"></i><b>5.8.3</b> Configuració òptima de xifratge</a></li>
+<li class="chapter" data-level="5.8.4" data-path="vpn.html"><a href="vpn.html#udp"><i class="fa fa-check"></i><b>5.8.4</b> UDP</a></li>
+<li class="chapter" data-level="5.8.5" data-path="vpn.html"><a href="vpn.html#utilitzeu-tls-només-per-a-lautenticació"><i class="fa fa-check"></i><b>5.8.5</b> Utilitzeu TLS només per a l’autenticació</a></li>
+<li class="chapter" data-level="5.8.6" data-path="vpn.html"><a href="vpn.html#utilitzeu-la-negociació-de-xifratge-de-dades"><i class="fa fa-check"></i><b>5.8.6</b> Utilitzeu la negociació de xifratge de dades</a></li>
+<li class="chapter" data-level="5.8.7" data-path="vpn.html"><a href="vpn.html#túnels-dividits"><i class="fa fa-check"></i><b>5.8.7</b> Túnels dividits</a></li>
+<li class="chapter" data-level="5.8.8" data-path="vpn.html"><a href="vpn.html#desactiva-la-compressió"><i class="fa fa-check"></i><b>5.8.8</b> Desactiva la compressió</a></li>
+<li class="chapter" data-level="5.8.9" data-path="vpn.html"><a href="vpn.html#connexions-duplicades"><i class="fa fa-check"></i><b>5.8.9</b> Connexions duplicades</a></li>
+<li class="chapter" data-level="5.8.10" data-path="vpn.html"><a href="vpn.html#augmenta-la-memòria-intermèdia-denviamentrecepció"><i class="fa fa-check"></i><b>5.8.10</b> Augmenta la memòria intermèdia d’enviament/recepció</a></li>
+<li class="chapter" data-level="5.8.11" data-path="vpn.html"><a href="vpn.html#openvpn-i-certificats"><i class="fa fa-check"></i><b>5.8.11</b> OpenVPN i certificats</a></li>
+<li class="chapter" data-level="5.8.12" data-path="vpn.html"><a href="vpn.html#mode-de-dispositiu"><i class="fa fa-check"></i><b>5.8.12</b> Mode de dispositiu</a></li>
+<li class="chapter" data-level="5.8.13" data-path="vpn.html"><a href="vpn.html#configuració-1"><i class="fa fa-check"></i><b>5.8.13</b> Configuració</a></li>
+<li class="chapter" data-level="5.8.14" data-path="vpn.html"><a href="vpn.html#configuracio-del-servidor"><i class="fa fa-check"></i><b>5.8.14</b> Configuracio del servidor</a></li>
+<li class="chapter" data-level="5.8.15" data-path="vpn.html"><a href="vpn.html#servidors-dautentificacio"><i class="fa fa-check"></i><b>5.8.15</b> Servidors d’autentificacio</a></li>
+<li class="chapter" data-level="5.8.16" data-path="vpn.html"><a href="vpn.html#exportar-els-arxius-de-configuracio-vpn-dels-clients"><i class="fa fa-check"></i><b>5.8.16</b> Exportar els arxius de configuracio VPN dels clients</a></li>
+<li class="chapter" data-level="5.8.17" data-path="vpn.html"><a href="vpn.html#configuracio-vlan-en-ubuntu-host"><i class="fa fa-check"></i><b>5.8.17</b> Configuracio VLAN en ubuntu host</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="truenas.html"><a href="truenas.html"><i class="fa fa-check"></i><b>6</b> TrueNas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="installar-truenass.html"><a href="installar-truenass.html"><i class="fa fa-check"></i><b>6.1</b> Instal·lar Truenass</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="installar-truenass.html"><a href="installar-truenass.html#afegirem-disc-de-pas-discs-reals"><i class="fa fa-check"></i><b>6.1.1</b> Afegirem disc de pas, discs reals</a></li>
+<li class="chapter" data-level="6.1.2" data-path="installar-truenass.html"><a href="installar-truenass.html#afegim-el-disc-a-truenas"><i class="fa fa-check"></i><b>6.1.2</b> Afegim el disc a Truenas</a></li>
+<li class="chapter" data-level="6.1.3" data-path="installar-truenass.html"><a href="installar-truenass.html#afegim-els-discs-a-proxmox"><i class="fa fa-check"></i><b>6.1.3</b> Afegim els discs a Proxmox</a></li>
+<li class="chapter" data-level="6.1.4" data-path="installar-truenass.html"><a href="installar-truenass.html#volums"><i class="fa fa-check"></i><b>6.1.4</b> Volums</a></li>
+<li class="chapter" data-level="6.1.5" data-path="installar-truenass.html"><a href="installar-truenass.html#zfs"><i class="fa fa-check"></i><b>6.1.5</b> ZFS</a></li>
+<li class="chapter" data-level="6.1.6" data-path="installar-truenass.html"><a href="installar-truenass.html#configurar-el-nou-disk"><i class="fa fa-check"></i><b>6.1.6</b> Configurar el nou disk</a></li>
+<li class="chapter" data-level="6.1.7" data-path="installar-truenass.html"><a href="installar-truenass.html#passthrough-disc-físic-a-màquina-virtual-forma-correcta"><i class="fa fa-check"></i><b>6.1.7</b> Passthrough disc físic a màquina virtual (forma correcta)</a></li>
+<li class="chapter" data-level="6.1.8" data-path="installar-truenass.html"><a href="installar-truenass.html#crear-dataset"><i class="fa fa-check"></i><b>6.1.8</b> Crear dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="politaca-de-volums.html"><a href="politaca-de-volums.html"><i class="fa fa-check"></i><b>6.2</b> Politaca de volums</a></li>
+<li class="chapter" data-level="6.3" data-path="configuracio-del-disc-backup-total.html"><a href="configuracio-del-disc-backup-total.html"><i class="fa fa-check"></i><b>6.3</b> Configuracio del disc Backup Total</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="configuracio-del-disc-backup-total.html"><a href="configuracio-del-disc-backup-total.html#treballs-de-sincronitzacio"><i class="fa fa-check"></i><b>6.3.1</b> Treballs de sincronitzacio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="nextcloud.html"><a href="nextcloud.html"><i class="fa fa-check"></i><b>7</b> Nextcloud</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importar-imatge-.html"><a href="importar-imatge-.html"><i class="fa fa-check"></i><b>7.1</b> Importar imatge .vmdk</a></li>
+<li class="chapter" data-level="7.2" data-path="volum-de-dades-nfs.html"><a href="volum-de-dades-nfs.html"><i class="fa fa-check"></i><b>7.2</b> volum de dades NFS</a></li>
+<li class="chapter" data-level="7.3" data-path="gestió-dusuaris-openldap.html"><a href="gestió-dusuaris-openldap.html"><i class="fa fa-check"></i><b>7.3</b> Gestió d’usuaris openLDAP</a></li>
+<li class="chapter" data-level="7.4" data-path="certificat-lets-encrypt.html"><a href="certificat-lets-encrypt.html"><i class="fa fa-check"></i><b>7.4</b> Certificat Let’s Encrypt</a></li>
+<li class="chapter" data-level="7.5" data-path="configuracio-daplicacions-nextcloud.html"><a href="configuracio-daplicacions-nextcloud.html"><i class="fa fa-check"></i><b>7.5</b> Configuracio d’aplicacions Nextcloud</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="zoneminder.html"><a href="zoneminder.html"><i class="fa fa-check"></i><b>8</b> Zoneminder</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ldap-apache.html"><a href="ldap-apache.html"><i class="fa fa-check"></i><b>8.1</b> LDAP Apache</a></li>
+<li class="chapter" data-level="8.2" data-path="vlan.html"><a href="vlan.html"><i class="fa fa-check"></i><b>8.2</b> VLAN</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="vlan.html"><a href="vlan.html#configuracio-de-les-targetes-de-xarxa"><i class="fa fa-check"></i><b>8.2.1</b> Configuracio de les targetes de xarxa</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="configuració-de-les-càmeres.html"><a href="configuració-de-les-càmeres.html"><i class="fa fa-check"></i><b>8.3</b> Configuració de les càmeres</a></li>
+<li class="chapter" data-level="8.4" data-path="espai-demmagatzematge.html"><a href="espai-demmagatzematge.html"><i class="fa fa-check"></i><b>8.4</b> Espai d’emmagatzematge</a></li>
+<li class="chapter" data-level="8.5" data-path="proves-pendents.html"><a href="proves-pendents.html"><i class="fa fa-check"></i><b>8.5</b> Proves pendents</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html"><i class="fa fa-check"></i><b>9</b> Instal·lació de wifi</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="installació-de-wifi.html"><a href="installació-de-wifi.html#potència-de-la-connexió-dinternet-per-donar-servei"><i class="fa fa-check"></i><b>9.0.1</b> Potència de la connexió d’internet per donar servei</a></li>
+<li class="chapter" data-level="9.1" data-path="muntatge.html"><a href="muntatge.html"><i class="fa fa-check"></i><b>9.1</b> Muntatge</a></li>
+<li class="chapter" data-level="9.2" data-path="com-fer-ho.html"><a href="com-fer-ho.html"><i class="fa fa-check"></i><b>9.2</b> Com fer-ho</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="com-fer-ho.html"><a href="com-fer-ho.html#procediment-1"><i class="fa fa-check"></i><b>9.2.1</b> Procediment</a></li>
+<li class="chapter" data-level="9.2.2" data-path="com-fer-ho.html"><a href="com-fer-ho.html#assigna-les-vlan-al-controlador-unifi"><i class="fa fa-check"></i><b>9.2.2</b> Assigna les VLAN al controlador UniFi</a></li>
+<li class="chapter" data-level="9.2.3" data-path="com-fer-ho.html"><a href="com-fer-ho.html#unifi-pfsense-on-instal.lar-el-controlador-de-les-antenes"><i class="fa fa-check"></i><b>9.2.3</b> unifi-pfsense, on instal.lar el controlador de les antenes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arts escèniques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vpn" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> vpn<a href="vpn.html#vpn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://support.openvpn.com/hc/en-us/articles/4408498995483-Access-Server-pfsense-Configuration">openVPN config pfSense</a></p>
+<p>Les VPN d’accés remot permeten als usuaris connectar-se de manera segura a una xarxa des de qualsevol lloc on hi haja una connexió a Internet disponible. Per oferir als empleats la possibilitat de treballar des de casa. Amb la proliferació de telèfons intel·ligents, els usuaris tenen la necessitat d’accedir de manera segura als serveis interns des dels seus telèfons mitjançant una VPN d’accés remot.</p>
+<p>Les VPN d’accés remot es poden configurar de manera que passe tot el trànsit del sistema client a través de la VPN, té un impacte en el rendiment, la farem soles per accedir als serveis de l’empresa.</p>
+<div id="autenticació" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Autenticació<a href="vpn.html#autenticació" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Possibilitats</p>
+<ul>
+<li>IPsec</li>
+<li>OpenVPN</li>
+<li>WireGuard (No recomanable)</li>
+</ul>
+<p>L’ús d’OpenVPN amb certificats, autenticació TLS i autenticació d’usuari és el mètode més segur i més senzill d’implementar. El xifratge es veu compromés si es comprometen les claus privades de l’estructura PKI, tot i que l’ús de múltiples factors com l’autenticació TLS a la part superior de la PKI pot mitigar part del perill.</p>
+<p>OpenVPN requereix l’ús de certificats per a l’accés remot a la majoria d’entorns, que inclou la seua pròpia corba d’aprenentatge i pot ser una mica difícil de gestionar. Hi ha un assistent per gestionar les configuracions d’accés remot d’OpenVPN més habituals i els paquets d’exportació de clients d’OpenVPN faciliten el procés de posar en funcionament els clients.</p>
+<p>OpenVPN té <a href="https://openvpn.net/vpn-client/">clients</a> disponibles per a Windows, Mac OS X, tots els BSD, Linux, Solaris i Windows Mobile, <a href="https://play.google.com/store/apps/details?id=de.blinkt.openvpn">Android</a>, <a href="https://apps.apple.com/us/app/openvpn-connect/id590379981">iOS</a>, però el client no ve preinstal·lat en cap d’aquests sistemes operatius.</p>
+<p>En funció del desplegament. Els clients mòbils (Accés remot), poden rebre una configuració automàtica en determinats casos. Poden rebre automàticament una adreça IP (recomanat 172…) assignada des d’un grup, i es poden enviar nombroses opcions addicionals per controlar el seu comportament des del costat del servidor (encaminament, DNS i molts altres).</p>
+</div>
+<div id="firewall-1" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Firewall<a href="vpn.html#firewall-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN és molt compatible amb el tallafoc. Com que utilitza un únic port UDP o TCP i no es veu afectat per les funcions NAT habituals. OpenVPN admet NAT entrant (per exemple, reenviaments de ports) i sortint mitjançant la pestanya OpenVPN del grup i també a les interfícies assignades. L’única dificultat possible és si el protocol i el port en ús estan bloquejats. Quan s’assignen com a interfície, les instàncies d’OpenVPN admeten completament les regles per túnel.</p>
+<div id="regles" class="section level4 hasAnchor" number="5.8.2.1">
+<h4><span class="header-section-number">5.8.2.1</span> Regles<a href="vpn.html#regles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>L’assistent VPN d’accés remot d’OpenVPN ofereix, crear regles per passar el trànsit i el trànsit WAN a la interfície d’OpenVPN.
+El trànsit encapsulat dins d’una connexió OpenVPN activa es controla mitjançant regles definides per l’usuari a la pestanya OpenVPN a Firewall &gt; Regles.</p>
+</div>
+</div>
+<div id="configuració-òptima-de-xifratge" class="section level3 hasAnchor" number="5.8.3">
+<h3><span class="header-section-number">5.8.3</span> Configuració òptima de xifratge<a href="vpn.html#configuració-òptima-de-xifratge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Feu servir maquinari compatible amb AES-NI.</li>
+<li>A la configuració de la Fase 1 (IKE), utilitzeu:
+<ul>
+<li>AES128-GCM amb longitud de clau de 128 bits per a l’algorisme</li>
+<li>AES-XCBC per al hash, que en aquest cas és efectivament una funció pseudoaleatòria (PRF). Això donarà el màxim rendiment en combinació amb AES128-GCM en maquinari que pot accelerar tots dos (per exemple, AES-NI)</li>
+</ul></li>
+<li>A la configuració de la Fase 2 (SA infantil), utilitzeu:
+<ul>
+<li>AES128-GCM amb longitud de clau de 128 bits per a l’algorisme</li>
+<li>No seleccioneu cap algoritme hash. Un algorisme hash no és necessari per a AES-GCM, ja que ja inclou l’autenticació.</li>
+</ul></li>
+</ul>
+</div>
+<div id="udp" class="section level3 hasAnchor" number="5.8.4">
+<h3><span class="header-section-number">5.8.4</span> UDP<a href="vpn.html#udp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>UDP té menys despeses generals per a les dades tunelades i, si un client ha de retransmetre, no augmentarà el problema retransmetent tant dins com fora del túnel.</p>
+</div>
+<div id="utilitzeu-tls-només-per-a-lautenticació" class="section level3 hasAnchor" number="5.8.5">
+<h3><span class="header-section-number">5.8.5</span> Utilitzeu TLS només per a l’autenticació<a href="vpn.html#utilitzeu-tls-només-per-a-lautenticació" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN pot utilitzar TLS tant per a l’autenticació com per al xifratge del canal de control. Realitzar el xifratge del canal de control afegeix més sobrecàrrega, que pot augmentar amb molts clients. Si no cal el xifratge del canal de control, considereu fer ús TLS només per a l’autenticació. Independentment de quina opció escolliu, el trànsit transportat per OpenVPN està xifrat.</p>
+</div>
+<div id="utilitzeu-la-negociació-de-xifratge-de-dades" class="section level3 hasAnchor" number="5.8.6">
+<h3><span class="header-section-number">5.8.6</span> Utilitzeu la negociació de xifratge de dades<a href="vpn.html#utilitzeu-la-negociació-de-xifratge-de-dades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La negociació de xifratge de dades es pot usar per a establir preferències de manera que els clients puguen preferir xifrats més eficients quan siga possible, però es poden fer úsr altres quan siga necessari. Estableix primer seleccions d’alta prioritat com ara AES-128-GCM, seguides d’altres com AES-128-CBC.</p>
+</div>
+<div id="túnels-dividits" class="section level3 hasAnchor" number="5.8.7">
+<h3><span class="header-section-number">5.8.7</span> Túnels dividits<a href="vpn.html#túnels-dividits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El túnel dividit només envia trànsit per a subxarxes específiques a través de la VPN en lloc d’enviar tot el trànsit. Amb OpenVPN, això es pot fer desmarcant les opcions de redirecció de la passarel·la IPv4/IPv6 i configurant les entrades de xarxes locals IPv4/IPv6. Tanmateix, els clients encara poden anul·lar aquest comportament de forma remota, així que comproveu també les configuracions del client.</p>
+</div>
+<div id="desactiva-la-compressió" class="section level3 hasAnchor" number="5.8.8">
+<h3><span class="header-section-number">5.8.8</span> Desactiva la compressió<a href="vpn.html#desactiva-la-compressió" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La majoria de les dades trameses a través de VPN en entorns moderns ja estan xifrades o no es poden comprimir, cosa que malgasta la CPU quan s’intenta comprimir. A més, vulnerabilitats com VORACLE poden permetre als atacants obtenir informació sobre dades xifrades quan s’han comprimit.</p>
+</div>
+<div id="connexions-duplicades" class="section level3 hasAnchor" number="5.8.9">
+<h3><span class="header-section-number">5.8.9</span> Connexions duplicades<a href="vpn.html#connexions-duplicades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Normalment, si un client OpenVPN es connecta utilitzant el mateix nom d’usuari o certificat CN, la connexió anterior es trenca a favor de la nova connexió. Això és més segur, però no permet que cap usuari es connecte diverses vegades. És el cas que tenim, pot estar connectat via web i via app movil.</p>
+</div>
+<div id="augmenta-la-memòria-intermèdia-denviamentrecepció" class="section level3 hasAnchor" number="5.8.10">
+<h3><span class="header-section-number">5.8.10</span> Augmenta la memòria intermèdia d’enviament/recepció<a href="vpn.html#augmenta-la-memòria-intermèdia-denviamentrecepció" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La mida de memòria intermèdia predeterminada és segura, però no òptima. Augmentar la mida de la memòria intermèdia fins a 512 KiB a ambdós costats pot augmentar el rendiment.</p>
+</div>
+<div id="openvpn-i-certificats" class="section level3 hasAnchor" number="5.8.11">
+<h3><span class="header-section-number">5.8.11</span> OpenVPN i certificats<a href="vpn.html#openvpn-i-certificats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La millor pràctica és emprar certificats per a l’accés remot i les VPN de lloc a lloc perquè permet revocar l’accés per a clients o llocs individuals. Idealment, els certificats haurien de ser únics per dispositiu o almenys per usuari.
+Si un client amb un certificat individual està compromés o l’accés s’ha de revocar per qualsevol altre motiu, simplement revoqueu aquest certificat. No hi ha cap altre client afectat.</p>
+<p>La GUI del programari pfSense inclou una interfície de gestió de certificats totalment integrada amb OpenVPN. Les autoritats de certificació (CA) i els certificats de servidor es gestionen al Gestor de certificats a la interfície web, que es troba a Sistema &gt; Gestor de certificats. Els certificats d’usuari també es gestionen a la interfície web, com a part del gestor d’usuaris integrat que es troba a Sistema &gt; Gestor d’usuaris. Els certificats es poden generar per a qualsevol compte d’usuari creat localment al tallafoc, excepte el compte d’administrador predeterminat.</p>
+<ul>
+<li>Peer to Peer (SSL/TLS)</li>
+<li>Peer to Peer (clau compartida)</li>
+<li>Accés remot (SSL/TLS)</li>
+<li>Accés remot (autenticació d’usuari)</li>
+<li>Accés remot (SSL/TLS + autenticació d’usuari)</li>
+</ul>
+<p>Utilitzarem <em>Accés remot (SSL/TLS + autenticació d’usuari)</em></p>
+<p>Aquesta és l’opció més segura disponible. No només obté els avantatges d’altres opcions SSL/TLS, sinó que també requereix un nom d’usuari i una contrasenya del client quan es connecta. L’accés del client es pot eliminar no només revocant el certificat, sinó també canviant la contrasenya. A més, si no es descobreix immediatament una clau compromesa, el perill es redueix perquè és poc probable que l’atacant tinga les claus i la contrasenya.</p>
+</div>
+<div id="mode-de-dispositiu" class="section level3 hasAnchor" number="5.8.12">
+<h3><span class="header-section-number">5.8.12</span> Mode de dispositiu<a href="vpn.html#mode-de-dispositiu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OpenVPN es pot executar en un dels dos modes de dispositiu:</p>
+<ul>
+<li><p>tun:
+Funciona a la capa 3 OSI i realitza l’encaminament en interfícies punt a punt.</p></li>
+<li><p>Toc:
+Pot funcionar a la capa 2 OSI i pot dur a terme tant l’encaminament com el pont si és necessari.</p></li>
+</ul>
+<p>Els clients com els que es troben a Android i iOS només admeten el mode <em>tun</em> a les aplicacions que la majoria de la gent pot utilitzar. Farem servir aquest mode.</p>
+</div>
+<div id="configuració-1" class="section level3 hasAnchor" number="5.8.13">
+<h3><span class="header-section-number">5.8.13</span> Configuració<a href="vpn.html#configuració-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://www.redeszone.net/tutoriales/vpn/pfsense-configuracion-servidor-openvpn/">oepenvpn pfsense</a></p>
+<p><a href="https://itigic.com/configure-openvpn-server-in-pfsense-with-the-best-security/">Configure the OpenVPN Server in pfSense with the Best Security</a></p>
+<p>Primer que res instal·larem el paquet que genera automaticament les configuracions per als clients. En sistema grent d’empaquetacio instal·lem openvpn-client-export</p>
+<div class="figure">
+<img src="imatges/proxmox/client_openVPN.png" style="width:80.0%" alt="" />
+<p class="caption">client export OpenVPN</p>
+</div>
+<p>Després hem de crear els certificats digitals en el propi pfSense, s’ha de crear una autoritat certificadora CA que firmara els certificats. Hem de crear un certificat per al servidor OpenVPN de tipus servidor, i els certificats VPN dels clients.</p>
+<p>En sistema -&gt; gerent de certificats des d’aci tambe podem revocar certificats si un usuari el perd.</p>
+<div id="ca-interna" class="section level4 hasAnchor" number="5.8.13.1">
+<h4><span class="header-section-number">5.8.13.1</span> CA interna<a href="vpn.html#ca-interna" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Creem la CA li donem a ADD</p>
+<ol style="list-style-type: decimal">
+<li>Nom descriptiu OpneVPN_usuaris</li>
+<li>Elaboracio CA interna</li>
+<li>Tipus de clau ECDSA</li>
+<li>Algoritme resum sha512</li>
+<li>vida util 3650 10 anys</li>
+<li>Nom cumu, un nom per a identificarlo openvpn-usuaris-CA</li>
+</ol>
+<p>Quedaria</p>
+<div class="figure">
+<img src="imatges/proxmox/CA_openVPN.png" style="width:80.0%" alt="" />
+<p class="caption">CA per a OpenVPN</p>
+</div>
+<p>Apareixeria en ñe CAs del sistema</p>
+<div class="figure">
+<img src="imatges/proxmox/CAs_pfsense.png" style="width:80.0%" alt="" />
+<p class="caption">CAs del sistema</p>
+</div>
+<p>Des d’aci, podem veure si està en ús i quants certificats té actius.</p>
+</div>
+<div id="certificat-per-al-servidor-de-vpn" class="section level4 hasAnchor" number="5.8.13.2">
+<h4><span class="header-section-number">5.8.13.2</span> Certificat per al servidor de VPN<a href="vpn.html#certificat-per-al-servidor-de-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ara crearen el certificat per al servidor OpenVPN intengrat en pfSense. Anem a la seccio certificats i li donem a ADD molt paregut a l’anterior.</p>
+<ol style="list-style-type: decimal">
+<li>Elaboracio certificat interior</li>
+<li>Autoritat, el certificat creat per a OpenVPN d’abans</li>
+<li>Clau ECDSA</li>
+<li>Algoritme sha512</li>
+<li>Vida util 3650 10 anys</li>
+<li>Nom cumu, un nom per a identificarlo openVPN-servidor</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Certificat_servidor_opnvpn.png" alt="" />
+<p class="caption">Certificat per al servidor OpenVPN</p>
+</div>
+<p>En atributs del certificat, li hem de dir que és per a servidor, el reste ho podem deixar en blanc.</p>
+<div class="figure">
+<img src="imatges/proxmox/atributa_cert_VPN.png" alt="" />
+<p class="caption">Atributs certificats servidor VPN</p>
+</div>
+<p>Aquest és el certificat que li hem de donar en configurar el servidor VPN</p>
+<p>Certificats dels clients</p>
+<p>El mateix proces que hem fet amb el servidor pero ara elegirem en comptes de servidor , client.</p>
+<div class="figure">
+<img src="imatges/proxmox/cert_VPN_client.png" style="width:80.0%" alt="" />
+<p class="caption">Certificat per als clients</p>
+</div>
+<p>Ara podem veure que apareix en la llisra dels certificats.</p>
+<div class="figure">
+<img src="imatges/proxmox/llista_cert.png" style="width:80.0%" alt="" />
+<p class="caption">Llista de certificats</p>
+</div>
+<p>Si els editem, els podem exportar amb un password que cifraria el certificat amb ell.</p>
+<div class="figure">
+<img src="imatges/proxmox/Edit_cert.png" style="width:80.0%" alt="" />
+<p class="caption">editar certificats</p>
+</div>
+</div>
+</div>
+<div id="configuracio-del-servidor" class="section level3 hasAnchor" number="5.8.14">
+<h3><span class="header-section-number">5.8.14</span> Configuracio del servidor<a href="vpn.html#configuracio-del-servidor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el menu de pfSense anem a la pestany VPN -&gt; OpneVPN -&gt; servodoes -&gt; ADD</p>
+<p>Hi ha un wizards (asistent) per poder-lo configurar, pero ho farem pas a pas.</p>
+<p>Eligirem les opcions</p>
+<ol style="list-style-type: decimal">
+<li>Descriptcio, podem tindre varis, i de fet farem un altre per administracio externa</li>
+<li>Mode servidor Acceso remot (SSL /TLS + Aut. de usuario)</li>
+<li>backend LDAP Turnkey (és el servidor LDAP que tenim instal·lat, tambe es va provar zentyal que és un servidor Active Directori i en ell se’n va instal·lar un FreeRadius)</li>
+<li>Protocol UDP</li>
+<li>Mode tipe Tun, que és la que admeten dispositius Android</li>
+<li>Interface WAN és per la que entrara</li>
+<li>Local port 1194 per defecte, es recomana que el canviem.</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Conf_VPN_server1.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio del servidor OpenVpn primera part</p>
+</div>
+<p>Configuerm la part criptografica</p>
+<ol style="list-style-type: decimal">
+<li>Habilitem la clau TLS per poder fer uns de tls-crypt i generar automaticament la clau</li>
+<li>Autoritat de certificacio, la CA que hem creat per a aquest servidor OpenVPN_usuaris</li>
+<li>peer certificate revocation, si hem creat una llista d’usuaris que no tinguen acces, l’eligiriem aci, es crea en la seccio system</li>
+<li>server certificate, el certificat de servidor per aquest servei OpneVPNServidor</li>
+<li>DH parametr length ECDH only</li>
+<li>Curva ECDH secp521r1</li>
+<li>Data Encryption Algorithms Data AES-256-GCM, AES-128-GCM i CHACHA20-POLY1305</li>
+<li>Algoritme Fallback per si el client no és compatible, el que ve per defecte AES-256-CBC</li>
+<li>Auth Digest Algorithm SHA256</li>
+<li>Certificado de Profundidad No admet certificats fets per CA intermedi.</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Conf_vpn_server2.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio del servidor OpenVpn crypto</p>
+</div>
+<p>Configurem la part del tunell</p>
+<ol style="list-style-type: decimal">
+<li>Xarxa per als clients, ha de ser una xarxa lliure, que encara no hem utilitzat per defecte 10.8.0.0/24</li>
+<li>Pasarela IPv4 de Redirección, si habilitem aquesta opcio, el client tindra acces a totes les xarxes internes, ho farem per al sevidor OpneVPN d’administracio. En el dels clients li direm baix a la xarxa que te acces, la privat VLAN 20, o definir després regle firewall per aquesta connexio i llimitar soles a la VLAN 20 172.16.20.0/24.</li>
+<li>IPv4 red (s) local la VLAN 20 172.16.20.0/24</li>
+<li>Conexiones concurrentes el número de conexions simultanies 15</li>
+<li>Compresio, no, és un risc de seguretat, explicat mes a dalt.</li>
+<li>compresio, no</li>
+<li>Inter-client communication, comunicacio entre clients, si</li>
+<li>Duplicate Connection, és perquè client es puga connectar en diversos dispositius amb un sol compte, portatil, movil . Es recomana que no ho posem i creem un certificat per a cada dispositiu, de moment l’activem</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Conf_vpn_server3.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio del servidor OpenVpn tunel</p>
+</div>
+<p>Configurem la part del client</p>
+<ol style="list-style-type: decimal">
+<li>IP dinamica</li>
+<li>Topologia subred</li>
+</ol>
+<p>Configuracio ping, és per veure si un client continua conectat, ho deixem com esta.
+Habilitem el nom de domini predeterminat
+Li donem el DNS local de la xarxa, el mateix pfSense, i el de Google 8.8.8.8</p>
+<div class="figure">
+<img src="imatges/proxmox/Conf_vpn_server4.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio del servidor OpenVpn client</p>
+</div>
+<p>Configuracion avanzada</p>
+<p>Tipus de pasarela IPv4</p>
+<div class="figure">
+<img src="imatges/proxmox/Conf_vpn_server5.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio del servidor OpenVpn avançada</p>
+</div>
+<p>En guardar per primera vegada es genera la clau TLS en configuracio de cifrat, ara tindriem que tornar i baix canviar el modo de uso de clave a cifrado y autentificacion.</p>
+<div class="figure">
+<img src="imatges/proxmox/Conf_vpn_server6.png" style="width:80.0%" alt="" />
+<p class="caption">canviar mode en cifrat</p>
+</div>
+<p>I ja el tindriem configurat.</p>
+<div class="figure">
+<img src="imatges/proxmox/conf_vpn_server_final.png" style="width:80.0%" alt="" />
+<p class="caption">Servidor OpenVPN resum</p>
+</div>
+<p>Soles quedaria configurar el firewall de connecxions entrants per deixar que accedeixquen per la WAN</p>
+<p>En firewall -&gt; WAN afegim una nova regla</p>
+<ol style="list-style-type: decimal">
+<li>que deixe pasar</li>
+<li>interfaz WAN</li>
+<li>Familia IPv4</li>
+<li>protocol UDP</li>
+<li>Font cualquiera</li>
+<li>Destination WAN en el port que tenim servitn aquest servidor OpenVpn 1194</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/regla_WAN_vpn_usuaris.png" style="width:80.0%" alt="" />
+<p class="caption">regal firewall WAN per a OpenVpn</p>
+</div>
+<div class="figure">
+<img src="imatges/proxmox/regl_wan_vpn_resum.png" style="width:80.0%" alt="" />
+<p class="caption">Resum regles WAN</p>
+</div>
+<p>Quedaria definir les regles de firewall de la nova interface openVpn que acaba de crear-se</p>
+<p>Com en el cas de les VLAN anem a interfase -&gt; assignar interfases i l’afegim</p>
+<div class="figure">
+<img src="imatges/proxmox/interfase_vpn.png" style="width:80.0%" alt="" />
+<p class="caption">Afegir interfase openVpn</p>
+</div>
+<p>Li donem nom i l’habilitem com sempre</p>
+<div class="figure">
+<img src="imatges/proxmox/habilitar_openVpn.png" style="width:80.0%" alt="" />
+<p class="caption">habilitar interfase opneVPN</p>
+</div>
+<p>I li donem les regles de firewall</p>
+<ol style="list-style-type: decimal">
+<li>Acces a la xarxa VLAN 20 privat</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/regla_vpn_privat.png" style="width:80.0%" alt="" />
+<p class="caption">acces a la VLAN 20</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Bloquetjar la d’administracio</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/regla_vpn_admin.png" style="width:80.0%" alt="" />
+<p class="caption">Blocar a la d’administracio</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Permet entre elles</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/regla_vpn_vpn.png" style="width:80.0%" alt="" />
+<p class="caption">Permet entre la xarxa vpn</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>De la xarxa vpn a la passarella</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/regla_vpn_passarella.png" style="width:80.0%" alt="" />
+<p class="caption">VPN a la passarella</p>
+</div>
+<p>Quedaria</p>
+<div class="figure">
+<img src="imatges/proxmox/regle_vpn_resum.png" style="width:80.0%" alt="" />
+<p class="caption">Firewall VPN resum</p>
+</div>
+<p>Faltaria provar si funciona bé, en casa no puc fer-ho per la meua connexio a internet. No s’ha posat la regla de la net a qualsevol cosa, crec que en aço no li donem acces a internet per la VPN, pero no estic segur.</p>
+<div class="rmdnote">
+<p>Ara tindriem que fer el mateix per un altre servidor OpenVpn per a les tasques d’administracio amb acces a totes les xarxes</p>
+</div>
+</div>
+<div id="servidors-dautentificacio" class="section level3 hasAnchor" number="5.8.15">
+<h3><span class="header-section-number">5.8.15</span> Servidors d’autentificacio<a href="vpn.html#servidors-dautentificacio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Aprofitarem aquesta secio per a definir els servidors d’autenticacio. Hauria de tindre un capitol per ell mateix, pero de moment no he arribat a plantejar-me l’organigrama de l’organitzacio. És un problema que abordare quan ja estiga tot configurat i funcionant. De moment he creat un usuari per probar que funciona.</p>
+<p>La idea és tindre com a minim 4 o 5 grups</p>
+<ul>
+<li>Administracio (administrador i colaborador administratiu per donar d’alta i baixes usuàries solament)</li>
+<li>Nextcloud (tots els usuaris)</li>
+<li>video (sol usuariper accedir a Zoneminder)</li>
+<li>VPN, en principi tots els de Nextcloud tindran acces a VPN.</li>
+<li>Convidats temporals.</li>
+</ul>
+<p>Ara tenim dues opcions, utilitzar <a href="https://zentyal.com/">Zentyal</a> que és una versio lliure 100% Active Directori i instalar un servidor Radius, el porta ja com a plugin, perquè comprove els usuaris, o utilitzar <a href="https://www.turnkeylinux.org/openldap">OpenLDAP</a>, he utilitzat la versio que hi ha en <a href="https://www.turnkeylinux.org/">Turnkey</a> per agilitzar les proves.</p>
+<div id="configuracio-openldap" class="section level4 hasAnchor" number="5.8.15.1">
+<h4><span class="header-section-number">5.8.15.1</span> Configuracio OpenLDAP<a href="vpn.html#configuracio-openldap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Instal·lariem la VM com la resta, i la poseriem en la VLAN 1 sol.
+En la demostracio està en la LAN, simplement seia posar-la en la VLAN 1 després. No afecta la prova.</p>
+<div class="figure">
+<img src="imatges/proxmox/OpenLDAP_conf1.png" style="width:50.0%" alt="" />
+<p class="caption">OpenLDAP onfiguracio de xarxa</p>
+</div>
+<p>Creem l’usuari de prova per PhpLDAPAdmin
+Farem una configuracio simple d’un usuari per phpLDAPadmin, en el grup usuari, ja en proces de produccio farem els grups, és soles per provar que ens autentica pfSense</p>
+<div class="figure">
+<img src="imatges/proxmox/PHPLDAPAdmin.png" style="width:70.0%" alt="" />
+<p class="caption">Usiari des de PHPLDAPAdmin</p>
+</div>
+<p>El seguent pas seria anar a pfSense i en sistema -&gt; gestio d’usuaris -servidors d’autenticacio afegir el servidor LDAP i perquè el volem fer servir, en el nostre cas, per autenticar els usuaris d’OpenVPN que acabem de crear.</p>
+<ol style="list-style-type: decimal">
+<li>Nom, LDAP turnkey</li>
+<li>Tipus LDAP</li>
+<li>IP, li posariem el nom DNS LDAP.inestable.dedyn.io o la IP</li>
+<li>El port si l’hem canviat, per defecte el 389</li>
+<li>Transport, s’hauria d’usar SSL/tsl, pero tindriem que crear el certificat per al servidor … Ho deixem per mes avant, posem TCP standart, que no va encriptada, com anira per una VLAN sola d’administracio, no seria un problema crític, pero millor encriptar.</li>
+<li>Peer autoritat certificacio, aci li posarem perquè el volem, per autenticar els usuaris d’OpenVPN OpenVPN_usuaris que el que vam crear.</li>
+<li>Base DN dc=inestable,dc=dedyn,dc=io</li>
+<li>Contenedors d’autenticació ou=Users,dc=inestable,dc=dedyn,dc=io</li>
+<li>Enllaç anònim com el tenim habilitat, ho marquen i no hem de posar l’admin ni el seu password perquè realitce les cerques, no és recomanable.</li>
+<li>Atribut de nom d’usuari he posat uid, pero podria ser CN</li>
+<li>La resta és per refinar més la recerca LDAP, es mirara ms avant. Pendent</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/pfSense_conf_LDAP_aut.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio autenticacio OpenLDAP</p>
+</div>
+<p>Comprovarem que funciona, anem a diagnòstic -&gt; autenticacio i en el servidor que acabem de configurar posem el uid del usuari i el password per veure que funciona.</p>
+<div class="figure">
+<img src="imatges/proxmox/Comprova_aut_ldap.png" style="width:80.0%" alt="" />
+<p class="caption">Comprovant OpenLDAP</p>
+</div>
+</div>
+<div id="configuracio-zentyal" class="section level4 hasAnchor" number="5.8.15.2">
+<h4><span class="header-section-number">5.8.15.2</span> Configuracio Zentyal<a href="vpn.html#configuracio-zentyal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Es comporta com un Active Directori, la veritat és que en la versio gratuita, la GUI té apartats llimitats, en principi ens és indiferent configurar la xarxa com una AD Windows, soles la volem per autenticar usuaris per als serveis, la resta com samba, correu … No els implementarem.</p>
+<p>L’entorn de configuracio és més amigable que el PHPLDAPAdmin, és una opcio a tindre en compte, si deixem l’administracio d’usuaris a una tercera persona, Tambe utilitza més recursos de la màquina server.</p>
+<p>Creem un usuari en zentyal. En users and computers -&gt; users li donem al +</p>
+<p><a href="https://julianscorner.com/windows/ad/radius_vpn">Setup Radius For Authentication With A pfSense VPN Server</a></p>
+<p>Farem el mateix, configurarem un usuari basic per provar que l’autentica.</p>
+<div class="figure">
+<img src="imatges/proxmox/Zentyal_usuari.png" style="width:80.0%" alt="" />
+<p class="caption">Afegir usuari a Zentyal</p>
+</div>
+<p>Comprovem que està afegit</p>
+<div class="figure">
+<img src="imatges/proxmox/usuari_zentyal.png" style="width:80.0%" alt="" />
+<p class="caption">Comprovem l’usuari a Zentyal</p>
+</div>
+<p>En gestio de Software l’hem d’installar, el paquet RADIUS, des d’aci és on podem instal·lar més serveis con DHCP, FTP, correu … i ho configurariem des del GUI, Es el que fa interesant aquesta opcio.</p>
+<p>Una vegada ja instal·lat anem a RADIUS i el configurem</p>
+<ol style="list-style-type: decimal">
+<li>elegiriem a quin grup es que volem que s’autentique, en el nostre cas soles tenim un grup usuaris, o podem elegir a tot el món. (seria posar en un futur un grup VPN)</li>
+<li>Configurem el client RADIUS li donem un nom, en el nostre cas volem que siga pfSense</li>
+<li>La IP del client 192.168.56.254 en un futur, seria la de la xarxa VLAN 1 172.16.0.254</li>
+<li>I definim una clau compartida que l’hem d’introduir després en el pfSense.</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Radius_server.png" style="width:80.0%" alt="" />
+<p class="caption">Configurar RADIUS server Zentyal</p>
+</div>
+<p>Pasariem a pfSense</p>
+<p>Afegiriem un altre servidor d’autenticacio</p>
+<ol style="list-style-type: decimal">
+<li>Nom Radius</li>
+<li>Tipus Radio</li>
+<li>Protocol ms-chapv2</li>
+<li>Nom o ip, el del servidor Zentyal 192.168.56.14, en un futur la de VLAN 1</li>
+<li>secret compartit, la clau que hem definit abans en el servidor RADIUS</li>
+<li>L’últim és per on escoltara les peticions, per la WAN que és per on entra OpenVN, pero podrien definir-loper a una altra xarxa per si volem utilitzar usuari i password per exemple per conectar per wifi a les VLAN mode enterprise, per a aquest fi, pfsense porta tambe per instal·lar el paquet freeRadio on es pot configurar un altre servidor Radio que conecte en LDAP i valide els accesos a les VLAN….</li>
+</ol>
+<p><a href="https://codepre.com/en/configure-freeradius-server-in-pfsense-and-use-wpa2-wpa3-enterprise.html">Configureu el servidor FreeRADIUS a pfSense i utilitzeu WPA2 / WPA3 Enterprise</a></p>
+<div class="figure">
+<img src="imatges/proxmox/Client_Radio_pfsense.png" style="width:80.0%" alt="" />
+<p class="caption">Configuracio client RADIO pfSense</p>
+</div>
+<p>Comprovem que podem autènticar amb aques metode</p>
+<div class="figure">
+<img src="imatges/proxmox/Prova_radi_aut.png" style="width:80.0%" alt="" />
+<p class="caption">Comprovacio autenticacio RADI</p>
+</div>
+<p>Resum metodes d’autenticacio, es podria posar tambe per a Zential tipus LDAP</p>
+<div class="figure">
+<img src="imatges/proxmox/Metodes_aut.png" style="width:80.0%" alt="" />
+<p class="caption">Resum dels metodes d’autenticacio</p>
+</div>
+</div>
+</div>
+<div id="exportar-els-arxius-de-configuracio-vpn-dels-clients" class="section level3 hasAnchor" number="5.8.16">
+<h3><span class="header-section-number">5.8.16</span> Exportar els arxius de configuracio VPN dels clients<a href="vpn.html#exportar-els-arxius-de-configuracio-vpn-dels-clients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si vam instal.lar el mòdul OpenVPN-export anem a VPM -&gt; OpenVPN -&gt; Client Export
+Per Exportar directament en un paquet instal·lable la configuracio per als clients, aquest sol han d’executar-lo i queda tot configurat. Hi ha per a Windows, Mac, Android, IOS… El baixem i l’enviem al client.</p>
+<ol style="list-style-type: decimal">
+<li>Remote acces servidor, el que tenim configurat, el dels usuaris</li>
+<li>Resolució del nom d’amfitrió, El domini que tenim en el DDNS inestable.dedyn.io</li>
+<li>Verifiqueu el CN del servidor CN: Automatic – use verify-x509-name</li>
+<li>Block outside DNS habilitada</li>
+<li>Mode d’enllaç port d’origen aleatori</li>
+<li>Guardem</li>
+<li>Exportem per al tipus de dispositu que volem</li>
+</ol>
+<div class="figure">
+<img src="imatges/proxmox/Exporta_vpn_client1.png" style="width:80.0%" alt="" />
+<p class="caption">Exportacio certificat client</p>
+</div>
+<div class="figure">
+<img src="imatges/proxmox/Exporta_vpn_client2.png" style="width:80.0%" alt="" />
+<p class="caption">Exportacio certificat paquet</p>
+</div>
+<p>Els podem encriptar per a distribuir-los</p>
+<div class="figure">
+<img src="imatges/proxmox/Password_cert.png" style="width:80.0%" alt="" />
+<p class="caption">password per al certificat</p>
+</div>
+<p>Soles apareix OpenVPNSclient que es el que hem creat, soles un, pero podriem, i deuriem crear per usuaris individuals, per si els perden poder-los revocar, sence afectar els altres o per a treballadors i convidats.</p>
+<p>Baixem el d’android</p>
+<div class="figure">
+<img src="imatges/proxmox/VPN_andorid.png" style="width:50.0%" alt="" />
+<p class="caption">Paquet VPN per Android</p>
+</div>
+<p>Soles quedaria provar a vore si funciona.</p>
+</div>
+<div id="configuracio-vlan-en-ubuntu-host" class="section level3 hasAnchor" number="5.8.17">
+<h3><span class="header-section-number">5.8.17</span> Configuracio VLAN en ubuntu host<a href="vpn.html#configuracio-vlan-en-ubuntu-host" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En l’iface de vboxinterna de pont</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="vpn.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install vlan</span></code></pre></div>
+<p>Si el modul no esta actiu , el carreguem</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="vpn.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> modprobe <span class="at">--first-time</span> 8021q</span></code></pre></div>
+<p>Per provar si funciona</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="vpn.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link add link vboxnet0 name privat.400 type vlan id 400</span>
+<span id="cb39-2"><a href="vpn.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link add link vboxnet0 name public.200 type vlan id 200</span>
+<span id="cb39-3"><a href="vpn.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip link add link vboxnet0 name video.300 type vlan id 300</span></code></pre></div>
+<p>Que és la VLAN privat que hem definit
+Li donem una ip</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="vpn.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ip addr add 172.16.40.10/24 dev vboxnet0.400</span></code></pre></div>
+<p>Fem ip per veure que anat be.
+O podem fer</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="vpn.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dhclient <span class="at">-v</span></span></code></pre></div>
+<p>Per obtenir les ip del dhcp de cada VLAN</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dns-dinàmic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="truenas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/incitato/prova/edit/main/05-pfsesnse.rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Arts_Escèniques.pdf", "Arts_Escèniques.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
